@@ -42,6 +42,14 @@ class Participacion(models.Model):
     estado = models.CharField(max_length=20, default='pendiente')
     fecha_registro = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=['mascota', 'categoria'],
+                name='una_participacion_por_mascota_categoria'
+            )
+        ]
+
     def __str__(self):
         return f"{self.mascota.nombre} - {self.categoria.nombre}"
 

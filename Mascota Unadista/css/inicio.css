@@ -1,0 +1,1583 @@
+/* ==========================================================
+   MASCOTA UNADISTA 2026
+   INICIO
+   ========================================================== */
+
+/* -----------------------------
+   VARIABLES
+----------------------------- */
+
+:root {
+
+    --blue: #005883;
+    --blue-dark: #003f60;
+
+    --orange: #f47920;
+
+    --yellow: #f0b429;
+
+    --navy: #071f3c;
+
+    --text: #151515;
+
+    --light-blue: #eaf3f7;
+
+    --white: #ffffff;
+
+    --gray: #cfcfcf;
+
+    --container: 1120px;
+
+    --radius: 18px;
+
+    --shadow:
+        0 7px 18px rgba(0, 0, 0, 0.10);
+}
+
+
+/* -----------------------------
+   RESET
+----------------------------- */
+
+* {
+    box-sizing: border-box;
+    margin: 5;
+    padding: 0;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    font-family:
+       'Inter';
+
+    color: var(--text);
+
+    background: var(--white);
+
+    line-height: 1.5;
+
+    overflow-x: hidden;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+.container {
+
+    width: min(92%, var(--container));
+
+    margin-inline: auto;
+}
+
+
+.section {
+
+    position: relative;
+
+    padding: 70px 0;
+}
+
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.site-header {
+
+    position: relative;
+
+    z-index: 50;
+
+    background: #ffffff;
+}
+
+
+.nav-wrapper {
+
+    min-height: 84px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+}
+
+
+/* ==========================================================
+   LOGO UNAD
+========================================================== */
+
+.brand {
+    width: 105px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    flex-shrink: 0;
+}
+
+
+.logo-unad {
+    width: 218px;
+    height: 171px;
+
+    display: block;
+
+    object-fit: contain;
+    object-position: left center;
+    margin-top: 35px;
+
+}
+
+
+.main-nav {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 27px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+.main-nav a {
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.main-nav a:hover,
+.main-nav a.active {
+
+    color: var(--orange);
+}
+
+
+.nav-cta {
+
+    background: var(--orange);
+
+    color: #ffffff !important;
+
+    padding: 15px 19px;
+
+    border-radius: 8px;
+
+    box-shadow: var(--shadow);
+}
+
+
+.nav-cta:hover {
+
+    transform: translateY(-2px);
+}
+
+
+.menu-toggle {
+
+    display: none;
+
+    border: 0;
+
+    background: transparent;
+
+    color: var(--blue);
+
+    font-size: 28px;
+
+    cursor: pointer;
+}
+
+
+/* ==========================================================
+   HERO
+========================================================== */
+
+.hero {
+
+    padding:
+        25px
+        0
+        20px;
+
+    min-height: 390px;
+
+    /* Evita scroll horizontal por el "breakout" de la imagen derecha. */
+    overflow: hidden;
+}
+
+
+.hero-grid {
+
+    min-height: 355px;
+
+    display: grid;
+    align-items: center;
+}
+
+
+.hero-copy {
+
+    position: relative;
+
+    padding-left: 35px;
+
+    z-index: 2;
+}
+
+
+/* ==========================================================
+   LOGO PRINCIPAL MASCOTA UNADISTA
+   Medida solicitada: 945 x 496 px
+========================================================== */
+
+.title-main {
+    display: block;
+    width: 945px;
+    height: 496px;
+    max-width: none;
+}
+
+
+.mascota-unadista-logo {
+    width: 945px;
+    height: 496px;
+
+    display: block;
+
+    object-fit: contain;
+    object-position: -45px;
+}
+
+
+.hero-subtitle {
+
+    margin-top: 22px;
+
+    font-size: 24px;
+
+    max-width: 840px;
+}
+
+
+.hero-actions {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 14px;
+
+    margin-top: 18px;
+}
+
+
+/* ==========================================================
+   IMAGEN PRINCIPAL DE MASCOTAS
+   Breakout lateral: borde derecho = borde del viewport
+========================================================== */
+
+.hero-art {
+    position: relative;
+    min-height: 340px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    /*
+       .hero-grid vive dentro de .container.
+       Este desplazamiento compensa exactamente el margen lateral
+       generado por el contenedor y lleva el arte hasta x = 100vw.
+    */
+    right: calc((100vw - min(92vw, var(--container))) / -2);
+
+    z-index: 1;
+}
+
+
+.hero-pets-image {
+width: 32%;
+    max-width: 520px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    object-position: right center;
+    margin: 0;
+    padding: 0;
+    top: -700px;
+    position: absolute;
+}
+
+.btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 42px;
+
+    padding:
+        28px
+        26px;
+
+    color: #ffffff;
+
+    border-radius: 8px;
+
+    font-size: 24px;
+
+    font-weight: 500;
+
+    transition:
+        transform 0.2s ease,
+        filter 0.2s ease;
+    margin-inline: 15px;
+}
+
+
+.btn:hover {
+
+    transform: translateY(-2px);
+
+    filter: brightness(1.05);
+}
+
+
+.btn-blue {
+
+    background: var(--blue);
+}
+
+
+.btn-orange {
+
+    background: var(--orange);
+}
+
+
+/* -----------------------------
+   DECORACIÓN HERO
+----------------------------- */
+
+.decor {
+
+    position: absolute;
+
+    font-weight: 900;
+
+    pointer-events: none;
+}
+
+/* -----------------------------
+   MASCOTAS HERO
+----------------------------- */
+
+.pet {
+
+    position: absolute;
+
+    display: grid;
+
+    place-items: center;
+
+    filter:
+        drop-shadow(
+            0 9px 6px
+            rgba(0, 0, 0, 0.12)
+        );
+}
+
+
+.pet-cat {
+
+    top: 0;
+
+    right: 80px;
+
+    font-size: 150px;
+
+    transform: rotate(-15deg);
+}
+
+
+.pet-dog {
+
+    right: 0;
+
+    bottom: -25px;
+
+    font-size: 155px;
+
+    transform: rotate(9deg);
+}
+
+
+
+
+/* ==========================================================
+   MASCOTAS
+========================================================== */
+
+.pets-showcase {
+
+    position: relative;
+
+    height: 1200px;
+
+    overflow: hidden;
+}
+
+.main-pets-image {
+    position: absolute;
+
+    z-index: 2;
+
+    left: 50%;
+    bottom: 25px;
+
+    width: 100%;
+
+    height: auto;
+
+    transform: translateX(-50%);
+
+    object-fit: contain;
+
+}
+
+
+/* ==========================================================
+   TÍTULOS
+========================================================== */
+
+.section-heading {
+
+    text-align: center;
+
+    max-width: 790px;
+
+    margin:
+        0
+        auto
+        85px;
+}
+
+
+.section-heading h2 {
+
+    font-size:48px;
+
+    line-height: 1.1;
+
+    margin-bottom: 17px;
+    font-weight: 600;
+}
+
+
+.section-heading p {
+
+    font-size: 24px;
+}
+
+
+/* ==========================================================
+   ¿DE QUÉ TRATA?
+========================================================== */
+
+
+.steps-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            1fr
+        );
+
+    gap: 24px;
+}
+
+
+.step-card {
+
+    position: relative;
+
+    padding:
+        42px
+        23px
+        23px;
+
+    color: #ffffff;
+
+    text-align: center;
+
+    border-radius: 15px;
+
+    min-height: 245px;
+
+    box-shadow: var(--shadow);
+}
+
+
+.step-blue {
+    background: var(--blue);
+}
+
+
+.step-orange {
+    background: var(--orange);
+}
+
+
+.step-yellow {
+    background: var(--yellow);
+}
+
+
+.step-icon {
+
+    position: absolute;
+    top: -60px;
+    left: 50px;
+    width: 264px;
+    height: 64px;
+    display: grid;
+    place-items: center;
+
+}
+
+
+.step-card h3 {
+
+    font-size: 36px;
+    margin-bottom: -10px;
+}
+
+
+.step-card p {
+
+    min-height: 75px;
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+
+
+.small-btn-inscribir {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 36px;
+
+    padding:
+        16px
+        14px;
+
+    border-radius: 30px;
+
+    background: #ffffff;
+
+    color: #005883;
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    transition:
+        transform 0.2s ease;
+}
+
+
+.small-btn-inscribir:hover {
+
+    transform: translateY(-2px);
+}
+.small-btn-concurso {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 36px;
+
+    padding:
+        16px
+        40px;
+
+    border-radius: 30px;
+
+    background: #ffffff;
+
+    color: #f47920;
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    transition:
+        transform 0.2s ease;
+}
+
+
+.small-btn-.small-btn-concurso {
+
+    transform: translateY(-2px);
+}
+.small-btn-ganadores {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 36px;
+
+    padding:
+        16px
+        40px;
+
+    border-radius: 30px;
+
+    background: #ffffff;
+
+    color: #f0b429;
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    transition:
+        transform 0.2s ease;
+}
+
+
+.small-btn-.small-btn-ganadores {
+
+    transform: translateY(-2px);
+}
+
+
+/* ==========================================================
+   EVENTOS
+========================================================== */
+
+
+.events-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 35px;
+}
+
+
+.event-card {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    align-items: center;
+
+    gap: 55px;
+}
+
+
+.event-card.reverse
+.event-image {
+
+    order: 2;
+}
+
+
+.event-card.reverse
+.event-content {
+
+    order: 1;
+}
+
+
+.event-image {
+
+    min-height: 300px;
+
+    border-radius: 4px;
+}
+
+
+.placeholder {
+
+    background: #c9c9c9;
+
+    display: grid;
+
+    place-items: center;
+
+    color: #777;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+.event-content {
+
+    padding: 10px;
+}
+
+
+.event-content h3 {
+
+    font-size: 40px;
+    margin-bottom: 14px;
+    font-weight: 600;
+}
+
+
+.event-content p {
+
+    font-size: 15px;
+    max-width: 420px;
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+
+
+.event-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    padding:
+        9px
+        16px;
+
+    border-radius: 5px;
+
+    color: #ffffff;
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    transition:
+        transform 0.2s ease;
+}
+
+
+.event-btn:hover {
+
+    transform: translateY(-2px);
+}
+
+
+.event-btn.yellow {
+
+    background: var(--yellow);
+}
+
+
+.event-btn.orange {
+
+    background: var(--orange);
+}
+
+
+.event-btn.blue {
+
+    background: var(--blue);
+}
+
+
+/* ==========================================================
+   CALENDARIO / EVENTO PRESENCIAL
+========================================================== */
+
+.presence {
+
+    padding-top: 50px;
+
+    padding-bottom: 90px;
+
+    /* El gato puede romper el contenedor sin crear scroll horizontal. */
+    overflow: hidden;
+}
+
+
+.presence-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1.15fr
+        0.85fr;
+
+    align-items: center;
+
+    gap: 70px;
+}
+
+
+.calendar-area {
+
+    position: relative;
+
+    min-height: 427px;
+}
+
+
+/* ==========================================================
+   GATO DEL CALENDARIO
+   Medida solicitada: 598 x 427 px
+   Breakout lateral: borde izquierdo = borde del viewport
+========================================================== */
+
+.decor-cat {
+    position: absolute;
+
+    bottom: 0;
+
+    /*
+       Compensa el margen izquierdo de .container para que el
+       gráfico comience exactamente en x = 0 del viewport.
+    */
+    left: calc((100vw - min(92vw, var(--container))) / -2);
+
+    z-index: 2;
+}
+
+
+.calendar-cat-image {
+    width: 598px;
+    height: 427px;
+
+    display: block;
+
+    object-fit: contain;
+    object-position: left bottom;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+/* -----------------------------
+   CALENDARIO
+----------------------------- */
+
+.calendar {
+
+    position: absolute;
+
+    right: 25%;
+
+    top: 15px;
+
+    width: 210px;
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 3px 14px
+        rgba(0,0,0,.18);
+
+    font-size: 9px;
+
+    z-index: 3;
+}
+
+
+.calendar-top,
+.calendar-week,
+.calendar-days {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            7,
+            1fr
+        );
+
+    gap: 5px;
+}
+
+
+.calendar-top {
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    margin-bottom: 10px;
+}
+
+
+.calendar-top strong:last-child {
+
+    text-align: right;
+}
+
+
+.calendar-week {
+
+    color: #777;
+
+    margin-bottom: 8px;
+}
+
+
+.calendar-days span {
+
+    min-height: 19px;
+
+    display: grid;
+
+    place-items: center;
+}
+
+
+.calendar-days .marked {
+
+    background: var(--yellow);
+
+    color: #ffffff;
+
+    border-radius: 50%;
+
+    font-weight: 900;
+}
+
+
+/* -----------------------------
+   EVENTO PRESENCIAL
+----------------------------- */
+
+.presence-card {
+
+position: relative;
+    padding: 35px 30px 35px;
+    border-radius: 72px;
+    background: var(--orange);
+    color: #ffffff;
+    overflow: hidden;
+    width: 536px;
+    height: 539px;
+}
+
+
+.presence-card h2 {
+
+    font-size: 48px;
+    line-height: 1.05;
+    text-align: right;
+    font-weight: 600px;
+}
+
+
+.presence-card p {
+
+    text-align: right;
+    margin:
+        20px
+        20px;
+    font-size: 24px;
+}
+
+
+.presence-decoration {
+
+    position: absolute;
+    left: 70px;
+    top: 150px;
+}
+
+
+.presence-btn {
+
+margin-left: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    padding: 9px 14px;
+    border: 0;
+    border-radius: 12px;
+    background: var(--yellow);
+    color: #ffffff;
+    font-size: 36px;
+    font-weight: 700;
+    box-shadow: 0 3px 0 rgba(0, 0, 0, .12);
+    transition: transform .2s ease;
+    width: 380px;
+    height: 111px;
+    margin-top: 8%;
+}
+
+
+.presence-btn:hover {
+
+    transform: translateY(-2px);
+}
+
+
+.presence-btn b {
+
+    font-size: 40px;
+
+    line-height: .5;
+}
+
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+.site-footer {
+
+    position: relative;
+
+    min-height: 190px;
+
+    background: var(--blue);
+
+    color: #ffffff;
+
+    overflow: hidden;
+}
+
+
+.footer-wave {
+
+    height: 45px;
+
+    background: #ffffff;
+
+    border-radius:
+        0 0
+        50%
+        50%;
+
+    transform:
+        translateY(-24px)
+        scaleX(1.15);
+}
+
+
+.footer-content {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 35px;
+
+    padding-top: 20px;
+}
+
+
+.footer-message {
+
+    font-size: 14px;
+}
+
+
+.footer-message span {
+
+    color: var(--yellow);
+}
+
+
+.social {
+
+    text-align: right;
+
+    font-size: 12px;
+}
+
+
+.social-links {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    margin-top: 9px;
+}
+
+
+.social-links a {
+
+    width: 28px;
+
+    height: 28px;
+
+    border:
+        2px
+        solid
+        #ffffff;
+
+    border-radius: 50%;
+
+    display: grid;
+
+    place-items: center;
+
+    font-weight: 900;
+}
+
+
+/* ==========================================================
+   RESPONSIVE - TABLET
+========================================================== */
+
+@media (max-width: 1200px) {
+
+    /*
+       En pantallas inferiores al ancho de diseño, el logo conserva
+       su proporción y se reduce para no romper el layout.
+       En escritorio (>1200px) permanece exactamente en 945x496.
+    */
+    .title-main,
+    .mascota-unadista-logo {
+        width: min(945px, 100%);
+    }
+
+    .title-main {
+        height: auto;
+    }
+
+    .mascota-unadista-logo {
+        height: auto;
+        aspect-ratio: 945 / 496;
+    }
+}
+
+
+@media (max-width: 900px) {
+
+    .main-nav {
+
+        gap: 15px;
+
+        font-size: 12px;
+    }
+
+
+    .hero-grid,
+    .presence-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .hero-copy {
+
+        text-align: center;
+
+        padding-left: 0;
+    }
+
+
+    .title-main {
+        margin-inline: auto;
+    }
+
+
+    .mascota-unadista-logo {
+        object-position: center;
+    }
+
+
+    .hero-actions {
+
+        justify-content: center;
+    }
+
+
+    .year-ribbon {
+
+        margin-inline: auto;
+    }
+
+
+    .hero-art {
+
+        min-height: 280px;
+
+        max-width: none;
+
+        width: calc(100% + ((100vw - min(92vw, var(--container))) / 2));
+
+        margin-left: auto;
+
+        right: calc((100vw - min(92vw, var(--container))) / -2);
+
+        justify-content: flex-end;
+    }
+
+
+    .hero-pets-image {
+        width: min(520px, 100%);
+    }
+
+
+    .steps-grid {
+
+        grid-template-columns: 1fr;
+
+        max-width: 450px;
+
+        margin-inline: auto;
+    }
+
+
+    .presence-grid {
+
+        gap: 35px;
+    }
+
+
+    .calendar-area {
+
+        min-height: 427px;
+    }
+
+
+    .presence-card {
+
+        max-width: 500px;
+
+        margin-inline: auto;
+    }
+
+}
+
+
+/* ==========================================================
+   RESPONSIVE - CELULAR
+========================================================== */
+
+@media (max-width: 720px) {
+
+    .nav-wrapper {
+
+        min-height: 70px;
+    }
+
+
+    .menu-toggle {
+
+        display: block;
+    }
+
+
+    .main-nav {
+
+        position: absolute;
+
+        top: 70px;
+
+        left: 0;
+
+        width: 100%;
+
+        display: none;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        padding: 20px;
+
+        background: #ffffff;
+
+        box-shadow: var(--shadow);
+    }
+
+
+    .main-nav.open {
+
+        display: flex;
+    }
+
+
+    .main-nav a {
+
+        padding: 10px;
+
+        text-align: center;
+    }
+
+
+    .hero {
+
+        padding-top: 35px;
+    }
+
+
+    .hero h1 {
+
+        font-size:
+            clamp(
+                50px,
+                16vw,
+                78px
+            );
+
+        letter-spacing: -4px;
+    }
+
+
+    .hero-art {
+
+        min-height: 245px;
+    }
+
+
+    .pet-cat {
+
+        font-size: 105px;
+
+        right: 22%;
+    }
+
+
+    .pet-dog {
+
+        font-size: 110px;
+
+        right: 2%;
+    }
+
+
+    .pets-showcase {
+
+        height: 280px;
+    }
+
+
+    .pets-blob {
+
+        height: 170px;
+
+        bottom: 45px;
+    }
+
+
+    .pet-row {
+
+        bottom: 43px;
+
+        font-size: 65px;
+    }
+
+
+    .event-card,
+    .event-card.reverse {
+
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+
+    .event-card.reverse
+    .event-image,
+    .event-card.reverse
+    .event-content {
+
+        order: initial;
+    }
+
+
+    .event-image {
+
+        min-height: 220px;
+    }
+
+
+    /*
+       En móvil el gráfico conserva la alineación al borde izquierdo,
+       pero se escala proporcionalmente para no invadir toda la vista.
+    */
+    .calendar-cat-image {
+        width: min(598px, 82vw);
+        height: auto;
+        aspect-ratio: 598 / 427;
+    }
+
+
+    .calendar-area {
+        min-height: min(427px, 58.5vw);
+    }
+
+
+    .calendar {
+
+        right: 7%;
+    }
+
+
+    .footer-content {
+
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+
+    .social {
+
+        text-align: center;
+    }
+
+
+    .social-links {
+
+        justify-content: center;
+    }
+
+}
+
+
+/* ==========================================================
+   RESPONSIVE - CELULAR PEQUEÑO
+========================================================== */
+
+@media (max-width: 480px) {
+
+    .section {
+
+        padding: 55px 0;
+    }
+
+
+    .hero-actions {
+
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .btn {
+
+        width: 100%;
+    }
+
+
+    .pets-showcase {
+
+        height: 240px;
+    }
+
+
+    .pet-row {
+
+        font-size: 50px;
+    }
+
+
+    .paw,
+    .fish {
+
+        font-size: 30px;
+    }
+
+
+    .calendar-area {
+
+        min-height: 250px;
+    }
+
+
+    .decor-cat {
+
+        font-size: 100px;
+    }
+
+
+    .calendar {
+
+        width: 185px;
+
+        right: 0;
+    }
+
+
+    .presence-card h2 {
+
+        text-align: center;
+    }
+
+
+    .presence-card p {
+
+        text-align: center;
+    }
+
+
+    .presence-decoration {
+
+        display: none;
+    }
+
+
+    .presence-btn {
+
+        margin-inline: auto;
+    }
+
+}

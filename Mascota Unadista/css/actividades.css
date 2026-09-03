@@ -1,0 +1,1037 @@
+/* ==========================================================
+   MASCOTA UNADISTA 2026
+   ACTIVIDADES Y WEBINARS
+   ========================================================== */
+
+:root {
+
+    --blue: #09658c;
+    --blue-dark: #005883;
+
+    --orange: #f5760b;
+    --yellow: #f5ad16;
+
+    --light-blue: #e7f0f4;
+
+    --text: #111111;
+    --white: #ffffff;
+    --border: #cfcfcf;
+
+    --container: 1180px;
+
+    --shadow:
+        0 6px 16px rgba(0, 0, 0, 0.05);
+}
+
+
+/* ==========================================================
+   RESET
+========================================================== */
+
+* {
+    box-sizing: border-box;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    min-width: 320px;
+
+    overflow-x: hidden;
+
+    color: var(--text);
+
+    background: var(--white);
+
+    font-family:
+        Inter,
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    line-height: 1.35;
+}
+
+
+img {
+    display: block;
+
+    max-width: 100%;
+}
+
+
+a {
+    color: inherit;
+
+    text-decoration: none;
+}
+
+
+button,
+label,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+.container {
+
+    width:
+        min(
+            92%,
+            var(--container)
+        );
+
+    margin-inline: auto;
+}
+
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.site-header {
+
+    position: relative;
+
+    z-index: 50;
+
+    background: var(--white);
+}
+
+
+.nav-wrapper {
+
+    min-height: 106px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 32px;
+}
+
+
+.brand {
+
+    width: 170px;
+    height: 92px;
+
+    display: flex;
+
+    align-items: center;
+
+    flex: 0 0 auto;
+}
+
+
+.logo-unad {
+
+    width: 150px;
+    height: 92px;
+
+    object-fit: contain;
+
+    object-position: left center;
+}
+
+
+.main-nav {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 42px;
+
+    font-size: 15px;
+    font-weight: 600;
+}
+
+
+.main-nav a {
+
+    transition:
+        color .2s ease,
+        transform .2s ease;
+}
+
+
+.main-nav a:hover,
+.main-nav a.active {
+
+    color: var(--orange);
+}
+
+
+.nav-cta {
+
+    padding:
+        14px
+        24px;
+
+    border-radius: 6px;
+
+    color: var(--white) !important;
+
+    background: var(--orange);
+
+    box-shadow: var(--shadow);
+}
+
+
+.nav-cta:hover {
+
+    transform: translateY(-2px);
+}
+
+
+.nav-toggle-input {
+
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+
+.menu-toggle {
+
+    display: none;
+
+    color: var(--blue);
+
+    font-size: 29px;
+
+    cursor: pointer;
+}
+
+
+/* ==========================================================
+   HERO ACTIVIDADES
+========================================================== */
+
+.activities-hero {
+
+    position: relative;
+
+    min-height: 260px;
+
+    overflow: hidden;
+}
+
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    padding:
+        22px
+        0
+        45px;
+
+    text-align: center;
+}
+
+
+.hero-content h1 {
+
+    color: var(--blue);
+
+    font-size:
+        clamp(
+            54px,
+            6vw,
+            78px
+        );
+
+    line-height: .98;
+
+    font-weight: 900;
+
+    letter-spacing: -2.6px;
+}
+
+
+.hero-content p {
+
+    margin-top: 23px;
+
+    font-size: 15px;
+    font-weight: 500;
+}
+
+
+/* ==========================================================
+   DECORACIONES TIPO HUELLAS / MANCHAS
+========================================================== */
+
+.paw-shape {
+
+    position: absolute;
+
+    z-index: 1;
+
+    border-radius:
+        48%
+        52%
+        57%
+        43%;
+
+    background: var(--light-blue);
+
+    transform: rotate(-18deg);
+}
+
+
+.paw-left-1 {
+
+    width: 74px;
+    height: 62px;
+
+    left: 55px;
+    top: 77px;
+}
+
+
+.paw-left-2 {
+
+    width: 31px;
+    height: 31px;
+
+    left: 5px;
+    top: 71px;
+
+    box-shadow:
+        47px -39px 0 -6px var(--light-blue),
+        91px -36px 0 -7px var(--light-blue);
+}
+
+
+.paw-right-1 {
+
+    width: 76px;
+    height: 65px;
+
+    right: 30px;
+    top: 115px;
+}
+
+
+.paw-right-2 {
+
+    width: 30px;
+    height: 30px;
+
+    right: 93px;
+    top: 80px;
+
+    box-shadow:
+        49px -12px 0 -5px var(--light-blue),
+        -34px 46px 0 -6px var(--light-blue);
+}
+
+
+/* ==========================================================
+   LISTADO DE ACTIVIDADES
+========================================================== */
+
+.activities-section {
+
+    position: relative;
+
+    padding:
+        6px
+        0
+        115px;
+
+    overflow: hidden;
+}
+
+
+.activities-list {
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 68px;
+}
+
+
+.activities-list::before,
+.activities-list::after {
+
+    content: "";
+
+    position: absolute;
+
+    z-index: -1;
+
+    border-radius:
+        48%
+        52%
+        57%
+        43%;
+
+    background: var(--light-blue);
+}
+
+
+.activities-list::before {
+
+    width: 74px;
+    height: 68px;
+
+    left: 44%;
+    top: 290px;
+
+    box-shadow:
+        -52px -56px 0 -18px var(--light-blue),
+        30px -52px 0 -19px var(--light-blue),
+        97px -18px 0 -18px var(--light-blue);
+}
+
+
+.activities-list::after {
+
+    width: 76px;
+    height: 70px;
+
+    right: -13px;
+    top: 665px;
+
+    box-shadow:
+        -38px -64px 0 -19px var(--light-blue),
+        -83px -41px 0 -20px var(--light-blue);
+}
+
+
+/* ==========================================================
+   FILA DE ACTIVIDAD
+========================================================== */
+
+.activity-row {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    align-items: center;
+
+    gap: 41px;
+}
+
+
+.activity-row-1 {
+
+    padding-right: 24px;
+}
+
+
+.activity-row-2 {
+
+    padding-left: 24px;
+}
+
+
+.activity-row-3 {
+
+    padding-right: 24px;
+}
+
+
+/* ==========================================================
+   TARJETA DE INFORMACIÓN
+========================================================== */
+
+.activity-card {
+
+    min-height: 268px;
+
+    padding:
+        28px
+        32px
+        27px;
+
+    border:
+        1px
+        solid
+        var(--border);
+
+    border-radius: 28px;
+
+    background: var(--white);
+
+    box-shadow: var(--shadow);
+}
+
+
+.activity-card h2 {
+
+    margin-bottom: 17px;
+
+    padding-left: 54px;
+
+    color: var(--yellow);
+
+    font-size: 31px;
+    line-height: 1;
+
+    font-weight: 800;
+}
+
+
+.activity-detail {
+
+    display: grid;
+
+    grid-template-columns:
+        47px
+        minmax(0, 1fr);
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 12px;
+}
+
+
+.activity-detail:last-child {
+
+    margin-bottom: 0;
+}
+
+
+.activity-icon {
+
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+
+    place-items: center;
+
+    color: var(--orange);
+}
+
+
+.activity-icon svg {
+
+    width: 33px;
+    height: 33px;
+
+    overflow: visible;
+
+    fill: none;
+
+    stroke: currentColor;
+
+    stroke-width: 2.4;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+.activity-text h3 {
+
+    margin-bottom: 2px;
+
+    color: var(--blue);
+
+    font-size: 16px;
+    line-height: 1.1;
+
+    font-weight: 800;
+}
+
+
+.activity-text p,
+.activity-link {
+
+    font-size: 12px;
+    line-height: 1.2;
+}
+
+
+.activity-link {
+
+    display: inline-block;
+}
+
+
+.activity-link:hover {
+
+    text-decoration: underline;
+}
+
+
+/* ==========================================================
+   IMÁGENES
+========================================================== */
+
+.activity-image-wrap {
+
+    width: 100%;
+    height: 325px;
+
+    overflow: hidden;
+}
+
+
+.activity-image {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    background: #c9c9c9;
+}
+
+
+/* ==========================================================
+   AJUSTES DE PROPORCIÓN SEGÚN EL PDF
+========================================================== */
+
+.activity-row-1
+.activity-card {
+
+    width: 100%;
+}
+
+
+.activity-row-1
+.activity-image-wrap {
+
+    width: 100%;
+}
+
+
+.activity-row-2
+.activity-image-wrap {
+
+    width: 100%;
+}
+
+
+.activity-row-2
+.activity-card {
+
+    width: 100%;
+}
+
+
+.activity-row-3
+.activity-card {
+
+    width: 100%;
+}
+
+
+.activity-row-3
+.activity-image-wrap {
+
+    width: 100%;
+}
+
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+.site-footer {
+
+    position: relative;
+
+    min-height: 155px;
+
+    overflow: hidden;
+
+    color: var(--white);
+
+    background: var(--blue);
+}
+
+
+.footer-background {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 0;
+}
+
+
+.footer-background img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center top;
+}
+
+
+.footer-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    min-height: 155px;
+
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 40px;
+
+    padding:
+        50px
+        65px
+        24px;
+}
+
+
+.footer-message {
+
+    text-align: center;
+
+    font-size: 13px;
+}
+
+
+.footer-message span {
+
+    color: var(--yellow);
+}
+
+
+.social {
+
+    text-align: right;
+
+    font-size: 12px;
+}
+
+
+.social-links {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    margin-top: 8px;
+}
+
+
+.social-links a {
+
+    width: 27px;
+    height: 27px;
+
+    display: grid;
+
+    place-items: center;
+
+    border:
+        2px
+        solid
+        currentColor;
+
+    border-radius: 50%;
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+
+/* ==========================================================
+   RESPONSIVE — TABLET
+========================================================== */
+
+@media (max-width: 980px) {
+
+    .main-nav {
+
+        gap: 22px;
+
+        font-size: 14px;
+    }
+
+
+    .activity-row {
+
+        gap: 26px;
+    }
+
+
+    .activity-card {
+
+        padding:
+            26px
+            24px;
+    }
+
+
+    .activity-card h2 {
+
+        padding-left: 48px;
+    }
+
+}
+
+
+/* ==========================================================
+   RESPONSIVE — MÓVIL
+========================================================== */
+
+@media (max-width: 760px) {
+
+    .nav-wrapper {
+
+        min-height: 78px;
+    }
+
+
+    .brand {
+
+        width: 135px;
+        height: 72px;
+    }
+
+
+    .logo-unad {
+
+        width: 120px;
+        height: 72px;
+    }
+
+
+    .menu-toggle {
+
+        display: block;
+    }
+
+
+    .main-nav {
+
+        position: absolute;
+
+        top: 78px;
+        left: 0;
+
+        width: 100%;
+
+        display: none;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 5px;
+
+        padding: 18px;
+
+        background: var(--white);
+
+        box-shadow: var(--shadow);
+    }
+
+
+    #nav-toggle:checked
+    ~ .main-nav {
+
+        display: flex;
+    }
+
+
+    .main-nav a {
+
+        padding: 11px;
+
+        text-align: center;
+    }
+
+
+    .activities-hero {
+
+        min-height: 230px;
+    }
+
+
+    .hero-content {
+
+        padding-top: 35px;
+    }
+
+
+    .hero-content h1 {
+
+        font-size:
+            clamp(
+                44px,
+                13vw,
+                64px
+            );
+    }
+
+
+    .activity-row {
+
+        grid-template-columns: 1fr;
+
+        gap: 22px;
+
+        padding-inline: 0;
+    }
+
+
+    .activity-row-2
+    .activity-image-wrap {
+
+        order: 2;
+    }
+
+
+    .activity-row-2
+    .activity-card {
+
+        order: 1;
+    }
+
+
+    .activities-list {
+
+        gap: 48px;
+    }
+
+
+    .activity-card {
+
+        min-height: 0;
+    }
+
+
+    .activity-image-wrap {
+
+        height: auto;
+
+        aspect-ratio:
+            1.18 / 1;
+    }
+
+
+    .footer-content {
+
+        min-height: 190px;
+
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: flex-end;
+
+        gap: 16px;
+
+        padding:
+            55px
+            20px
+            22px;
+
+        text-align: center;
+    }
+
+
+    .social {
+
+        text-align: center;
+    }
+
+
+    .social-links {
+
+        justify-content: center;
+    }
+
+}
+
+
+/* ==========================================================
+   RESPONSIVE — CELULAR PEQUEÑO
+========================================================== */
+
+@media (max-width: 480px) {
+
+    .hero-content p {
+
+        font-size: 13px;
+    }
+
+
+    .activity-card {
+
+        padding:
+            24px
+            20px;
+    }
+
+
+    .activity-card h2 {
+
+        padding-left: 0;
+
+        text-align: center;
+    }
+
+
+    .activity-detail {
+
+        grid-template-columns:
+            42px
+            minmax(0, 1fr);
+    }
+
+
+    .activity-text h3 {
+
+        font-size: 15px;
+    }
+
+
+    .activity-text p,
+    .activity-link {
+
+        font-size: 11.5px;
+    }
+
+}

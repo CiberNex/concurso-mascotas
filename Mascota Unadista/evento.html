@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Evento presencial Mascota UNADista 2026. Información, reglamento, inscripción y preguntas frecuentes.">
+    <title>Mascota UNADista 2026 | Evento</title>
+    <link rel="stylesheet" href="css/evento.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container nav-wrapper">
+        <a href="index.html" class="brand" aria-label="Ir al inicio">
+            <img src="assets/logo/Logo UNAD.png" alt="Universidad Nacional Abierta y a Distancia - UNAD" class="logo-unad">
+        </a>
+
+        <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
+        <label for="nav-toggle" class="menu-toggle" aria-label="Abrir o cerrar menú">☰</label>
+
+        <nav id="main-nav" class="main-nav" aria-label="Navegación principal">
+            <a href="index.html">Inicio</a>
+            <a href="evento.html" class="active" aria-current="page">Evento</a>
+            <a href="actividades.html">Actividades</a>
+            <a href="ganadores.html">Ganadores</a>
+            <a href="vota-ahora.html" class="nav-cta">♥ VOTAR AHORA</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="event-hero" aria-labelledby="event-hero-title">
+        <div class="container event-hero-grid">
+            <div class="event-hero-copy">
+                <h1 id="event-hero-title">
+                    <span>¡Celebremos juntos</span>
+                    <span>a nuestras</span>
+                    <strong>mascotas!</strong>
+                </h1>
+                <p>Acompáñanos en un día lleno de diversión, aprendizaje y mucho amor por los animales.</p>
+            </div>
+
+            <div class="event-hero-media">
+                <!-- IMAGEN 1 DEL ESQUEMA: reemplaza únicamente este src -->
+                <img src="path/a/imagen-hero-evento.png" alt="Mascota protagonista e invitación al evento presencial" class="event-hero-image">
+            </div>
+        </div>
+    </section>
+
+    <section class="event-details section-decor" aria-labelledby="event-details-title">
+        <div class="container">
+            <h2 id="event-details-title" class="section-title">Evento Presencial</h2>
+
+            <div class="event-facts" aria-label="Información principal del evento">
+                <article class="fact-item">
+                    <span class="fact-icon fact-icon-blue" aria-hidden="true">▣</span>
+                    <div>
+                        <h3>FECHA</h3>
+                        <p>20 de<br>Octubre de<br>2026</p>
+                        <span class="fact-accent" aria-hidden="true"></span>
+                    </div>
+                </article>
+
+                <article class="fact-item">
+                    <span class="fact-icon fact-icon-yellow" aria-hidden="true">●</span>
+                    <div>
+                        <h3>LUGAR</h3>
+                        <p>CIP Cali<br>Cl. 5B 5 36-110 San<br>Fernando</p>
+                        <span class="fact-accent" aria-hidden="true"></span>
+                    </div>
+                </article>
+
+                <article class="fact-item">
+                    <span class="fact-icon fact-icon-orange" aria-hidden="true">◉</span>
+                    <div>
+                        <h3>FECHA</h3>
+                        <p>00:00 a.m -<br>00:00 a.m</p>
+                        <span class="fact-accent" aria-hidden="true"></span>
+                    </div>
+                </article>
+
+                <article class="fact-item fact-item-wide">
+                    <span class="fact-icon fact-icon-navy" aria-hidden="true">♟</span>
+                    <div>
+                        <h3>¿QUIÉNES PUEDEN PARTICIPAR?</h3>
+                        <p>Estudiantes, egresados, funcionarios y comunidad.</p>
+                        <span class="fact-accent" aria-hidden="true"></span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="event-info section-decor" aria-labelledby="event-info-title">
+        <div class="container">
+
+            <header class="event-info-heading">
+                <h2 id="event-info-title">Información del Evento</h2>
+                <p>Todo lo que necesitas saber para participar.</p>
+            </header>
+
+            <!-- =================================================
+                 CONTROLES CSS-ONLY
+                 No requieren JavaScript.
+                 Reglamento queda activo inicialmente.
+            ================================================== -->
+
+            <input
+                class="event-tab-control"
+                type="radio"
+                name="event-info-tab"
+                id="event-tab-participar"
+            >
+
+            <input
+                class="event-tab-control"
+                type="radio"
+                name="event-info-tab"
+                id="event-tab-reglamento"
+                checked
+            >
+
+            <input
+                class="event-tab-control"
+                type="radio"
+                name="event-info-tab"
+                id="event-tab-inscripcion"
+            >
+
+            <input
+                class="event-tab-control"
+                type="radio"
+                name="event-info-tab"
+                id="event-tab-faq"
+            >
+
+
+            <div class="event-info-layout">
+
+                <!-- =============================================
+                     MENÚ AZUL
+                ============================================== -->
+                <aside class="event-tabs-card" aria-label="Menú de información del evento">
+
+                    <div class="event-tabs">
+
+                        <label
+                            for="event-tab-participar"
+                            class="event-tab tab-participar"
+                        >
+                            ¿CÓMO PARTICIPAR?
+                        </label>
+
+                        <label
+                            for="event-tab-reglamento"
+                            class="event-tab tab-reglamento"
+                        >
+                            REGLAMENTO
+                        </label>
+
+                        <label
+                            for="event-tab-inscripcion"
+                            class="event-tab tab-inscripcion"
+                        >
+                            INSCRIPCIÓN
+                        </label>
+
+                        <label
+                            for="event-tab-faq"
+                            class="event-tab tab-faq"
+                        >
+                            PREGUNTAS FRECUENTES
+                        </label>
+
+                    </div>
+
+                    <!-- =========================================
+                         IMAGEN 2 DEL ESQUEMA
+                         Cambia únicamente este path.
+                    ========================================== -->
+                    <div class="tabs-pets">
+                        <img
+                            src="path/a/gatos-menu-evento.png"
+                            alt="Gatos de Mascota UNADista"
+                            class="tabs-pets-image"
+                        >
+                    </div>
+
+                </aside>
+
+
+                <!-- =============================================
+                     TARJETA DINÁMICA DE INFORMACIÓN
+                ============================================== -->
+                <section class="event-tab-content">
+
+                    <!-- ¿CÓMO PARTICIPAR? -->
+                    <article class="tab-panel panel-participar">
+
+                        <h3>¿Cómo participar?</h3>
+
+                        <p>
+                            Para participar en el evento presencial debes
+                            inscribir previamente a tu mascota a través del
+                            formulario dispuesto para la actividad.
+                        </p>
+
+                        <p>
+                            Diligencia la información solicitada de la mascota
+                            y de su responsable. Verifica los datos antes de
+                            enviar el formulario.
+                        </p>
+
+                        <a
+                            class="panel-cta"
+                            href="https://forms.office.com/REEMPLAZAR-ENLACE"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            IR AL FORMULARIO DE INSCRIPCIÓN
+                        </a>
+
+                    </article>
+
+
+                    <!-- REGLAMENTO -->
+                    <article class="tab-panel panel-reglamento">
+
+                        <h3>Reglamento del Evento</h3>
+
+                        <p>
+                            Para disfrutar de una jornada segura y agradable para
+                            todos, ten en cuenta:
+                        </p>
+
+                        <ul class="rules-list">
+                            <li>Mascotas de menos de 10 kg.</li>
+
+                            <li>
+                                Deben ser amigables, tranquilas y estar bajo
+                                supervisión de su responsable.
+                            </li>
+
+                            <li>
+                                Lleva a tu mascota con correa y collar o arnés
+                                durante toda la jornada.
+                            </li>
+
+                            <li>
+                                Lleva elementos de limpieza para recoger sus
+                                necesidades.
+                            </li>
+
+                            <li>
+                                Recuerda llevar agua, alimento y cualquier
+                                elemento que tu mascota necesite.
+                            </li>
+
+                            <li>
+                                Ten disponible un guacal, bolso transportador
+                                o elemento adecuado para cargarla cuando sea
+                                necesario.
+                            </li>
+
+                            <li>
+                                Respeta el espacio de las demás mascotas y
+                                asistentes.
+                            </li>
+
+                            <li>
+                                Si tu mascota presenta estrés, malestar o
+                                comportamiento agresivo, retírala de la actividad.
+                            </li>
+                        </ul>
+
+                        <p class="rules-closing">
+                            ¡Seamos responsables!
+                        </p>
+
+                    </article>
+
+
+                    <!-- INSCRIPCIÓN -->
+                    <article class="tab-panel panel-inscripcion">
+
+                        <h3>Inscripción</h3>
+
+                        <p>
+                            Registra a tu mascota para hacer parte del evento
+                            presencial. El formulario solicita la información
+                            necesaria de la mascota y de su responsable.
+                        </p>
+
+                        <div class="registration-highlight">
+                            <strong>Inscripción al evento presencial</strong>
+
+                            <span>
+                                Haz clic en el botón para abrir el formulario
+                                y completar el registro.
+                            </span>
+                        </div>
+
+                        <a
+                            class="panel-cta"
+                            href="https://forms.office.com/REEMPLAZAR-ENLACE"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            INSCRIBIR MI MASCOTA
+                        </a>
+
+                    </article>
+
+
+                    <!-- PREGUNTAS FRECUENTES -->
+                    <article class="tab-panel panel-faq">
+
+                        <h3>Preguntas Frecuentes</h3>
+
+                        <div class="faq-list">
+
+                            <details class="faq-item">
+                                <summary>
+                                    ¿Qué mascotas se pueden llevar?
+                                </summary>
+
+                                <div class="faq-answer">
+                                    <p>
+                                        Mascotas domésticas de menos de 10 kg,
+                                        tranquilas y amigables.
+                                    </p>
+                                </div>
+                            </details>
+
+
+                            <details class="faq-item">
+                                <summary>
+                                    ¿Qué requisitos de peso existen?
+                                </summary>
+
+                                <div class="faq-answer">
+                                    <p>
+                                        El peso máximo permitido es de 10 kg
+                                        por mascota.
+                                    </p>
+                                </div>
+                            </details>
+
+
+                            <details class="faq-item">
+                                <summary>
+                                    ¿Qué debo llevar obligatoriamente?
+                                </summary>
+
+                                <div class="faq-answer">
+                                    <p>
+                                        Correa o arnés, elementos de aseo,
+                                        agua y guacal o transportador si aplica.
+                                    </p>
+                                </div>
+                            </details>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-art" aria-hidden="true">
+        <img src="assets/fondos/Footer.png" alt="">
+    </div>
+
+    <div class="container footer-content">
+        <div class="footer-message">
+            <strong>Porque ellos nos acompañan cada día,<br>¡hoy es su momento de <span>brillar!</span></strong>
+        </div>
+
+        <div class="social">
+            <span>Síguenos en nuestras redes</span>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook">f</a>
+                <a href="#" aria-label="LinkedIn">in</a>
+                <a href="#" aria-label="YouTube">▶</a>
+                <a href="#" aria-label="Instagram">◎</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

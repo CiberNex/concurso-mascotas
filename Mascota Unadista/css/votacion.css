@@ -1,0 +1,1262 @@
+/* ==========================================================
+   MASCOTA UNADISTA 2026
+   VOTACIÓN
+   ========================================================== */
+
+:root {
+
+    --blue: #08658d;
+    --blue-dark: #092844;
+
+    --orange: #f5720b;
+    --yellow: #f4b71e;
+
+    --light-blue: #e6f0f4;
+
+    --white: #ffffff;
+    --text: #111111;
+    --border: #d1d1d1;
+
+    --container: 1180px;
+
+    --shadow:
+        0 6px 16px rgba(0, 0, 0, 0.05);
+}
+
+
+/* ==========================================================
+   RESET
+========================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    min-width: 320px;
+
+    overflow-x: hidden;
+
+    color: var(--text);
+
+    background: var(--white);
+
+    font-family:
+        Inter,
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    line-height: 1.35;
+}
+
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+button,
+input,
+label {
+    font: inherit;
+}
+
+
+button,
+label,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+.container {
+
+    width:
+        min(
+            92%,
+            var(--container)
+        );
+
+    margin-inline: auto;
+}
+
+
+.sr-only {
+
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    padding: 0;
+
+    margin: -1px;
+
+    overflow: hidden;
+
+    clip: rect(0, 0, 0, 0);
+
+    white-space: nowrap;
+
+    border: 0;
+}
+
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.site-header {
+
+    position: relative;
+
+    z-index: 50;
+
+    background: var(--white);
+}
+
+
+.nav-wrapper {
+
+    min-height: 105px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 34px;
+}
+
+
+.brand {
+
+    width: 170px;
+    height: 92px;
+
+    display: flex;
+
+    align-items: center;
+
+    flex: 0 0 auto;
+}
+
+
+.logo-unad {
+
+    width: 150px;
+    height: 92px;
+
+    object-fit: contain;
+
+    object-position: left center;
+}
+
+
+.main-nav {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 42px;
+
+    font-size: 15px;
+    font-weight: 600;
+}
+
+
+.main-nav a {
+
+    transition:
+        color .2s ease,
+        transform .2s ease;
+}
+
+
+.main-nav a:hover {
+
+    color: var(--orange);
+}
+
+
+.nav-cta {
+
+    padding:
+        14px
+        24px;
+
+    border-radius: 6px;
+
+    color: var(--white) !important;
+
+    background: var(--orange);
+
+    box-shadow: var(--shadow);
+}
+
+
+.nav-cta:hover {
+
+    transform: translateY(-2px);
+}
+
+
+.nav-toggle-input {
+
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+
+.menu-toggle {
+
+    display: none;
+
+    color: var(--blue);
+
+    font-size: 29px;
+
+    cursor: pointer;
+}
+
+
+/* ==========================================================
+   HERO / TÍTULO
+========================================================== */
+
+.vote-hero {
+
+    position: relative;
+
+    min-height: 210px;
+
+    overflow: hidden;
+}
+
+
+.vote-heading {
+
+    position: relative;
+
+    z-index: 2;
+
+    padding:
+        20px
+        0
+        26px;
+
+    text-align: center;
+}
+
+
+.vote-title-row {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+
+.vote-title-icon {
+
+    flex: 0 0 auto;
+
+    object-fit: contain;
+
+    object-position: center;
+}
+
+
+.vote-title-icon-left {
+
+    width: 72px;
+    height: 72px;
+}
+
+
+.vote-title-icon-right {
+
+    width: 82px;
+    height: 76px;
+}
+
+
+.vote-heading h1 {
+
+    color: var(--orange);
+
+    font-size:
+        clamp(
+            62px,
+            7vw,
+            94px
+        );
+
+    line-height: .96;
+
+    font-weight: 900;
+
+    letter-spacing: -3px;
+}
+
+
+.vote-heading p {
+
+    margin-top: 17px;
+
+    font-size: 17px;
+    font-weight: 450;
+}
+
+
+/* ==========================================================
+   DECORACIÓN CELESTE
+========================================================== */
+
+.blob,
+.blob-dot {
+
+    position: absolute;
+
+    z-index: 1;
+
+    background: var(--light-blue);
+}
+
+
+.blob {
+
+    border-radius:
+        44%
+        56%
+        60%
+        40%;
+
+    transform: rotate(-18deg);
+}
+
+
+.blob-dot {
+
+    border-radius: 50%;
+}
+
+
+.blob-left {
+
+    width: 100px;
+    height: 80px;
+
+    left: 12px;
+    top: 128px;
+}
+
+
+.blob-left-dot-1 {
+
+    width: 31px;
+    height: 31px;
+
+    left: 0;
+    top: 67px;
+}
+
+
+.blob-left-dot-2 {
+
+    width: 29px;
+    height: 29px;
+
+    left: 78px;
+    top: 53px;
+}
+
+
+.blob-left-dot-3 {
+
+    width: 30px;
+    height: 30px;
+
+    left: 134px;
+    top: 89px;
+}
+
+
+.blob-right {
+
+    width: 104px;
+    height: 83px;
+
+    right: 43px;
+    top: 130px;
+
+    transform: rotate(22deg);
+}
+
+
+.blob-right-dot-1 {
+
+    width: 29px;
+    height: 29px;
+
+    right: 120px;
+    top: 63px;
+}
+
+
+.blob-right-dot-2 {
+
+    width: 29px;
+    height: 29px;
+
+    right: 60px;
+    top: 79px;
+}
+
+
+.blob-right-dot-3 {
+
+    width: 27px;
+    height: 27px;
+
+    right: 4px;
+    top: 110px;
+}
+
+
+/* ==========================================================
+   FILTROS Y BUSCADOR
+========================================================== */
+
+.vote-tools {
+
+    position: relative;
+
+    z-index: 4;
+
+    padding:
+        4px
+        0
+        52px;
+}
+
+
+.vote-tools-row {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+.category-filters {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+
+.filter-pill {
+
+    min-width: 94px;
+    min-height: 46px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    padding:
+        10px
+        20px;
+
+    border:
+        1px
+        solid
+        var(--border);
+
+    border-radius: 999px;
+
+    background: var(--white);
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition:
+        color .2s ease,
+        background .2s ease,
+        border-color .2s ease;
+}
+
+
+.filter-pill:hover,
+.filter-pill.active {
+
+    color: var(--white);
+
+    border-color: var(--blue);
+
+    background: var(--blue);
+}
+
+
+.pet-search {
+
+    width: 300px;
+
+    display: flex;
+
+    align-items: center;
+
+    border:
+        1px
+        solid
+        var(--border);
+
+    border-radius: 999px;
+
+    overflow: hidden;
+
+    background: var(--white);
+}
+
+
+.pet-search input {
+
+    width: 100%;
+
+    min-height: 46px;
+
+    padding:
+        11px
+        8px
+        11px
+        20px;
+
+    border: 0;
+
+    outline: 0;
+
+    background: transparent;
+
+    font-size: 13px;
+}
+
+
+.pet-search button {
+
+    width: 48px;
+    height: 46px;
+
+    flex: 0 0 auto;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #555;
+
+    font-size: 29px;
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+
+/* ==========================================================
+   GALERÍA DE MASCOTAS
+========================================================== */
+
+.vote-gallery {
+
+    position: relative;
+
+    padding:
+        0
+        0
+        76px;
+
+    overflow: hidden;
+}
+
+
+.pet-grid {
+
+    position: relative;
+
+    z-index: 3;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0, 1fr)
+        );
+
+    column-gap: 31px;
+    row-gap: 20px;
+}
+
+
+.pet-card {
+
+    min-width: 0;
+}
+
+
+.pet-image-wrap {
+
+    width: 100%;
+
+    overflow: hidden;
+
+    border-radius: 5px;
+
+    background: #c9c9c9;
+}
+
+
+.pet-image {
+
+    width: 100%;
+
+    aspect-ratio:
+        1.24 / 1;
+
+    object-fit: cover;
+
+    object-position: center;
+}
+
+
+.pet-info {
+
+    padding:
+        15px
+        0
+        0;
+}
+
+
+.pet-info h2 {
+
+    color: var(--blue-dark);
+
+    font-size: 26px;
+    line-height: 1;
+
+    font-weight: 800;
+}
+
+
+.pet-info p {
+
+    margin-top: 10px;
+
+    color: var(--blue);
+
+    font-size: 16px;
+    line-height: 1;
+
+    font-weight: 500;
+}
+
+
+.vote-button {
+
+    width: 100%;
+
+    min-height: 45px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 19px;
+
+    border-radius: 999px;
+
+    color: var(--white);
+
+    background: var(--orange);
+
+    font-size: 21px;
+    line-height: 1;
+
+    font-weight: 800;
+
+    transition:
+        transform .2s ease,
+        filter .2s ease;
+}
+
+
+.vote-button:hover {
+
+    transform: translateY(-2px);
+
+    filter: brightness(1.04);
+}
+
+
+/* ==========================================================
+   DECORACIONES DE LA GALERÍA
+========================================================== */
+
+.gallery-dot-1 {
+
+    width: 35px;
+    height: 35px;
+
+    left: 47%;
+    top: 305px;
+
+    box-shadow:
+        62px 8px 0 1px var(--light-blue),
+        120px 40px 0 -3px var(--light-blue);
+}
+
+
+.gallery-dot-2 {
+
+    width: 34px;
+    height: 34px;
+
+    right: 67px;
+    top: 272px;
+}
+
+
+.gallery-dot-3 {
+
+    width: 32px;
+    height: 32px;
+
+    left: 84px;
+    bottom: 98px;
+
+    box-shadow:
+        84px 26px 0 -2px var(--light-blue),
+        184px -20px 0 -1px var(--light-blue);
+}
+
+
+.gallery-blob-right {
+
+    width: 105px;
+    height: 97px;
+
+    right: -17px;
+    bottom: 22px;
+
+    transform: rotate(19deg);
+}
+
+
+/* ==========================================================
+   PAGINACIÓN
+========================================================== */
+
+.pagination {
+
+    position: relative;
+
+    z-index: 4;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-top: 38px;
+}
+
+
+.pagination-arrow {
+
+    width: 31px;
+    height: 31px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    color: var(--white);
+
+    background: var(--blue);
+
+    font-size: 29px;
+    line-height: 1;
+
+    font-weight: 700;
+}
+
+
+.pagination-dot {
+
+    width: 18px;
+    height: 18px;
+
+    border-radius: 50%;
+
+    background: #d8d8d8;
+}
+
+
+.pagination-dot.active {
+
+    background: var(--yellow);
+}
+
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+.site-footer {
+
+    position: relative;
+
+    min-height: 180px;
+
+    overflow: hidden;
+
+    color: var(--white);
+
+    background: var(--blue);
+}
+
+
+.footer-background {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 0;
+}
+
+
+.footer-background img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center top;
+}
+
+
+.footer-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    min-height: 180px;
+
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 40px;
+
+    padding:
+        58px
+        65px
+        24px;
+}
+
+
+.footer-message {
+
+    text-align: center;
+
+    font-size: 14px;
+}
+
+
+.footer-message span {
+
+    color: var(--yellow);
+}
+
+
+.social {
+
+    text-align: right;
+
+    font-size: 13px;
+}
+
+
+.social-links {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    margin-top: 9px;
+}
+
+
+.social-links a {
+
+    width: 29px;
+    height: 29px;
+
+    display: grid;
+
+    place-items: center;
+
+    border:
+        2px
+        solid
+        currentColor;
+
+    border-radius: 50%;
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+
+/* ==========================================================
+   RESPONSIVE - TABLET
+========================================================== */
+
+@media (max-width: 980px) {
+
+    .main-nav {
+
+        gap: 22px;
+
+        font-size: 14px;
+    }
+
+
+    .vote-tools-row {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .pet-search {
+
+        width:
+            min(
+                100%,
+                380px
+            );
+    }
+
+
+    .pet-grid {
+
+        column-gap: 22px;
+    }
+
+}
+
+
+/* ==========================================================
+   RESPONSIVE - MÓVIL
+========================================================== */
+
+@media (max-width: 760px) {
+
+    .nav-wrapper {
+
+        min-height: 78px;
+    }
+
+
+    .brand {
+
+        width: 135px;
+        height: 72px;
+    }
+
+
+    .logo-unad {
+
+        width: 120px;
+        height: 72px;
+    }
+
+
+    .menu-toggle {
+
+        display: block;
+    }
+
+
+    .main-nav {
+
+        position: absolute;
+
+        top: 78px;
+        left: 0;
+
+        width: 100%;
+
+        display: none;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 5px;
+
+        padding: 18px;
+
+        background: var(--white);
+
+        box-shadow: var(--shadow);
+    }
+
+
+    #nav-toggle:checked
+    ~ .main-nav {
+
+        display: flex;
+    }
+
+
+    .main-nav a {
+
+        padding: 11px;
+
+        text-align: center;
+    }
+
+
+    .vote-hero {
+
+        min-height: 190px;
+    }
+
+
+    .vote-heading {
+
+        padding-top: 30px;
+    }
+
+
+    .vote-title-row {
+
+        gap: 6px;
+    }
+
+
+    .vote-title-icon-left {
+
+        width: 46px;
+        height: 46px;
+    }
+
+
+    .vote-title-icon-right {
+
+        width: 50px;
+        height: 48px;
+    }
+
+
+    .vote-heading h1 {
+
+        font-size:
+            clamp(
+                46px,
+                13vw,
+                68px
+            );
+    }
+
+
+    .vote-heading p {
+
+        max-width: 430px;
+
+        margin:
+            15px
+            auto
+            0;
+
+        font-size: 14px;
+    }
+
+
+    .vote-tools {
+
+        padding-bottom: 35px;
+    }
+
+
+    .category-filters {
+
+        width: 100%;
+
+        gap: 9px;
+    }
+
+
+    .filter-pill {
+
+        min-width: 0;
+
+        flex:
+            1
+            1
+            90px;
+    }
+
+
+    .pet-grid {
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+        gap: 24px 18px;
+    }
+
+
+    .pet-info h2 {
+
+        font-size: 22px;
+    }
+
+
+    .pet-info p {
+
+        font-size: 14px;
+    }
+
+
+    .vote-button {
+
+        min-height: 42px;
+
+        font-size: 18px;
+    }
+
+
+    .footer-content {
+
+        min-height: 210px;
+
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: flex-end;
+
+        gap: 18px;
+
+        padding:
+            62px
+            20px
+            24px;
+
+        text-align: center;
+    }
+
+
+    .social {
+
+        text-align: center;
+    }
+
+
+    .social-links {
+
+        justify-content: center;
+    }
+
+}
+
+
+/* ==========================================================
+   RESPONSIVE - CELULAR PEQUEÑO
+========================================================== */
+
+@media (max-width: 480px) {
+
+    .pet-grid {
+
+        grid-template-columns: 1fr;
+
+        max-width: 380px;
+    }
+
+
+    .pet-search {
+
+        width: 100%;
+    }
+
+
+    .pagination {
+
+        gap: 11px;
+    }
+
+
+    .pagination-dot {
+
+        width: 15px;
+        height: 15px;
+    }
+
+}

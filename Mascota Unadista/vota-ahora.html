@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Vota por tu mascota favorita en Mascota UNADista 2026.">
+
+    <title>Mascota UNADista 2026 | Votación</title>
+
+    <link rel="stylesheet" href="css/votacion.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         HEADER / NAVEGACIÓN
+    ====================================================== -->
+    <header class="site-header">
+
+        <div class="container nav-wrapper">
+
+            <a href="index.html" class="brand" aria-label="Ir al inicio">
+                <img
+                    src="assets/logo/Logo UNAD.png"
+                    alt="Universidad Nacional Abierta y a Distancia - UNAD"
+                    class="logo-unad"
+                >
+            </a>
+
+            <!-- Menú responsive sin JavaScript -->
+            <input
+                type="checkbox"
+                id="nav-toggle"
+                class="nav-toggle-input"
+            >
+
+            <label
+                for="nav-toggle"
+                class="menu-toggle"
+                aria-label="Abrir o cerrar menú"
+            >
+                ☰
+            </label>
+
+            <nav class="main-nav" aria-label="Navegación principal">
+
+                <a href="index.html">
+                    Inicio
+                </a>
+
+                <a href="evento.html">
+                    Evento
+                </a>
+
+                <a href="actividades.html">
+                    Actividades
+                </a>
+
+                <a href="ganadores.html">
+                    Ganadores
+                </a>
+
+                <a
+                    href="votacion.html"
+                    class="nav-cta active"
+                    aria-current="page"
+                >
+                    ♥ VOTAR AHORA
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <!-- =====================================================
+             HERO / TÍTULO
+        ====================================================== -->
+        <section class="vote-hero">
+
+            <!-- Decoraciones celestes -->
+            <span class="blob blob-left" aria-hidden="true"></span>
+            <span class="blob-dot blob-left-dot-1" aria-hidden="true"></span>
+            <span class="blob-dot blob-left-dot-2" aria-hidden="true"></span>
+            <span class="blob-dot blob-left-dot-3" aria-hidden="true"></span>
+
+            <span class="blob blob-right" aria-hidden="true"></span>
+            <span class="blob-dot blob-right-dot-1" aria-hidden="true"></span>
+            <span class="blob-dot blob-right-dot-2" aria-hidden="true"></span>
+            <span class="blob-dot blob-right-dot-3" aria-hidden="true"></span>
+
+            <div class="container vote-heading">
+
+                <div class="vote-title-row">
+
+                    <!-- IMAGEN 1 DEL ESQUEMA -->
+                    <img
+                        src="assets/votacion/huella-titulo-izquierda.png"
+                        alt=""
+                        class="vote-title-icon vote-title-icon-left"
+                    >
+
+                    <h1>Vota Ahora</h1>
+
+                    <!-- IMAGEN 2 DEL ESQUEMA -->
+                    <img
+                        src="assets/votacion/huellas-titulo-derecha.png"
+                        alt=""
+                        class="vote-title-icon vote-title-icon-right"
+                    >
+
+                </div>
+
+                <p>
+                    Conoce las mascotas participantes y vota a tu favorita
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             FILTROS Y BUSCADOR
+        ====================================================== -->
+        <section class="vote-tools">
+
+            <div class="container vote-tools-row">
+
+                <div class="category-filters" aria-label="Categorías de mascotas">
+
+                    <a href="#" class="filter-pill active">
+                        Todas
+                    </a>
+
+                    <a href="#" class="filter-pill">
+                        <span aria-hidden="true">✤</span>
+                        Perros
+                    </a>
+
+                    <a href="#" class="filter-pill">
+                        <span aria-hidden="true">✤</span>
+                        Gatos
+                    </a>
+
+                    <a href="#" class="filter-pill">
+                        <span aria-hidden="true">✤</span>
+                        Aves
+                    </a>
+
+                    <a href="#" class="filter-pill">
+                        Otros
+                    </a>
+
+                </div>
+
+
+                <form class="pet-search" action="#" method="get">
+
+                    <label class="sr-only" for="pet-search-input">
+                        Buscar mascota
+                    </label>
+
+                    <input
+                        id="pet-search-input"
+                        name="q"
+                        type="search"
+                        placeholder="Buscar mascota..."
+                    >
+
+                    <button type="submit" aria-label="Buscar">
+                        ⌕
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             TARJETAS DE VOTACIÓN
+        ====================================================== -->
+        <section class="vote-gallery">
+
+            <!-- decoración central -->
+            <span class="blob-dot gallery-dot-1" aria-hidden="true"></span>
+            <span class="blob-dot gallery-dot-2" aria-hidden="true"></span>
+            <span class="blob-dot gallery-dot-3" aria-hidden="true"></span>
+            <span class="blob gallery-blob-right" aria-hidden="true"></span>
+
+            <div class="container pet-grid">
+
+                <!-- ROCKY -->
+                <article class="pet-card">
+
+                    <div class="pet-image-wrap">
+                        <!-- IMAGEN 3 DEL ESQUEMA -->
+                        <img
+                            src="assets/votacion/rocky.png"
+                            alt="Rocky"
+                            class="pet-image"
+                        >
+                    </div>
+
+                    <div class="pet-info">
+                        <h2>Rocky</h2>
+                        <p>20 votos</p>
+
+                        <a href="#" class="vote-button">
+                            VOTAR
+                        </a>
+                    </div>
+
+                </article>
+
+
+                <!-- MIA -->
+                <article class="pet-card">
+
+                    <div class="pet-image-wrap">
+                        <!-- IMAGEN 4 DEL ESQUEMA -->
+                        <img
+                            src="assets/votacion/mia.png"
+                            alt="Mia"
+                            class="pet-image"
+                        >
+                    </div>
+
+                    <div class="pet-info">
+                        <h2>Mia</h2>
+                        <p>15 votos</p>
+
+                        <a href="#" class="vote-button">
+                            VOTAR
+                        </a>
+                    </div>
+
+                </article>
+
+
+                <!-- KIWI -->
+                <article class="pet-card">
+
+                    <div class="pet-image-wrap">
+                        <!-- IMAGEN 5 DEL ESQUEMA -->
+                        <img
+                            src="assets/votacion/kiwi.png"
+                            alt="Kiwi"
+                            class="pet-image"
+                        >
+                    </div>
+
+                    <div class="pet-info">
+                        <h2>Kiwi</h2>
+                        <p>12 votos</p>
+
+                        <a href="#" class="vote-button">
+                            VOTAR
+                        </a>
+                    </div>
+
+                </article>
+
+
+                <!-- LUNA -->
+                <article class="pet-card">
+
+                    <div class="pet-image-wrap">
+                        <!-- IMAGEN 6 DEL ESQUEMA -->
+                        <img
+                            src="assets/votacion/luna.png"
+                            alt="Luna"
+                            class="pet-image"
+                        >
+                    </div>
+
+                    <div class="pet-info">
+                        <h2>Luna</h2>
+                        <p>8 votos</p>
+
+                        <a href="#" class="vote-button">
+                            VOTAR
+                        </a>
+                    </div>
+
+                </article>
+
+
+                <!-- SCARLETT -->
+                <article class="pet-card">
+
+                    <div class="pet-image-wrap">
+                        <!-- IMAGEN 7 DEL ESQUEMA -->
+                        <img
+                            src="assets/votacion/scarlett.png"
+                            alt="Scarlett"
+                            class="pet-image"
+                        >
+                    </div>
+
+                    <div class="pet-info">
+                        <h2>Scarlett</h2>
+                        <p>5 votos</p>
+
+                        <a href="#" class="vote-button">
+                            VOTAR
+                        </a>
+                    </div>
+
+                </article>
+
+
+                <!-- TOBY -->
+                <article class="pet-card">
+
+                    <div class="pet-image-wrap">
+                        <!-- IMAGEN 8 DEL ESQUEMA -->
+                        <img
+                            src="assets/votacion/toby.png"
+                            alt="Toby"
+                            class="pet-image"
+                        >
+                    </div>
+
+                    <div class="pet-info">
+                        <h2>Toby</h2>
+                        <p>3 votos</p>
+
+                        <a href="#" class="vote-button">
+                            VOTAR
+                        </a>
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <!-- =================================================
+                 PAGINACIÓN VISUAL
+            ================================================== -->
+            <nav class="pagination" aria-label="Paginación de mascotas">
+
+                <a href="#" class="pagination-arrow" aria-label="Página anterior">
+                    ‹
+                </a>
+
+                <a href="#" class="pagination-dot active" aria-label="Página 1"></a>
+                <a href="#" class="pagination-dot" aria-label="Página 2"></a>
+                <a href="#" class="pagination-dot" aria-label="Página 3"></a>
+                <a href="#" class="pagination-dot" aria-label="Página 4"></a>
+                <a href="#" class="pagination-dot" aria-label="Página 5"></a>
+
+                <a href="#" class="pagination-arrow" aria-label="Página siguiente">
+                    ›
+                </a>
+
+            </nav>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+    <footer class="site-footer">
+
+        <div class="footer-background" aria-hidden="true">
+            <img
+                src="assets/fondos/Footer.png"
+                alt=""
+            >
+        </div>
+
+        <div class="container footer-content">
+
+            <div class="footer-message">
+
+                <strong>
+                    Porque ellos nos acompañan cada día,<br>
+                    ¡hoy es su momento de
+                    <span>brillar!</span>
+                </strong>
+
+            </div>
+
+
+            <div class="social">
+
+                <span>
+                    Síguenos en nuestras redes
+                </span>
+
+                <div class="social-links">
+
+                    <a href="#" aria-label="Facebook">f</a>
+                    <a href="#" aria-label="LinkedIn">in</a>
+                    <a href="#" aria-label="YouTube">▶</a>
+                    <a href="#" aria-label="Instagram">◎</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>

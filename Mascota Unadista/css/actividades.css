@@ -252,20 +252,13 @@ a {
 
 .hero-content h1 {
 
-    color: var(--blue);
+    font-family: "Chewy", system-ui !important;
+    color: #09658c;
+    font-size: clamp(62px, 7vw, 94px);
+    line-height: .96;
+    font-weight: 400;
+    letter-spacing: 0;
 
-    font-size:
-        clamp(
-            54px,
-            6vw,
-            78px
-        );
-
-    line-height: .98;
-
-    font-weight: 900;
-
-    letter-spacing: -2.6px;
 }
 
 
@@ -660,120 +653,6 @@ a {
 }
 
 
-/* ==========================================================
-   FOOTER
-========================================================== */
-
-.site-footer {
-
-    position: relative;
-
-    min-height: 155px;
-
-    overflow: hidden;
-
-    color: var(--white);
-
-    background: var(--blue);
-}
-
-
-.footer-background {
-
-    position: absolute;
-
-    inset: 0;
-
-    z-index: 0;
-}
-
-
-.footer-background img {
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    object-position: center top;
-}
-
-
-.footer-content {
-
-    position: relative;
-
-    z-index: 2;
-
-    min-height: 155px;
-
-    display: flex;
-
-    align-items: flex-end;
-    justify-content: space-between;
-
-    gap: 40px;
-
-    padding:
-        50px
-        65px
-        24px;
-}
-
-
-.footer-message {
-
-    text-align: center;
-
-    font-size: 13px;
-}
-
-
-.footer-message span {
-
-    color: var(--yellow);
-}
-
-
-.social {
-
-    text-align: right;
-
-    font-size: 12px;
-}
-
-
-.social-links {
-
-    display: flex;
-
-    justify-content: flex-end;
-
-    gap: 10px;
-
-    margin-top: 8px;
-}
-
-
-.social-links a {
-
-    width: 27px;
-    height: 27px;
-
-    display: grid;
-
-    place-items: center;
-
-    border:
-        2px
-        solid
-        currentColor;
-
-    border-radius: 50%;
-
-    font-size: 12px;
-    font-weight: 800;
-}
 
 
 /* ==========================================================
@@ -951,27 +830,6 @@ a {
             1.18 / 1;
     }
 
-
-    .footer-content {
-
-        min-height: 190px;
-
-        flex-direction: column;
-
-        align-items: center;
-        justify-content: flex-end;
-
-        gap: 16px;
-
-        padding:
-            55px
-            20px
-            22px;
-
-        text-align: center;
-    }
-
-
     .social {
 
         text-align: center;
@@ -984,7 +842,110 @@ a {
     }
 
 }
+/* ==========================================================
+   FOOTER
+   La imagen Footer.png contiene todo el diseño visual.
+========================================================== */
 
+.site-footer {
+
+    position: relative;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    line-height: 0;
+
+}
+
+
+/* ----------------------------------------------------------
+   IMAGEN DEL FOOTER
+---------------------------------------------------------- */
+
+.footer-image {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    max-width: none;
+
+}
+
+
+/* ----------------------------------------------------------
+   REDES SOCIALES
+---------------------------------------------------------- */
+
+.footer-social {
+
+    position: absolute;
+
+    z-index: 10;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 18px;
+
+}
+
+
+/* Cada botón de red */
+
+.footer-social a {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 48px;
+
+    height: 48px;
+
+    transition: transform .2s ease;
+
+}
+
+
+/* Iconos */
+
+.footer-social img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+}
+
+
+/* Efecto al pasar el mouse */
+
+.footer-social a:hover {
+
+    transform: translateY(-4px);
+
+}
+.footer-social {
+
+    right: 6%;
+
+    top: 70%;
+
+}
 
 /* ==========================================================
    RESPONSIVE — CELULAR PEQUEÑO

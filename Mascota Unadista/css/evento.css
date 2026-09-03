@@ -19,7 +19,7 @@ body {
     overflow-x: hidden;
     color: var(--text);
     background: var(--white);
-    font-family: Inter, "Segoe UI", Arial, Helvetica, sans-serif;
+    font-family: Inter;
     line-height: 1.35;
 }
 img { display: block; max-width: 100%; }
@@ -44,28 +44,28 @@ a { color: inherit; text-decoration: none; }
 .event-hero { position: relative; min-height: 410px; overflow: hidden; }
 .event-hero-grid { display: grid; grid-template-columns: 230px minmax(0, 1fr); align-items: center; gap: 18px; }
 .event-hero-copy { position: relative; z-index: 2; align-self: start; padding-top: 25px; }
-.event-hero-copy h1 { display: flex; flex-direction: column; margin-bottom: 20px; color: var(--blue); font-size: 39px; line-height: 1.02; letter-spacing: -1.6px; }
+.event-hero-copy h1 {     font-family: "Chewy", system-ui !important;
+    color: #09658c;
+    font-size: 64px;
+    line-height: .96;
+    font-weight: 400;
+    letter-spacing: 0;
+ }
 .event-hero-copy h1 span { font-weight: 800; }
 .event-hero-copy h1 strong { margin-top: 8px; color: var(--orange); font-weight: 900; }
-.event-hero-copy p { max-width: 180px; font-size: 17px; line-height: 1.3; font-weight: 500; }
+.event-hero-copy p { max-width: 180px; font-size: 17px; line-height: 1.4; font-weight: 500; }
 .event-hero-media { position: relative; width: 100%; align-self: stretch; display: flex; align-items: flex-start; overflow: hidden; }
-.event-hero-image { width: 100%; height: 405px; object-fit: cover; object-position: center; }
+.event-hero-image { width: 100%; object-fit: cover; object-position: center; }
 
-/* DECORACIONES SUAVES */
-.section-decor { position: relative; isolation: isolate; }
-.section-decor::before, .section-decor::after { content: ""; position: absolute; z-index: -1; border-radius: 999px; background: var(--light-blue); }
-.event-details::before { width: 110px; height: 110px; left: -45px; top: 15px; }
-.event-details::after { width: 48px; height: 48px; left: 80px; top: 74px; box-shadow: -52px -28px 0 -4px var(--light-blue), 18px -48px 0 -11px var(--light-blue); }
-.event-info::before { width: 64px; height: 64px; right: 4%; top: 120px; box-shadow: 52px -46px 0 20px var(--light-blue), -80px 96px 0 -11px var(--light-blue); }
-.event-info::after { width: 42px; height: 42px; left: 29%; top: 140px; box-shadow: 62px -18px 0 -5px var(--light-blue), 95px 22px 0 5px var(--light-blue); }
+
 
 /* EVENTO PRESENCIAL */
 .event-details { padding: 16px 0 38px; }
-.section-title { margin-bottom: 30px; text-align: center; font-size: 34px; line-height: 1.1; font-weight: 750; }
+.section-title { margin-bottom: 30px; text-align: center; font-size: 34px; line-height: 1.1; font-weight: 600; }
 .event-facts { min-height: 135px; display: grid; grid-template-columns: .78fr 1.08fr .78fr 1.5fr; align-items: stretch; padding: 22px 26px; border: 1px solid var(--border); border-radius: 25px; background: var(--white); box-shadow: 0 5px 0 rgba(0,0,0,.07); }
 .fact-item { position: relative; display: grid; grid-template-columns: 48px minmax(0, 1fr); align-items: center; gap: 12px; padding: 5px 22px; }
 .fact-item + .fact-item { border-left: 1px solid #e6e6e6; }
-.fact-icon { width: 42px; height: 42px; display: grid; place-items: center; border: 3px solid currentColor; border-radius: 50%; font-size: 16px; font-weight: 800; }
+.fact-icon { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 50%; font-size: 16px; font-weight: 800; }
 .fact-icon-blue, .fact-icon-navy { color: var(--navy); }
 .fact-icon-yellow { color: var(--yellow); }
 .fact-icon-orange { color: var(--orange); }
@@ -76,7 +76,7 @@ a { color: inherit; text-decoration: none; }
 /* INFORMACIÓN */
 .event-info { padding: 18px 0 90px; }
 .event-info-heading { margin-bottom: 58px; text-align: center; }
-.event-info-heading h2 { margin-bottom: 8px; font-size: 34px; line-height: 1.1; font-weight: 750; }
+.event-info-heading h2 { margin-bottom: 8px; font-size: 34px; line-height: 1.1; font-weight: 600; }
 .event-info-heading p { font-size: 15px; font-weight: 500; }
 .event-info-layout { display: grid; grid-template-columns: 300px minmax(0, 1fr); align-items: stretch; gap: 72px; max-width: 1065px; margin-inline: auto; }
 
@@ -88,7 +88,7 @@ a { color: inherit; text-decoration: none; }
 .event-tab.active, .event-tab[aria-selected="true"] { background: var(--orange); box-shadow: 0 4px 0 rgba(0,0,0,.08); transform: translateY(-1px); }
 .event-tab:focus-visible { outline: 3px solid var(--yellow); outline-offset: 2px; }
 .tabs-pets { position: absolute; left: 0; right: 0; bottom: 0; z-index: 1; height: 160px; overflow: hidden; }
-.tabs-pets-image { width: 100%; height: 100%; object-fit: cover; object-position: center bottom; }
+.tabs-pets-image { width: 80%; height: 100%; object-fit: cover; object-position: center bottom; }
 
 /* PANEL DERECHO */
 .event-tab-content { min-height: 430px; }
@@ -116,17 +116,110 @@ a { color: inherit; text-decoration: none; }
 .faq-question[aria-expanded="true"] .faq-symbol { transform: rotate(45deg); }
 .faq-answer { padding: 0 17px 15px; font-size: 14px; line-height: 1.4; }
 
-/* FOOTER */
-.site-footer { position: relative; min-height: 180px; overflow: hidden; color: var(--white); background: var(--blue); }
-.footer-art { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
-.footer-art img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
-.footer-content { position: relative; z-index: 2; min-height: 180px; display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; padding: 50px 60px 25px; }
-.footer-message { font-size: 13px; text-align: center; }
-.footer-message span { color: var(--yellow); }
-.social { font-size: 12px; text-align: right; }
-.social-links { display: flex; justify-content: flex-end; gap: 10px; margin-top: 8px; }
-.social-links a { width: 27px; height: 27px; display: grid; place-items: center; border: 2px solid currentColor; border-radius: 50%; font-size: 12px; font-weight: 800; }
+/* ==========================================================
+   FOOTER
+   La imagen Footer.png contiene todo el diseño visual.
+========================================================== */
 
+.site-footer {
+
+    position: relative;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    line-height: 0;
+
+}
+
+
+/* ----------------------------------------------------------
+   IMAGEN DEL FOOTER
+---------------------------------------------------------- */
+
+.footer-image {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    max-width: none;
+
+}
+
+
+/* ----------------------------------------------------------
+   REDES SOCIALES
+---------------------------------------------------------- */
+
+.footer-social {
+
+    position: absolute;
+
+    z-index: 10;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 18px;
+
+}
+
+
+/* Cada botón de red */
+
+.footer-social a {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 48px;
+
+    height: 48px;
+
+    transition: transform .2s ease;
+
+}
+
+
+/* Iconos */
+
+.footer-social img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+}
+
+
+/* Efecto al pasar el mouse */
+
+.footer-social a:hover {
+
+    transform: translateY(-4px);
+
+}
+.footer-social {
+
+    right: 6%;
+
+    top: 70%;
+
+}
 @media (max-width: 980px) {
     .main-nav { gap: 22px; font-size: 14px; }
     .event-hero-grid { grid-template-columns: 190px minmax(0, 1fr); }
@@ -167,7 +260,6 @@ a { color: inherit; text-decoration: none; }
     .tab-panel { padding: 25px 23px 28px; border-radius: 24px; }
     .tab-panel h3 { font-size: 23px; }
     .rules-list li { font-size: 14px; }
-    .footer-content { min-height: 200px; flex-direction: column; align-items: center; justify-content: flex-end; gap: 18px; padding: 60px 20px 24px; text-align: center; }
     .social { text-align: center; }
     .social-links { justify-content: center; }
 }
@@ -179,12 +271,6 @@ a { color: inherit; text-decoration: none; }
 }
 
 
-
-
-/* ==========================================================
-   INTERACTIVIDAD SIN JAVASCRIPT
-   Tabs mediante radio + label
-========================================================== */
 
 .nav-toggle-input,
 .event-tab-control {

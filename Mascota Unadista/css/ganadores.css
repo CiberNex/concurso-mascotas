@@ -255,14 +255,13 @@ a {
 
     align-items: center;
 
-    gap: 13px;
 }
 
 
 .title-paws {
 
-    width: 72px;
-    height: 126px;
+
+    height: 120px;
 
     flex: 0 0 auto;
 
@@ -274,20 +273,12 @@ a {
 
 .winners-heading h1 {
 
+  font-family: "Chewy", system-ui !important;
     color: var(--yellow);
-
-    font-size:
-        clamp(
-            62px,
-            7vw,
-            92px
-        );
-
+    font-size: clamp(62px, 7vw, 94px);
     line-height: .96;
-
-    font-weight: 900;
-
-    letter-spacing: -3px;
+    font-weight: 400;
+    letter-spacing: 0;
 }
 
 
@@ -300,119 +291,6 @@ a {
 }
 
 
-/* ==========================================================
-   DECORACIONES CELESTES
-========================================================== */
-
-.blob,
-.blob-dot {
-
-    position: absolute;
-
-    z-index: 1;
-
-    background: var(--light-blue);
-}
-
-
-.blob {
-
-    border-radius:
-        44%
-        56%
-        59%
-        41%;
-
-    transform: rotate(-18deg);
-}
-
-
-.blob-dot {
-
-    border-radius: 50%;
-}
-
-
-.blob-left-main {
-
-    width: 105px;
-    height: 101px;
-
-    left: 62px;
-    top: 105px;
-}
-
-
-.blob-left-dot-1 {
-
-    width: 35px;
-    height: 35px;
-
-    left: 56px;
-    top: 48px;
-}
-
-
-.blob-left-dot-2 {
-
-    width: 34px;
-    height: 34px;
-
-    left: 126px;
-    top: 51px;
-}
-
-
-.blob-left-dot-3 {
-
-    width: 29px;
-    height: 29px;
-
-    left: 17px;
-    top: 95px;
-}
-
-
-.blob-right-main {
-
-    width: 113px;
-    height: 111px;
-
-    right: 61px;
-    top: 142px;
-
-    transform: rotate(24deg);
-}
-
-
-.blob-right-dot-1 {
-
-    width: 31px;
-    height: 31px;
-
-    right: 122px;
-    top: 83px;
-}
-
-
-.blob-right-dot-2 {
-
-    width: 31px;
-    height: 31px;
-
-    right: 63px;
-    top: 92px;
-}
-
-
-.blob-right-dot-3 {
-
-    width: 30px;
-    height: 30px;
-
-    right: 12px;
-    top: 140px;
-}
 
 
 /* ==========================================================
@@ -426,7 +304,7 @@ a {
     min-height: 540px;
 
     padding:
-        13px
+        70px
         0
         82px;
 
@@ -480,6 +358,7 @@ a {
     object-fit: cover;
 
     object-position: center;
+    border-radius: 8px;
 }
 
 
@@ -676,183 +555,122 @@ a {
 
 .winner-crown {
 
-    position: absolute;
-
+position: absolute;
     z-index: 6;
-
-    width: 112px;
-    height: 112px;
-
+    width: 130px;
+    height: 130px;
     right: -43px;
     top: -65px;
-
     object-fit: contain;
-
-    transform: rotate(6deg);
 }
 
 
-/* ==========================================================
-   DECORACIÓN INFERIOR
-========================================================== */
-
-.blob-bottom-left {
-
-    width: 98px;
-    height: 85px;
-
-    left: -17px;
-    bottom: 35px;
-}
-
-
-.blob-bottom-left-dot {
-
-    width: 34px;
-    height: 34px;
-
-    left: 90px;
-    bottom: 120px;
-}
-
-
-.blob-bottom-right {
-
-    width: 108px;
-    height: 104px;
-
-    right: 78px;
-    bottom: 22px;
-
-    transform: rotate(24deg);
-}
-
-
-.blob-bottom-right-dot {
-
-    width: 34px;
-    height: 34px;
-
-    right: 246px;
-    bottom: 102px;
-}
 
 
 /* ==========================================================
    FOOTER
+   La imagen Footer.png contiene todo el diseño visual.
 ========================================================== */
 
 .site-footer {
 
     position: relative;
 
-    min-height: 180px;
+    width: 100%;
 
     overflow: hidden;
 
-    color: var(--white);
+    line-height: 0;
 
-    background: var(--blue);
 }
 
 
-.footer-background {
+/* ----------------------------------------------------------
+   IMAGEN DEL FOOTER
+---------------------------------------------------------- */
+
+.footer-image {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    max-width: none;
+
+}
+
+
+/* ----------------------------------------------------------
+   REDES SOCIALES
+---------------------------------------------------------- */
+
+.footer-social {
 
     position: absolute;
 
-    inset: 0;
+    z-index: 10;
 
-    z-index: 0;
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 18px;
+
 }
 
 
-.footer-background img {
+/* Cada botón de red */
+
+.footer-social a {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 48px;
+
+    height: 48px;
+
+    transition: transform .2s ease;
+
+}
+
+
+/* Iconos */
+
+.footer-social img {
+
+    display: block;
 
     width: 100%;
+
     height: 100%;
 
-    object-fit: cover;
+    object-fit: contain;
 
-    object-position: center top;
 }
 
 
-.footer-content {
+/* Efecto al pasar el mouse */
 
-    position: relative;
+.footer-social a:hover {
 
-    z-index: 2;
+    transform: translateY(-4px);
 
-    min-height: 180px;
-
-    display: flex;
-
-    align-items: flex-end;
-    justify-content: space-between;
-
-    gap: 40px;
-
-    padding:
-        58px
-        65px
-        24px;
 }
+.footer-social {
 
+    right: 6%;
 
-.footer-message {
+    top: 70%;
 
-    text-align: center;
-
-    font-size: 14px;
 }
-
-
-.footer-message span {
-
-    color: var(--yellow);
-}
-
-
-.social {
-
-    text-align: right;
-
-    font-size: 13px;
-}
-
-
-.social-links {
-
-    display: flex;
-
-    justify-content: flex-end;
-
-    gap: 10px;
-
-    margin-top: 9px;
-}
-
-
-.social-links a {
-
-    width: 29px;
-    height: 29px;
-
-    display: grid;
-
-    place-items: center;
-
-    border:
-        2px
-        solid
-        currentColor;
-
-    border-radius: 50%;
-
-    font-size: 12px;
-    font-weight: 800;
-}
-
 
 /* ==========================================================
    RESPONSIVE - TABLET
@@ -1074,26 +892,6 @@ a {
     .first-place-card {
 
         max-width: 330px;
-    }
-
-
-    .footer-content {
-
-        min-height: 210px;
-
-        flex-direction: column;
-
-        align-items: center;
-        justify-content: flex-end;
-
-        gap: 18px;
-
-        padding:
-            62px
-            20px
-            24px;
-
-        text-align: center;
     }
 
 

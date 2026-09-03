@@ -5,7 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Evento presencial Mascota UNADista 2026. Información, reglamento, inscripción y preguntas frecuentes.">
     <title>Mascota UNADista 2026 | Evento</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/evento.css">
+  
+
 </head>
 <body>
 
@@ -42,7 +47,7 @@
 
             <div class="event-hero-media">
                 <!-- IMAGEN 1 DEL ESQUEMA: reemplaza únicamente este src -->
-                <img src="path/a/imagen-hero-evento.png" alt="Mascota protagonista e invitación al evento presencial" class="event-hero-image">
+                <img src="assets\mascotas\Perro Evento.png" alt="Mascota protagonista e invitación al evento presencial" class="event-hero-image">
             </div>
         </div>
     </section>
@@ -53,7 +58,7 @@
 
             <div class="event-facts" aria-label="Información principal del evento">
                 <article class="fact-item">
-                    <span class="fact-icon fact-icon-blue" aria-hidden="true">▣</span>
+                    <span class="fact-icon fact-icon-blue" aria-hidden="true"><img src="assets\iconos\Calendario.png" alt="Icono Calendario" class="event-hero-image"></span>
                     <div>
                         <h3>FECHA</h3>
                         <p>20 de<br>Octubre de<br>2026</p>
@@ -62,7 +67,7 @@
                 </article>
 
                 <article class="fact-item">
-                    <span class="fact-icon fact-icon-yellow" aria-hidden="true">●</span>
+                    <span class="fact-icon fact-icon-yellow" aria-hidden="true"><img src="assets\iconos\Lugar.png" alt="Icono Lugar" class="event-hero-image"></span>
                     <div>
                         <h3>LUGAR</h3>
                         <p>CIP Cali<br>Cl. 5B 5 36-110 San<br>Fernando</p>
@@ -71,16 +76,16 @@
                 </article>
 
                 <article class="fact-item">
-                    <span class="fact-icon fact-icon-orange" aria-hidden="true">◉</span>
+                    <span class="fact-icon fact-icon-orange" aria-hidden="true"><img src="assets\iconos\Hora.png" alt="Icono Hora" class="event-hero-image"></span>
                     <div>
-                        <h3>FECHA</h3>
+                        <h3>HORA</h3>
                         <p>00:00 a.m -<br>00:00 a.m</p>
                         <span class="fact-accent" aria-hidden="true"></span>
                     </div>
                 </article>
 
                 <article class="fact-item fact-item-wide">
-                    <span class="fact-icon fact-icon-navy" aria-hidden="true">♟</span>
+                    <span class="fact-icon fact-icon-navy" aria-hidden="true"><img src="assets\iconos\Comunidad.png" alt="Icono Comunidad" class="event-hero-image"></span>
                     <div>
                         <h3>¿QUIÉNES PUEDEN PARTICIPAR?</h3>
                         <p>Estudiantes, egresados, funcionarios y comunidad.</p>
@@ -99,11 +104,7 @@
                 <p>Todo lo que necesitas saber para participar.</p>
             </header>
 
-            <!-- =================================================
-                 CONTROLES CSS-ONLY
-                 No requieren JavaScript.
-                 Reglamento queda activo inicialmente.
-            ================================================== -->
+
 
             <input
                 class="event-tab-control"
@@ -180,7 +181,7 @@
                     ========================================== -->
                     <div class="tabs-pets">
                         <img
-                            src="path/a/gatos-menu-evento.png"
+                            src="assets\mascotas\Gatos Tarjeta.png"
                             alt="Gatos de Mascota UNADista"
                             class="tabs-pets-image"
                         >
@@ -372,26 +373,57 @@
     </section>
 </main>
 
+
+   <!-- =====================================================
+     FOOTER
+====================================================== -->
+
 <footer class="site-footer">
-    <div class="footer-art" aria-hidden="true">
-        <img src="assets/fondos/Footer.png" alt="">
+
+    <!-- Imagen completa del footer -->
+    <img
+        src="assets/fondos/Footer.png"
+        alt="Mascota UNADista"
+        class="footer-image"
+    >
+
+    <!-- Redes sociales -->
+    <div class="footer-social">
+
+        <a href="#"
+           aria-label="Facebook">
+            <img
+                src="assets/iconos/Facebook.png"
+                alt="Facebook"
+            >
+        </a>
+
+        <a href="#"
+           aria-label="LinkedIn">
+            <img
+                src="assets/iconos/Linkedin.png"
+                alt="LinkedIn"
+            >
+        </a>
+
+        <a href="#"
+           aria-label="YouTube">
+            <img
+                src="assets/iconos/Youtube.png"
+                alt="YouTube"
+            >
+        </a>
+
+        <a href="#"
+           aria-label="Instagram">
+            <img
+                src="assets/iconos/Instagram.png"
+                alt="Instagram"
+            >
+        </a>
+
     </div>
 
-    <div class="container footer-content">
-        <div class="footer-message">
-            <strong>Porque ellos nos acompañan cada día,<br>¡hoy es su momento de <span>brillar!</span></strong>
-        </div>
-
-        <div class="social">
-            <span>Síguenos en nuestras redes</span>
-            <div class="social-links">
-                <a href="#" aria-label="Facebook">f</a>
-                <a href="#" aria-label="LinkedIn">in</a>
-                <a href="#" aria-label="YouTube">▶</a>
-                <a href="#" aria-label="Instagram">◎</a>
-            </div>
-        </div>
-    </div>
 </footer>
 
 </body>

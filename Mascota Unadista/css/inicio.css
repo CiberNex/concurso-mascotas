@@ -1075,109 +1075,110 @@ margin-left: 50px;
     line-height: .5;
 }
 
-
 /* ==========================================================
    FOOTER
+   La imagen Footer.png contiene todo el diseño visual.
 ========================================================== */
 
 .site-footer {
 
     position: relative;
 
-    min-height: 190px;
-
-    background: var(--blue);
-
-    color: #ffffff;
+    width: 100%;
 
     overflow: hidden;
+
+    line-height: 0;
+
 }
 
 
-.footer-wave {
+/* ----------------------------------------------------------
+   IMAGEN DEL FOOTER
+---------------------------------------------------------- */
 
-    height: 45px;
+.footer-image {
 
-    background: #ffffff;
+    display: block;
 
-    border-radius:
-        0 0
-        50%
-        50%;
+    width: 100%;
 
-    transform:
-        translateY(-24px)
-        scaleX(1.15);
+    height: auto;
+
+    max-width: none;
+
 }
 
 
-.footer-content {
+/* ----------------------------------------------------------
+   REDES SOCIALES
+---------------------------------------------------------- */
+
+.footer-social {
+
+    position: absolute;
+
+    z-index: 10;
 
     display: flex;
-
-    justify-content: space-between;
 
     align-items: center;
 
-    gap: 35px;
+    justify-content: center;
 
-    padding-top: 20px;
+    gap: 18px;
+
 }
 
 
-.footer-message {
+/* Cada botón de red */
 
-    font-size: 14px;
-}
-
-
-.footer-message span {
-
-    color: var(--yellow);
-}
-
-
-.social {
-
-    text-align: right;
-
-    font-size: 12px;
-}
-
-
-.social-links {
+.footer-social a {
 
     display: flex;
 
-    justify-content: flex-end;
+    align-items: center;
 
-    gap: 10px;
+    justify-content: center;
 
-    margin-top: 9px;
+    width: 48px;
+
+    height: 48px;
+
+    transition: transform .2s ease;
+
 }
 
 
-.social-links a {
+/* Iconos */
 
-    width: 28px;
+.footer-social img {
 
-    height: 28px;
+    display: block;
 
-    border:
-        2px
-        solid
-        #ffffff;
+    width: 100%;
 
-    border-radius: 50%;
+    height: 100%;
 
-    display: grid;
+    object-fit: contain;
 
-    place-items: center;
-
-    font-weight: 900;
 }
 
 
+/* Efecto al pasar el mouse */
+
+.footer-social a:hover {
+
+    transform: translateY(-4px);
+
+}
+.footer-social {
+
+    right: 6%;
+
+    top: 70%;
+
+}
 /* ==========================================================
    RESPONSIVE - TABLET
 ========================================================== */

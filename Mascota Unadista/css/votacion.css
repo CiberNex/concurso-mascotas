@@ -51,11 +51,7 @@ body {
     background: var(--white);
 
     font-family:
-        Inter,
-        "Segoe UI",
-        Arial,
-        Helvetica,
-        sans-serif;
+        Inter;
 
     line-height: 1.35;
 }
@@ -72,12 +68,11 @@ a {
     text-decoration: none;
 }
 
-
 button,
-input,
-label {
-    font: inherit;
+input {
+    font-family: inherit;
 }
+
 
 
 button,
@@ -309,24 +304,13 @@ a {
 
 
 .vote-heading h1 {
-
+    font-family: "Chewy", system-ui !important;
     color: var(--orange);
-
-    font-size:
-        clamp(
-            62px,
-            7vw,
-            94px
-        );
-
+    font-size: clamp(62px, 7vw, 94px);
     line-height: .96;
-
-    font-weight: 900;
-
-    letter-spacing: -3px;
+    font-weight: 400;
+    letter-spacing: 0;
 }
-
-
 .vote-heading p {
 
     margin-top: 17px;
@@ -335,120 +319,6 @@ a {
     font-weight: 450;
 }
 
-
-/* ==========================================================
-   DECORACIÓN CELESTE
-========================================================== */
-
-.blob,
-.blob-dot {
-
-    position: absolute;
-
-    z-index: 1;
-
-    background: var(--light-blue);
-}
-
-
-.blob {
-
-    border-radius:
-        44%
-        56%
-        60%
-        40%;
-
-    transform: rotate(-18deg);
-}
-
-
-.blob-dot {
-
-    border-radius: 50%;
-}
-
-
-.blob-left {
-
-    width: 100px;
-    height: 80px;
-
-    left: 12px;
-    top: 128px;
-}
-
-
-.blob-left-dot-1 {
-
-    width: 31px;
-    height: 31px;
-
-    left: 0;
-    top: 67px;
-}
-
-
-.blob-left-dot-2 {
-
-    width: 29px;
-    height: 29px;
-
-    left: 78px;
-    top: 53px;
-}
-
-
-.blob-left-dot-3 {
-
-    width: 30px;
-    height: 30px;
-
-    left: 134px;
-    top: 89px;
-}
-
-
-.blob-right {
-
-    width: 104px;
-    height: 83px;
-
-    right: 43px;
-    top: 130px;
-
-    transform: rotate(22deg);
-}
-
-
-.blob-right-dot-1 {
-
-    width: 29px;
-    height: 29px;
-
-    right: 120px;
-    top: 63px;
-}
-
-
-.blob-right-dot-2 {
-
-    width: 29px;
-    height: 29px;
-
-    right: 60px;
-    top: 79px;
-}
-
-
-.blob-right-dot-3 {
-
-    width: 27px;
-    height: 27px;
-
-    right: 4px;
-    top: 110px;
-}
 
 
 /* ==========================================================
@@ -536,7 +406,16 @@ a {
     background: var(--blue);
 }
 
+/* ==========================================================
+   ICONOS DE PATAS - CATEGORÍAS
+   ========================================================== */
 
+.paw-categoria {
+    width: 10px;
+    height: 32px;
+    object-fit: contain;
+    flex: 0 0 auto;
+}
 .pet-search {
 
     width: 300px;
@@ -854,119 +733,108 @@ a {
 
 /* ==========================================================
    FOOTER
+   La imagen Footer.png contiene todo el diseño visual.
 ========================================================== */
 
 .site-footer {
 
     position: relative;
 
-    min-height: 180px;
+    width: 100%;
 
     overflow: hidden;
 
-    color: var(--white);
+    line-height: 0;
 
-    background: var(--blue);
 }
 
 
-.footer-background {
+/* ----------------------------------------------------------
+   IMAGEN DEL FOOTER
+---------------------------------------------------------- */
+
+.footer-image {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    max-width: none;
+
+}
+
+
+/* ----------------------------------------------------------
+   REDES SOCIALES
+---------------------------------------------------------- */
+
+.footer-social {
 
     position: absolute;
 
-    inset: 0;
+    z-index: 10;
 
-    z-index: 0;
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 18px;
+
 }
 
 
-.footer-background img {
+/* Cada botón de red */
+
+.footer-social a {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 48px;
+
+    height: 48px;
+
+    transition: transform .2s ease;
+
+}
+
+
+/* Iconos */
+
+.footer-social img {
+
+    display: block;
 
     width: 100%;
+
     height: 100%;
 
-    object-fit: cover;
+    object-fit: contain;
 
-    object-position: center top;
 }
 
 
-.footer-content {
+/* Efecto al pasar el mouse */
 
-    position: relative;
+.footer-social a:hover {
 
-    z-index: 2;
+    transform: translateY(-4px);
 
-    min-height: 180px;
-
-    display: flex;
-
-    align-items: flex-end;
-    justify-content: space-between;
-
-    gap: 40px;
-
-    padding:
-        58px
-        65px
-        24px;
 }
+.footer-social {
 
+    right: 6%;
 
-.footer-message {
+    top: 70%;
 
-    text-align: center;
-
-    font-size: 14px;
 }
-
-
-.footer-message span {
-
-    color: var(--yellow);
-}
-
-
-.social {
-
-    text-align: right;
-
-    font-size: 13px;
-}
-
-
-.social-links {
-
-    display: flex;
-
-    justify-content: flex-end;
-
-    gap: 10px;
-
-    margin-top: 9px;
-}
-
-
-.social-links a {
-
-    width: 29px;
-    height: 29px;
-
-    display: grid;
-
-    place-items: center;
-
-    border:
-        2px
-        solid
-        currentColor;
-
-    border-radius: 50%;
-
-    font-size: 12px;
-    font-weight: 800;
-}
-
 
 /* ==========================================================
    RESPONSIVE - TABLET
@@ -1192,25 +1060,6 @@ a {
         font-size: 18px;
     }
 
-
-    .footer-content {
-
-        min-height: 210px;
-
-        flex-direction: column;
-
-        align-items: center;
-        justify-content: flex-end;
-
-        gap: 18px;
-
-        padding:
-            62px
-            20px
-            24px;
-
-        text-align: center;
-    }
 
 
     .social {

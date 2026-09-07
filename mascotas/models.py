@@ -81,3 +81,14 @@ class Voto(models.Model):
 
     def __str__(self):
         return f"{self.persona.nombre} - {self.participacion.mascota.nombre}"
+    def clean(self):
+        from django.core.exceptions import ValidationError
+
+        if self.categoria_id != self.participacion.categoria_id:
+            raise ValidationError(
+                'La categoría del voto debe coincidir '
+                'con la categoría de la participación.'
+            )
+
+    def __str__(self):
+        return f"{self.persona.nombre} - {self.participacion.mascota.nombre}"

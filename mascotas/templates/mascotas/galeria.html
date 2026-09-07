@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Prueba galería</title>
+</head>
+<body>
+
+    <h1>LA GALERÍA FUNCIONA</h1>
+
+    {% for participacion in participaciones %}
+
+    <h2>{{ participacion.mascota.nombre }}</h2>
+
+    <p>
+        Votos: {{ participacion.votos.count }}
+    </p>
+
+{% endfor %}
+
+</body>
+</html>

@@ -95,7 +95,9 @@ def votar(request, participacion_id):
     return render(
         request,
         'mascotas/votar.html',
-        {'participacion': participacion}
+        {
+            'participacion': participacion
+        }
     )
 
 
@@ -117,4 +119,9 @@ def galeria(request, categoria_id):
             'categoria': categoria,
             'participaciones': participaciones
         }
+    )
+def registro_exitoso(request):
+    return render(
+        request,
+        'mascotas/registro_exitoso.html'
     )

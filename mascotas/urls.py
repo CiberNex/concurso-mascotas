@@ -8,6 +8,11 @@ urlpatterns = [
         name='registrar_mascota'
     ),
     path(
+        'registro-exitoso/',
+        views.registro_exitoso,
+        name='registro_exitoso'
+    ),
+    path(
         'votar/<int:participacion_id>/',
         views.votar,
         name='votar'

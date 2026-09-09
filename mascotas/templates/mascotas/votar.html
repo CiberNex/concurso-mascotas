@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Votar</title>
+</head>
+<body>
+
+    <h1>Votar por {{ participacion.mascota.nombre }}</h1>
+
+    <p>
+        Categoría: {{ participacion.categoria.nombre }}
+    </p>
+
+    <p>
+        Votos actuales: {{ participacion.votos.count }}
+    </p>
+
+    {% if error %}
+        <p>{{ error }}</p>
+    {% endif %}
+
+    {% if mensaje %}
+        <p>{{ mensaje }}</p>
+    {% endif %}
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <label for="cedula">Cédula:</label>
+        <input
+            type="text"
+            name="cedula"
+            id="cedula"
+            required
+        >
+
+        <button type="submit">
+            Votar
+        </button>
+    </form>
+
+</body>
+</html>

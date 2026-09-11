@@ -2783,3 +2783,209 @@ margin-left: 50px;
     }
 
 }
+
+
+/* ==========================================================
+   PATROCINADORES
+========================================================== */
+
+.sponsors {
+    position: relative;
+    padding: 70px 0 85px;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.sponsors::before,
+.sponsors::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background: var(--light-blue);
+    pointer-events: none;
+}
+
+.sponsors::before {
+    width: 54px;
+    height: 54px;
+    left: 5%;
+    top: 34%;
+    box-shadow:
+        62px -34px 0 -13px var(--light-blue),
+        102px 29px 0 -18px var(--light-blue);
+}
+
+.sponsors::after {
+    width: 68px;
+    height: 68px;
+    right: 5%;
+    bottom: 16%;
+    box-shadow:
+        -60px -38px 0 -17px var(--light-blue),
+        28px -57px 0 -20px var(--light-blue);
+}
+
+.sponsors-inner {
+    position: relative;
+    z-index: 2;
+}
+
+.sponsors-heading {
+    max-width: 760px;
+    margin: 0 auto 42px;
+    text-align: center;
+}
+
+.sponsors-heading h2 {
+    margin-bottom: 12px;
+    color: var(--blue);
+    font-size: clamp(36px, 4vw, 50px);
+    line-height: 1.05;
+    font-weight: 700;
+}
+
+.sponsors-heading p {
+    font-size: 18px;
+    line-height: 1.45;
+}
+
+.sponsors-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+}
+
+.sponsor-card {
+    min-height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 28px 30px;
+    border: 1px solid #e2e2e2;
+    border-radius: 22px;
+    background: #ffffff;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.07);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.sponsor-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.10);
+}
+
+.sponsor-logo {
+    width: 100%;
+    max-width: 230px;
+    object-fit: contain;
+    object-position: center;
+}
+
+
+/* ==========================================================
+   HERO - VISIBILIDAD POR TAMAÑO DE PANTALLA
+   La imagen lateral solo se muestra en escritorio amplio.
+========================================================== */
+
+@media (max-width: 1200px) {
+
+    .hero-art {
+        display: none !important;
+    }
+
+    .hero {
+        min-height: 0 !important;
+        padding: 24px 0 30px;
+    }
+
+    .hero-grid {
+        min-height: 0 !important;
+    }
+
+    .hero-copy {
+        width: 100%;
+        padding-inline: 0;
+        text-align: center;
+    }
+
+    .title-main {
+        margin-inline: auto;
+    }
+
+    .mascota-unadista-logo {
+        object-position: center;
+    }
+
+    .hero-subtitle {
+        margin-inline: auto;
+        text-align: center;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+
+}
+
+
+/* ==========================================================
+   PATROCINADORES - RESPONSIVE
+========================================================== */
+
+@media (max-width: 900px) {
+
+    .sponsors {
+        padding: 58px 0 68px;
+    }
+
+    .sponsors-heading {
+        margin-bottom: 34px;
+    }
+
+    .sponsors-heading p {
+        font-size: 16px;
+    }
+
+    .sponsors-grid {
+        grid-template-columns: 1fr;
+        max-width: 520px;
+        margin-inline: auto;
+        gap: 18px;
+    }
+
+    .sponsor-card {
+        min-height: 150px;
+    }
+
+    .sponsor-logo {
+        max-width: 210px;
+        max-height: 95px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .sponsors {
+        padding: 48px 0 58px;
+    }
+
+    .sponsors-heading h2 {
+        font-size: 34px;
+    }
+
+    .sponsors-heading p {
+        font-size: 15px;
+    }
+
+    .sponsor-card {
+        min-height: 135px;
+        padding: 22px 24px;
+        border-radius: 18px;
+    }
+
+    .sponsor-logo {
+        max-width: 190px;
+        max-height: 85px;
+    }
+
+}

@@ -273,7 +273,7 @@ a {
     display: block;
 
     object-fit: contain;
-    object-position: -45px;
+  
 }
 
 
@@ -1579,6 +1579,1207 @@ margin-left: 50px;
     .presence-btn {
 
         margin-inline: auto;
+    }
+
+}
+
+/* ==========================================================
+   FOOTER - AJUSTE RESPONSIVE UNIFICADO
+   Evita que los iconos sociales se corten en tablet y móvil.
+========================================================== */
+
+@media (max-width: 760px) {
+
+    .footer-social {
+        top: auto;
+        right: 5.5%;
+        bottom: 8%;
+        gap: clamp(6px, 1.7vw, 10px);
+    }
+
+    .footer-social a {
+        width: clamp(20px, 5.5vw, 28px);
+        height: clamp(20px, 5.5vw, 28px);
+    }
+
+    .footer-social a:hover {
+        transform: none;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .footer-social {
+        top: auto;
+        right: 4.5%;
+        bottom: 7%;
+        gap: 6px;
+    }
+
+    .footer-social a {
+        width: clamp(18px, 5.2vw, 23px);
+        height: clamp(18px, 5.2vw, 23px);
+    }
+
+}
+
+/* ==========================================================
+   INICIO - AJUSTES DE COMPOSICIÓN DESKTOP
+   1. Elimina el gran vacío entre el hero y Mascotas Colores.
+   2. Recupera el tamaño visual del calendario del diseño.
+   ========================================================== */
+
+@media (min-width: 901px) {
+
+    /* ------------------------------------------------------
+       HERO
+       La ilustración lateral deja de ocupar una segunda fila
+       invisible del grid. Se superpone al hero sin generar
+       espacio vertical adicional.
+       ------------------------------------------------------ */
+
+    .hero {
+        min-height: 0;
+        padding: 25px 0 0;
+    }
+
+    .hero-grid {
+        position: relative;
+
+        display: block;
+
+        min-height: 0;
+    }
+
+    .hero-copy {
+        position: relative;
+
+        z-index: 2;
+    }
+
+    .hero-art {
+        position: absolute;
+
+        top: 0;
+        bottom: 0;
+        left: 0;
+
+        right:
+            calc(
+                (100vw - min(92vw, var(--container))) / -2
+            );
+
+        min-height: 0;
+
+        display: block;
+
+        margin: 0;
+
+        pointer-events: none;
+
+        z-index: 1;
+    }
+
+    .hero-pets-image {
+        position: absolute;
+
+        top: -30px;
+        right: 0;
+
+        width: 32%;
+        max-width: 520px;
+        height: auto;
+
+        margin: 0;
+        padding: 0;
+
+        object-fit: contain;
+        object-position: right top;
+    }
+
+
+    /* ------------------------------------------------------
+       MASCOTAS COLORES
+       Antes la sección medía 1200px y la imagen estaba anclada
+       al fondo; eso creaba varios cientos de píxeles vacíos.
+       Ahora la imagen participa en el flujo normal.
+       ------------------------------------------------------ */
+
+    .pets-showcase {
+        position: relative;
+
+        height: auto;
+        min-height: 0;
+
+        margin-top: 18px;
+        padding: 0;
+
+        overflow: hidden;
+    }
+
+    .pets-scene {
+        position: relative;
+    }
+
+    .main-pets-image {
+        position: relative;
+
+        left: auto;
+        bottom: auto;
+
+        width: 100%;
+        height: auto;
+
+        margin: 0 auto;
+
+        transform: none;
+
+        object-fit: contain;
+        object-position: center top;
+    }
+
+
+    /* ======================================================
+       CALENDARIO + EVENTO PRESENCIAL
+       Medidas cercanas al frame de referencia:
+       calendario ≈ 520 x 520 px / tarjeta ≈ 536 x 539 px.
+       ====================================================== */
+
+    .presence-grid {
+        grid-template-columns:
+            minmax(0, 1fr)
+            536px;
+
+        align-items: center;
+
+        gap: 60px;
+    }
+
+    .calendar-area {
+        position: relative;
+
+        min-height: 560px;
+    }
+
+
+    /* El gato debe quedar visualmente por delante del calendario. */
+
+    .decor-cat {
+        z-index: 4;
+    }
+
+    .calendar-cat-image {
+        width: 598px;
+        height: 427px;
+
+        object-fit: contain;
+        object-position: left bottom;
+    }
+
+
+    /* Tarjeta del calendario */
+
+    .calendar {
+        position: absolute;
+
+        top: 15px;
+        right: 40px;
+
+        width: 520px;
+        height: 520px;
+
+        display: flex;
+        flex-direction: column;
+
+        padding:
+            28px
+            30px;
+
+        border-radius: 24px;
+
+        font-size: 16px;
+
+        z-index: 3;
+    }
+
+
+    .calendar-top {
+        grid-template-columns:
+            1fr
+            1fr;
+
+        margin-bottom: 22px;
+
+        font-size: 20px;
+    }
+
+
+    .calendar-week {
+        margin-bottom: 16px;
+
+        color: #777;
+
+        font-size: 14px;
+    }
+
+
+    .calendar-days {
+        flex: 1;
+
+        grid-template-columns:
+            repeat(
+                7,
+                1fr
+            );
+
+        grid-template-rows:
+            repeat(
+                5,
+                1fr
+            );
+
+        gap:
+            8px
+            10px;
+    }
+
+
+    .calendar-days span {
+        min-height: 0;
+
+        display: grid;
+
+        place-items: center;
+
+        font-size: 16px;
+    }
+
+
+    .calendar-days .marked {
+        width: 38px;
+        height: 38px;
+
+        justify-self: center;
+        align-self: center;
+    }
+
+
+    /* La tarjeta naranja conserva las dimensiones del diseño. */
+
+    .presence-card {
+        width: 536px;
+        max-width: 536px;
+        height: 539px;
+    }
+
+}
+
+/* ==========================================================
+   INICIO - CORRECCIONES RESPONSIVE FINALES
+   1. Hero completo y pegado al borde derecho en escritorio.
+   2. Hero lateral oculto en celular.
+   3. Iconos de "¿De qué trata?" centrados sin superposición.
+   4. Calendario y tarjeta presencial contenidos en móvil.
+========================================================== */
+
+
+/* ==========================================================
+   HERO - ESCRITORIO
+========================================================== */
+
+@media (min-width: 901px) {
+
+    .hero {
+        position: relative;
+
+        min-height: 690px;
+
+        padding:
+            20px
+            0
+            0;
+
+        overflow: hidden;
+    }
+
+
+    .hero-grid {
+        position: relative;
+
+        display: block;
+
+        min-height: 670px;
+    }
+
+
+    .hero-copy {
+        position: relative;
+
+        z-index: 3;
+    }
+
+
+    /*
+       El contenedor rompe solamente hacia el borde derecho del
+       viewport. La imagen queda siempre pegada al lateral derecho.
+    */
+    .hero-art {
+        position: absolute;
+
+        top: 0;
+        right:
+            calc(
+                (100vw - min(92vw, var(--container))) / -2
+            );
+        bottom: 0;
+        left: 0;
+
+        width: auto;
+        min-height: 0;
+
+        margin: 0;
+
+        display: block;
+
+        pointer-events: none;
+
+        z-index: 1;
+    }
+
+
+    /*
+       Se usa contain y un ancho controlado por viewport.
+       Así nunca se recorta la ilustración y su borde derecho
+       coincide con el borde de la pantalla.
+    */
+    .hero-pets-image {
+        position: absolute;
+
+        top: 0;
+        right: 0;
+
+        width: min(50vw, 720px);
+        max-width: none;
+        height: auto;
+        max-height: 660px;
+
+        margin: 0;
+        padding: 0;
+
+        object-fit: contain;
+        object-position: right top;
+    }
+
+}
+
+
+/* ==========================================================
+   ¿DE QUÉ TRATA? - TABLET Y CELULAR
+========================================================== */
+
+@media (max-width: 900px) {
+
+    .steps-grid {
+        gap: 88px;
+    }
+
+
+    .step-card {
+        position: relative;
+
+        overflow: visible;
+
+        padding:
+            72px
+            24px
+            28px;
+    }
+
+
+    .step-icon {
+        position: absolute;
+
+        top: -52px;
+        left: 50%;
+
+        width: 108px;
+        height: 108px;
+
+        display: grid;
+        place-items: center;
+
+        transform: translateX(-50%);
+    }
+
+
+    .step-icon img,
+    .step-icon-image {
+        display: block;
+
+        width: 100%;
+        height: 100%;
+
+        object-fit: contain;
+        object-position: center;
+    }
+
+}
+
+
+/* ==========================================================
+   CALENDARIO + EVENTO PRESENCIAL - TABLET / CELULAR
+========================================================== */
+
+@media (max-width: 900px) {
+
+    .presence {
+        padding:
+            40px
+            0
+            60px;
+
+        overflow: hidden;
+    }
+
+
+    .presence-grid {
+        width: min(92%, var(--container));
+
+        grid-template-columns: 1fr;
+
+        gap: 42px;
+
+        margin-inline: auto;
+    }
+
+
+    /* --------------------------
+       CALENDARIO
+    -------------------------- */
+
+    .calendar-area {
+        position: relative;
+
+        width: 100%;
+
+        min-height:
+            clamp(
+                330px,
+                78vw,
+                430px
+            );
+
+        overflow: visible;
+    }
+
+
+    .decor-cat {
+        position: absolute;
+
+        left: 0;
+        bottom: 0;
+
+        transform: none;
+
+        z-index: 4;
+    }
+
+
+    .calendar-cat-image {
+        width:
+            min(
+                72vw,
+                320px
+            );
+
+        height: auto;
+
+        aspect-ratio: auto;
+
+        object-fit: contain;
+        object-position: left bottom;
+    }
+
+
+    .calendar {
+        position: absolute;
+
+        top: 14px;
+        right: 0;
+
+        width:
+            min(
+                46vw,
+                210px
+            );
+
+        height: auto;
+
+        padding: 14px;
+
+        border-radius: 12px;
+
+        font-size: 9px;
+
+        z-index: 3;
+    }
+
+
+    .calendar-top {
+        margin-bottom: 10px;
+
+        font-size: 10px;
+    }
+
+
+    .calendar-week {
+        margin-bottom: 8px;
+
+        font-size: 8px;
+    }
+
+
+    .calendar-days {
+        display: grid;
+
+        grid-template-columns:
+            repeat(
+                7,
+                1fr
+            );
+
+        grid-template-rows: none;
+
+        gap: 5px;
+    }
+
+
+    .calendar-days span {
+        min-height: 19px;
+
+        font-size: 9px;
+    }
+
+
+    .calendar-days .marked {
+        width: auto;
+        height: auto;
+    }
+
+
+    /* --------------------------
+       TARJETA NARANJA
+    -------------------------- */
+
+    .presence-card {
+        position: relative;
+
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        min-height: 0;
+
+        margin: 0;
+
+        padding:
+            32px
+            24px
+            30px;
+
+        border-radius: 44px;
+
+        overflow: hidden;
+    }
+
+
+    .presence-card h2 {
+        font-size:
+            clamp(
+                32px,
+                7vw,
+                44px
+            );
+
+        line-height: 1.06;
+
+        text-align: center;
+
+        font-weight: 600;
+    }
+
+
+    .presence-card p {
+        margin:
+            20px
+            0;
+
+        font-size:
+            clamp(
+                18px,
+                4vw,
+                24px
+            );
+
+        text-align: center;
+    }
+
+
+    .presence-decoration {
+        position: static;
+
+        display: block;
+
+        width: 72px;
+
+        margin:
+            0
+            auto
+            14px;
+    }
+
+
+    .presence-decoration img {
+        display: block;
+
+        width: 100%;
+        height: auto;
+
+        object-fit: contain;
+    }
+
+
+    .presence-btn {
+        width: min(100%, 380px);
+        height: auto;
+        min-height: 92px;
+
+        margin:
+            24px
+            auto
+            0;
+
+        padding:
+            14px
+            20px;
+
+        justify-content: space-between;
+
+        font-size:
+            clamp(
+                25px,
+                6vw,
+                34px
+            );
+    }
+
+
+    .presence-btn img {
+        width: 38px;
+        height: auto;
+
+        flex: 0 0 auto;
+
+        object-fit: contain;
+    }
+
+}
+
+
+/* ==========================================================
+   CELULAR
+========================================================== */
+
+@media (max-width: 720px) {
+
+    /*
+       En celular se elimina por completo la ilustración lateral
+       del hero. El logo/título conserva su protagonismo y deja de
+       superponerse con las mascotas.
+    */
+    .hero-art {
+        display: none !important;
+    }
+
+
+    .hero {
+        min-height: 0;
+
+        padding:
+            24px
+            0
+            28px;
+    }
+
+
+    .hero-grid {
+        min-height: 0;
+    }
+
+
+    .hero-copy {
+        padding-inline: 0;
+    }
+
+
+    .hero-subtitle {
+        margin:
+            16px
+            auto
+            0;
+
+        max-width: 92%;
+
+        font-size:
+            clamp(
+                18px,
+                5vw,
+                23px
+            );
+
+        text-align: center;
+    }
+
+
+    .hero-actions {
+        width: 100%;
+
+        margin-top: 20px;
+
+        gap: 12px;
+    }
+
+
+    .btn {
+        width: 100%;
+
+        margin-inline: 0;
+
+        padding:
+            18px
+            14px;
+
+        font-size:
+            clamp(
+                18px,
+                5vw,
+                23px
+            );
+    }
+
+
+    /*
+       Sin hero lateral, esta sección puede acercarse al contenido
+       anterior sin generar huecos artificiales.
+    */
+    .pets-showcase {
+        height: auto;
+
+        margin-top: 0;
+
+        padding-top: 10px;
+    }
+
+
+    .main-pets-image {
+        position: relative;
+
+        left: auto;
+        bottom: auto;
+
+        width: 100%;
+
+        transform: none;
+    }
+
+}
+
+
+/* ==========================================================
+   CELULAR PEQUEÑO
+========================================================== */
+
+@media (max-width: 480px) {
+
+    .steps-grid {
+        gap: 82px;
+    }
+
+
+    .step-card {
+        padding:
+            65px
+            18px
+            26px;
+    }
+
+
+    .step-icon {
+        top: -47px;
+
+        width: 96px;
+        height: 96px;
+    }
+
+
+    .calendar-area {
+        min-height:
+            clamp(
+                300px,
+                92vw,
+                365px
+            );
+    }
+
+
+    .calendar-cat-image {
+        width:
+            min(
+                70vw,
+                275px
+            );
+    }
+
+
+    .calendar {
+        top: 8px;
+        right: 0;
+
+        width:
+            min(
+                48vw,
+                190px
+            );
+
+        padding: 11px;
+
+        font-size: 8px;
+    }
+
+
+    .calendar-top {
+        font-size: 9px;
+    }
+
+
+    .calendar-week {
+        font-size: 7px;
+    }
+
+
+    .calendar-days {
+        gap: 4px;
+    }
+
+
+    .calendar-days span {
+        min-height: 17px;
+
+        font-size: 8px;
+    }
+
+
+    .presence-card {
+        padding:
+            28px
+            18px
+            26px;
+
+        border-radius: 36px;
+    }
+
+
+    .presence-decoration {
+        display: none;
+    }
+
+
+    .presence-card h2 {
+        font-size:
+            clamp(
+                30px,
+                9vw,
+                38px
+            );
+    }
+
+
+    .presence-card p {
+        font-size:
+            clamp(
+                17px,
+                5.5vw,
+                21px
+            );
+    }
+
+
+    .presence-btn {
+        min-height: 84px;
+
+        padding:
+            12px
+            16px;
+
+        font-size:
+            clamp(
+                24px,
+                8vw,
+                31px
+            );
+    }
+
+
+    .presence-btn img {
+        width: 32px;
+    }
+
+}
+
+/* ==========================================================
+   INICIO - AJUSTE HEADER + CALENDARIO RESPONSIVE V3
+   ========================================================== */
+
+/* ----------------------------------------------------------
+   HEADER
+   Se iguala a la escala usada en las demás páginas.
+---------------------------------------------------------- */
+
+.nav-wrapper {
+    min-height: 104px;
+    gap: 30px;
+}
+
+.brand {
+    width: 170px;
+    height: 92px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    flex: 0 0 auto;
+}
+
+.logo-unad {
+    width: 155px;
+    height: 92px;
+
+    margin-top: 0;
+
+    display: block;
+
+    object-fit: contain;
+    object-position: left center;
+}
+
+.main-nav {
+    gap: 43px;
+
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.nav-cta {
+    padding: 14px 24px;
+
+    border-radius: 6px;
+}
+
+
+/* ----------------------------------------------------------
+   TABLET
+---------------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+    .nav-wrapper {
+        min-height: 78px;
+    }
+
+    .brand {
+        width: 135px;
+        height: 72px;
+    }
+
+    .logo-unad {
+        width: 120px;
+        height: 72px;
+    }
+
+    .main-nav {
+        gap: 22px;
+        font-size: 14px;
+    }
+
+
+    /* CALENDARIO MÁS GRANDE EN RESPONSIVE */
+
+    .calendar-area {
+        min-height: clamp(370px, 92vw, 470px);
+    }
+
+    .calendar-cat-image {
+        width: min(78vw, 340px);
+        height: auto;
+
+        object-fit: contain;
+        object-position: left bottom;
+    }
+
+    .calendar {
+        top: 10px;
+        right: 0;
+
+        width: min(64vw, 290px);
+        height: auto;
+
+        padding: 16px;
+
+        border-radius: 14px;
+
+        font-size: 11px;
+    }
+
+    .calendar-top {
+        margin-bottom: 12px;
+
+        font-size: 12px;
+    }
+
+    .calendar-week {
+        margin-bottom: 10px;
+
+        font-size: 9px;
+    }
+
+    .calendar-days {
+        gap: 5px;
+    }
+
+    .calendar-days span {
+        min-height: 22px;
+
+        font-size: 10px;
+    }
+
+}
+
+
+/* ----------------------------------------------------------
+   CELULAR
+---------------------------------------------------------- */
+
+@media (max-width: 720px) {
+
+    .nav-wrapper {
+        min-height: 78px;
+    }
+
+    .brand {
+        width: 135px;
+        height: 72px;
+    }
+
+    .logo-unad {
+        width: 120px;
+        height: 72px;
+    }
+
+    .main-nav {
+        top: 78px;
+    }
+
+
+    /* El calendario ocupa una parte mucho mayor del ancho
+       sin desbordarse del viewport. */
+
+    .calendar-area {
+        min-height: clamp(360px, 102vw, 430px);
+    }
+
+    .decor-cat {
+        left: 0;
+        bottom: 0;
+    }
+
+    .calendar-cat-image {
+        width: min(82vw, 305px);
+    }
+
+    .calendar {
+        top: 8px;
+        right: 0;
+
+        width: min(70vw, 260px);
+
+        padding: 14px;
+
+        font-size: 10px;
+    }
+
+    .calendar-top {
+        margin-bottom: 10px;
+
+        font-size: 11px;
+    }
+
+    .calendar-week {
+        margin-bottom: 8px;
+
+        font-size: 8px;
+    }
+
+    .calendar-days {
+        gap: 4px;
+    }
+
+    .calendar-days span {
+        min-height: 20px;
+
+        font-size: 9px;
+    }
+
+}
+
+
+/* ----------------------------------------------------------
+   CELULAR PEQUEÑO
+---------------------------------------------------------- */
+
+@media (max-width: 480px) {
+
+    .calendar-area {
+        min-height: clamp(350px, 108vw, 405px);
+    }
+
+    .calendar-cat-image {
+        width: min(84vw, 290px);
+    }
+
+    .calendar {
+        top: 6px;
+        right: 0;
+
+        width: min(72vw, 245px);
+
+        padding: 13px;
+
+        font-size: 9px;
+    }
+
+    .calendar-top {
+        font-size: 10px;
+    }
+
+    .calendar-week {
+        font-size: 7.5px;
+    }
+
+    .calendar-days span {
+        min-height: 19px;
+
+        font-size: 8.5px;
     }
 
 }

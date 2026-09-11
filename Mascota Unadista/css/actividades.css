@@ -996,3 +996,44 @@ a {
     }
 
 }
+
+/* ==========================================================
+   FOOTER - AJUSTE RESPONSIVE UNIFICADO
+   Evita que los iconos sociales se corten en tablet y móvil.
+========================================================== */
+
+@media (max-width: 760px) {
+
+    .footer-social {
+        top: auto;
+        right: 5.5%;
+        bottom: 8%;
+        gap: clamp(6px, 1.7vw, 10px);
+    }
+
+    .footer-social a {
+        width: clamp(20px, 5.5vw, 28px);
+        height: clamp(20px, 5.5vw, 28px);
+    }
+
+    .footer-social a:hover {
+        transform: none;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .footer-social {
+        top: auto;
+        right: 4.5%;
+        bottom: 7%;
+        gap: 6px;
+    }
+
+    .footer-social a {
+        width: clamp(18px, 5.2vw, 23px);
+        height: clamp(18px, 5.2vw, 23px);
+    }
+
+}

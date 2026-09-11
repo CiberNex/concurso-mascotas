@@ -1,0 +1,722 @@
+/* ==========================================================
+   MASCOTA UNADISTA 2026 — INSCRIPCIÓN
+   ========================================================== */
+
+:root {
+    --blue: #09658d;
+    --orange: #f47616;
+    --yellow: #f5bb23;
+    --text: #111111;
+    --white: #ffffff;
+    --border: #cfcfcf;
+    --input-border: #d7d7d7;
+    --container: 1180px;
+    --shadow: 0 7px 18px rgba(0, 0, 0, 0.06);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-width: 320px;
+    overflow-x: hidden;
+    color: var(--text);
+    background: var(--white);
+    font-family: Inter, "Segoe UI", Arial, Helvetica, sans-serif;
+    line-height: 1.35;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select,
+label {
+    font: inherit;
+}
+
+.container {
+    width: min(92%, var(--container));
+    margin-inline: auto;
+}
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.site-header {
+    position: relative;
+    z-index: 50;
+    background: #fff;
+}
+
+.nav-wrapper {
+    min-height: 105px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.brand {
+    width: 170px;
+    height: 92px;
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+}
+
+.logo-unad {
+    width: 150px;
+    height: 92px;
+    object-fit: contain;
+    object-position: left center;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 38px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.main-nav a {
+    transition: color .2s ease, transform .2s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--yellow);
+}
+
+.nav-cta {
+    padding: 14px 24px;
+    border-radius: 6px;
+    color: #fff !important;
+    background: var(--orange);
+    box-shadow: var(--shadow);
+}
+
+.nav-cta:hover {
+    transform: translateY(-2px);
+}
+
+.nav-toggle-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.menu-toggle {
+    display: none;
+    color: var(--blue);
+    font-size: 29px;
+    cursor: pointer;
+}
+
+/* ==========================================================
+   ENCABEZADO
+========================================================== */
+
+.registration-hero {
+    padding: 14px 0 38px;
+}
+
+.registration-heading {
+    text-align: center;
+}
+
+.registration-heading h1 {
+    font-family: "Chewy", system-ui !important;
+    color: var(--yellow);
+    font-size: clamp(58px, 6vw, 84px);
+    line-height: .98;
+    font-weight: 900;
+    letter-spacing: -2px;
+}
+
+.registration-heading p {
+    max-width: 720px;
+    margin: 18px auto 0;
+    font-size: 16px;
+    line-height: 1.25;
+}
+
+/* ==========================================================
+   FORMULARIO
+========================================================== */
+
+.registration-section {
+    padding: 5px 0 105px;
+}
+
+.registration-form {
+    width: min(100%, 1040px);
+    margin-inline: auto;
+    padding: 32px 60px 50px;
+    border: 1px solid var(--border);
+    border-radius: 37px;
+    background: #fff;
+    box-shadow: var(--shadow);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 76px minmax(0, 1fr);
+    align-items: start;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.field-icon {
+    width: 64px;
+    height: 64px;
+    display: grid;
+    place-items: center;
+    margin-top: -2px;
+}
+
+.field-icon img {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+}
+
+.field-content {
+    min-width: 0;
+}
+
+.field-content > label {
+    display: inline-block;
+    margin: 0 0 6px 10px;
+    color: var(--blue);
+    font-size: 18px;
+    line-height: 1.1;
+    font-weight: 800;
+}
+
+.field-content > label span,
+.terms-row label > span {
+    color: var(--orange);
+}
+
+.field-content input[type="text"],
+.field-content input[type="tel"],
+.field-content input[type="email"],
+.field-content select {
+    width: 100%;
+    height: 47px;
+    padding: 0 21px;
+    border: 1px solid var(--input-border);
+    border-radius: 999px;
+    outline: none;
+    color: #333;
+    background: #fff;
+    font-size: 14px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.03);
+    transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.field-content input::placeholder {
+    color: #898989;
+    opacity: 1;
+}
+
+.field-content input:focus,
+.field-content select:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(9, 101, 141, 0.09);
+}
+
+/* ==========================================================
+   SELECTS
+========================================================== */
+
+.select-wrap {
+    position: relative;
+}
+
+.select-wrap::after {
+    content: "";
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    width: 13px;
+    height: 13px;
+    border-right: 5px solid var(--blue);
+    border-bottom: 5px solid var(--blue);
+    transform: translateY(-70%) rotate(45deg);
+    pointer-events: none;
+}
+
+.field-content select {
+    appearance: none;
+    -webkit-appearance: none;
+    padding-right: 58px;
+    color: #777;
+    cursor: pointer;
+}
+
+/* ==========================================================
+   CARGA DE FOTO
+========================================================== */
+
+.form-row-file {
+    margin-top: 4px;
+}
+
+.file-dropzone {
+    width: 100%;
+    min-height: 155px;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin: 0 !important;
+    padding: 18px;
+    border: 1px solid var(--input-border);
+    border-radius: 20px;
+    color: var(--blue) !important;
+    background: #fff;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.03);
+}
+
+.file-dropzone:hover {
+    border-color: var(--blue);
+    background: #fbfdfe;
+}
+
+.camera-icon {
+    width: 74px;
+    height: 54px;
+    object-fit: contain;
+    margin-bottom: 2px;
+}
+
+.file-dropzone strong {
+    font-size: 14px;
+}
+
+.file-dropzone small {
+    color: #747474;
+    font-size: 12px;
+}
+
+.file-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* ==========================================================
+   TÉRMINOS
+========================================================== */
+
+.terms-row {
+    width: calc(100% - 88px);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0 0 auto;
+}
+
+.terms-row input {
+    width: 20px;
+    height: 20px;
+    flex: 0 0 auto;
+    accent-color: var(--blue);
+}
+
+.terms-row label {
+    color: #686868;
+    font-size: 13px;
+}
+
+.terms-row a {
+    color: var(--blue);
+    font-weight: 650;
+}
+
+/* ==========================================================
+   BOTÓN
+========================================================== */
+
+.submit-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.submit-button {
+    min-width: 380px;
+    min-height: 45px;
+    padding: 11px 30px;
+    border: 0;
+    border-radius: 999px;
+    color: #fff;
+    background: var(--yellow);
+    font-size: 18px;
+    line-height: 1;
+    font-weight: 850;
+    cursor: pointer;
+    transition: transform .2s ease, filter .2s ease;
+}
+
+.submit-button:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.03);
+}
+
+/* ==========================================================
+   REGISTRO EXITOSO — SIN JAVASCRIPT
+========================================================== */
+
+.success-message {
+    width: min(100%, 700px);
+    display: none;
+    align-items: center;
+    gap: 15px;
+    margin: 24px auto 0;
+    padding: 18px 22px;
+    border: 1px solid #a8d8b0;
+    border-radius: 18px;
+    color: #20582a;
+    background: #effaf1;
+    box-shadow: var(--shadow);
+}
+
+.success-message:target {
+    display: flex;
+}
+
+.success-icon {
+    width: 42px;
+    height: 42px;
+    flex: 0 0 auto;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: #fff;
+    background: #3d9b4b;
+    font-size: 25px;
+    font-weight: 900;
+}
+
+.success-message strong {
+    display: block;
+    margin-bottom: 3px;
+    font-size: 18px;
+}
+
+.success-message p {
+    font-size: 13px;
+    line-height: 1.35;
+}
+
+/* ==========================================================
+   FOOTER
+   La imagen Footer.png contiene todo el diseño visual.
+========================================================== */
+
+.site-footer {
+
+    position: relative;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    line-height: 0;
+
+}
+
+
+/* ----------------------------------------------------------
+   IMAGEN DEL FOOTER
+---------------------------------------------------------- */
+
+.footer-image {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    max-width: none;
+
+}
+
+
+/* ----------------------------------------------------------
+   REDES SOCIALES
+---------------------------------------------------------- */
+
+.footer-social {
+
+    position: absolute;
+
+    z-index: 10;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    right: 6%;
+
+    top: 70%;
+
+}
+
+
+/* Cada botón de red */
+
+.footer-social a {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 48px;
+
+    height: 48px;
+
+    transition: transform .2s ease;
+
+}
+
+
+/* Iconos */
+
+.footer-social img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+}
+
+
+/* Efecto al pasar el mouse */
+
+.footer-social a:hover {
+
+    transform: translateY(-4px);
+
+}
+
+
+/* Ajuste de redes en pantallas pequeñas
+   Se posicionan desde abajo para impedir que los iconos
+   salgan del área visible del Footer.png. */
+@media (max-width: 760px) {
+
+    .footer-social {
+        top: auto;
+        right: 5.5%;
+        bottom: 8%;
+        gap: clamp(6px, 1.7vw, 10px);
+    }
+
+    .footer-social a {
+        width: clamp(20px, 5.5vw, 28px);
+        height: clamp(20px, 5.5vw, 28px);
+    }
+
+    .footer-social a:hover {
+        transform: none;
+    }
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width: 980px) {
+    .main-nav {
+        gap: 20px;
+        font-size: 13px;
+    }
+
+    .registration-form {
+        padding: 30px 38px 45px;
+    }
+}
+
+@media (max-width: 760px) {
+    .nav-wrapper {
+        min-height: 78px;
+    }
+
+    .brand {
+        width: 135px;
+        height: 72px;
+    }
+
+    .logo-unad {
+        width: 120px;
+        height: 72px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .main-nav {
+        position: absolute;
+        top: 78px;
+        left: 0;
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 5px;
+        padding: 18px;
+        background: #fff;
+        box-shadow: var(--shadow);
+    }
+
+    #nav-toggle:checked ~ .main-nav {
+        display: flex;
+    }
+
+    .main-nav a {
+        padding: 11px;
+        text-align: center;
+    }
+
+    .registration-hero {
+        padding-top: 28px;
+    }
+
+    .registration-heading h1 {
+        font-size: clamp(48px, 13vw, 66px);
+    }
+
+    .registration-heading p {
+        max-width: 520px;
+        font-size: 14px;
+    }
+
+    .registration-section {
+        padding-bottom: 70px;
+    }
+
+    .registration-form {
+        padding: 28px 22px 38px;
+        border-radius: 26px;
+    }
+
+    .form-row {
+        grid-template-columns: 52px minmax(0, 1fr);
+        gap: 8px;
+    }
+
+    .field-icon,
+    .field-icon img {
+        width: 46px;
+        height: 46px;
+    }
+
+    .field-content > label {
+        margin-left: 5px;
+        font-size: 15px;
+    }
+
+    .field-content input[type="text"],
+    .field-content input[type="tel"],
+    .field-content input[type="email"],
+    .field-content select {
+        height: 44px;
+        padding-left: 17px;
+    }
+
+    .file-dropzone {
+        min-height: 140px;
+    }
+
+    .terms-row {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .submit-button {
+        min-width: 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .registration-form {
+        padding-inline: 15px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .field-icon {
+        display: none;
+    }
+
+    .field-content > label {
+        margin-left: 4px;
+    }
+
+    .success-message {
+        align-items: flex-start;
+    }
+}
+
+
+/* ==========================================================
+   FOOTER - AJUSTE EXTRA PARA CELULARES PEQUEÑOS
+========================================================== */
+@media (max-width: 480px) {
+
+    .footer-social {
+        top: auto;
+        right: 4.5%;
+        bottom: 7%;
+        gap: 6px;
+    }
+
+    .footer-social a {
+        width: clamp(18px, 5.2vw, 23px);
+        height: clamp(18px, 5.2vw, 23px);
+    }
+
+}

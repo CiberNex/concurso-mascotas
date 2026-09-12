@@ -125,3 +125,8 @@ def registro_exitoso(request):
         request,
         'mascotas/registro_exitoso.html'
     )
+def inicio(request):
+    return render(
+        request,
+        'mascotas/index.html'
+    )

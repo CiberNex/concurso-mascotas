@@ -48,7 +48,7 @@
                     Inicio
                 </a>
 
-                <a href="evento.html">
+                <a href="{% url 'evento' %}">
                     Evento
                 </a>
 
@@ -103,7 +103,7 @@
 
                     <div class="hero-actions">
 
-                        <a href="evento.html"
+                        <a href="{% url 'evento' %}"
                            class="btn btn-blue">
                             CONOCE EL CONCURSO
                         </a>
@@ -201,9 +201,10 @@
                             que es.
                         </p>
 
-                        <a href="inscripcion.html"
+                        <a href="{% static 'registrar.html' %}"
                            class="small-btn-inscribir">
-                            INSCRIBIR MI MASCOTAㅤ<img src="{% static 'assets/iconos/paw-print.png' %}" alt="Icono Pata">
+                            INSCRIBIR MI MASCOTAㅤ
+                            <img src="{% static 'assets/iconos/paw-print.png' %}" alt="Icono Pata">
                         </a>
 
                     </article>
@@ -259,7 +260,7 @@
 
                         <a href="ganadores.html"
                            class="small-btn-ganadores">
-                            VER GANADORESㅤ<img src="assets/iconos/paw-print relleno.png" alt="Icono Pata">
+                            VER GANADORESㅤ<img src="{% static 'assets/iconos/paw-print relleno.png' %}" alt="Icono Pata">
                         </a>
 
                     </article>

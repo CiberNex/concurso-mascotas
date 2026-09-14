@@ -130,3 +130,8 @@ def inicio(request):
         request,
         'mascotas/index.html'
     )
+def evento(request):
+    return render(
+        request,
+        'mascotas/evento.html'
+    )

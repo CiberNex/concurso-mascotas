@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
+
+{% load static %}
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/evento.css">
+    <link rel="stylesheet" href="{% static 'css/evento.css' %}">
   
 
 </head>
@@ -16,21 +19,41 @@
 
 <header class="site-header">
     <div class="container nav-wrapper">
-        <a href="index.html" class="brand" aria-label="Ir al inicio">
-            <img src="assets/logo/Logo UNAD.png" alt="Universidad Nacional Abierta y a Distancia - UNAD" class="logo-unad">
+        <a href="{% static 'index.html' %}" class="brand" aria-label="Ir al inicio">
+            <img src="{% static 'assets/logo/Logo UNAD.png' %}" alt="Universidad Nacional Abierta y a Distancia - UNAD" class="logo-unad">
         </a>
 
         <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
         <label for="nav-toggle" class="menu-toggle" aria-label="Abrir o cerrar menú">☰</label>
 
-        <nav id="main-nav" class="main-nav" aria-label="Navegación principal">
-            <a href="index.html">Inicio</a>
-            <a href="evento.html" class="active" aria-current="page">Evento</a>
-            <a href="actividades.html">Actividades</a>
-            <a href="ganadores.html">Ganadores</a>
-            <a href="inscripcion.html">Inscripción</a>
-            <a href="vota-ahora.html" class="nav-cta">♥ VOTAR AHORA</a>
-        </nav>
+        <nav class="main-nav" aria-label="Navegación principal">
+
+                <a href="{% url 'inicio' %}" class="active">
+                    Inicio
+                </a>
+
+                <a href="{% url 'evento' %}">
+                    Evento
+                </a>
+
+                <a href="actividades.html">
+                    Actividades
+                </a>
+
+                <a href="ganadores.html">
+                    Ganadores
+                </a>
+
+                <a href="{% url 'registrar_mascota' %}">
+                    Inscripción
+                </a>
+
+
+                <a href="vota-ahora.html" class="nav-cta">
+                    ♥ VOTAR AHORA
+                </a>
+
+            </nav>
     </div>
 </header>
 
@@ -48,7 +71,7 @@
 
             <div class="event-hero-media">
                 <!-- IMAGEN 1 DEL ESQUEMA: reemplaza únicamente este src -->
-                <img src="assets/mascotas/Perro Evento.png" alt="Mascota protagonista e invitación al evento presencial" class="event-hero-image">
+                <img src="{% static 'assets/mascotas/Perro Evento.png' %}" alt="Mascota protagonista e invitación al evento presencial" class="event-hero-image">
             </div>
         </div>
     </section>
@@ -182,7 +205,7 @@
                     ========================================== -->
                     <div class="tabs-pets">
                         <img
-                            src="assets/mascotas/Gatos Tarjeta.png"
+                            src="{% static 'assets/mascotas/Gatos Tarjeta.png' %}"
                             alt="Gatos de Mascota UNADista"
                             class="tabs-pets-image"
                         >
@@ -384,7 +407,7 @@ Haz clic en el botón para completar la inscripción.
 
     <!-- Imagen completa del footer -->
     <img
-        src="assets/fondos/Footer.png"
+        src="{% static 'assets/fondos/Footer.png' %}"
         alt="Mascota UNADista"
         class="footer-image"
     >
@@ -395,7 +418,7 @@ Haz clic en el botón para completar la inscripción.
         <a href="https://www.facebook.com/UniversidadUNAD/"
            aria-label="Facebook">
             <img
-                src="assets/iconos/Facebook.png"
+                src="{% static 'assets/iconos/Facebook.png' %}"
                 alt="Facebook"
             >
         </a>
@@ -403,7 +426,7 @@ Haz clic en el botón para completar la inscripción.
         <a href="https://www.linkedin.com/school/universidadunad"
            aria-label="LinkedIn">
             <img
-                src="assets/iconos/Linkedin.png"
+                src="{% static 'assets/iconos/Linkedin.png' %}"
                 alt="LinkedIn"
             >
         </a>
@@ -411,7 +434,7 @@ Haz clic en el botón para completar la inscripción.
         <a href="https://www.youtube.com/@universidadunadTvUnadVirtual"
            aria-label="YouTube">
             <img
-                src="assets/iconos/Youtube.png"
+                src="{% static 'assets/iconos/Youtube.png' %}"
                 alt="YouTube"
             >
         </a>
@@ -419,7 +442,7 @@ Haz clic en el botón para completar la inscripción.
         <a href="https://www.instagram.com/universidadunad"
            aria-label="Instagram">
             <img
-                src="assets/iconos/Instagram.png"
+                src="{% static 'assets/iconos/Instagram.png' %}"
                 alt="Instagram"
             >
         </a>

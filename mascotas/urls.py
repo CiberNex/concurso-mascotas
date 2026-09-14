@@ -7,7 +7,11 @@ urlpatterns = [
         views.inicio,
         name='inicio'
     ),
-
+    path(
+        'evento/',
+        views.evento,
+        name='evento'
+    ),
     path(
         'registrar/',
         views.registrar_mascota,

@@ -1,22 +1,376 @@
 <!DOCTYPE html>
 <html lang="es">
+
+{% load static %}
+
 <head>
     <meta charset="UTF-8">
-    <title>Registrar mascota</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Formulario de inscripción de Mascota UNADista 2026.">
+
+    <title>Mascota UNADista 2026 | Inscripción</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Chewy&family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+>
+
+    <link rel="stylesheet" href="{% static 'css/inscripcion.css' %}">
 </head>
+
 <body>
 
-    <h1>Registrar mascota</h1>
+<header class="site-header">
+    <div class="container nav-wrapper">
 
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
+        <a href="{% url 'inicio' %}" class="brand" aria-label="Ir al inicio">
+            <img
+                src="{% static 'assets/logo/Logo UNAD.png' %}"
+                alt="Universidad Nacional Abierta y a Distancia - UNAD"
+                class="logo-unad"
+            >
+        </a>
 
-        {{ form.as_p }}
+        <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
 
-        <button type="submit">
-            Registrar mascota
-        </button>
-    </form>
+        <label
+            for="nav-toggle"
+            class="menu-toggle"
+            aria-label="Abrir o cerrar menú"
+        >
+            ☰
+        </label>
+
+        <nav class="main-nav" aria-label="Navegación principal">
+            <a href="{% url 'inicio' %}">Inicio</a>
+            <a href="{% url 'evento' %}">Evento</a>
+            <a href="{% url 'actividades' %}">Actividades</a>
+            <a href="{% url 'ganadores' %}">Ganadores</a>
+
+            <a
+                href="{% url 'registrar_mascota' %}"
+                class="active"
+                aria-current="page"
+            >
+                Inscripción
+            </a>
+
+            <!-- La galería actual exige categoria_id; se conectará en la fase de votación. -->
+            <a href="#" class="nav-cta">♥ VOTAR AHORA</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<main>
+
+    <section class="registration-hero">
+        <div class="container registration-heading">
+
+            <h1>
+                Formulario de<br>
+                Inscripción
+            </h1>
+
+            <p>
+                Registra a tu mascota para que participe en el concurso;
+                ¡queremos conocer a tu mejor amigo!
+            </p>
+
+        </div>
+    </section>
+
+
+    <section class="registration-section">
+        <div class="container">
+
+            <form
+                class="registration-form"
+                method="POST"
+                enctype="multipart/form-data"
+            >
+                {% csrf_token %}
+
+                {% if form.non_field_errors %}
+                    <div class="form-errors form-errors-general" role="alert">
+                        {{ form.non_field_errors }}
+                    </div>
+                {% endif %}
+
+
+                <!-- NOMBRE COMPLETO DEL RESPONSABLE -->
+                <div class="form-row">
+
+                    <div class="field-icon" aria-hidden="true">
+                        <img
+                            src="{% static 'assets/iconos/huella-naranja.png' %}"
+                            alt=""
+                        >
+                    </div>
+
+                    <div class="field-content">
+
+                        <label for="{{ form.nombre_persona.id_for_label }}">
+                            Nombre completo del responsable <span>*</span>
+                        </label>
+
+                        {{ form.nombre_persona }}
+
+                        {% if form.nombre_persona.errors %}
+                            <div class="field-errors" role="alert">
+                                {{ form.nombre_persona.errors }}
+                            </div>
+                        {% endif %}
+
+                    </div>
+
+                </div>
+
+
+                <!-- CÉDULA -->
+                <div class="form-row">
+
+                    <div class="field-icon" aria-hidden="true">
+                        <img
+                            src="{% static 'assets/iconos/huella-amarilla.png' %}"
+                            alt=""
+                        >
+                    </div>
+
+                    <div class="field-content">
+
+                        <label for="{{ form.cedula.id_for_label }}">
+                            Cédula <span>*</span>
+                        </label>
+
+                        {{ form.cedula }}
+
+                        {% if form.cedula.errors %}
+                            <div class="field-errors" role="alert">
+                                {{ form.cedula.errors }}
+                            </div>
+                        {% endif %}
+
+                    </div>
+
+                </div>
+
+
+                <!-- NOMBRE DE LA MASCOTA -->
+                <div class="form-row">
+
+                    <div class="field-icon" aria-hidden="true">
+                        <img
+                            src="{% static 'assets/iconos/huella-azul.png' %}"
+                            alt=""
+                        >
+                    </div>
+
+                    <div class="field-content">
+
+                        <label for="{{ form.nombre_mascota.id_for_label }}">
+                            Nombre de la mascota <span>*</span>
+                        </label>
+
+                        {{ form.nombre_mascota }}
+
+                        {% if form.nombre_mascota.errors %}
+                            <div class="field-errors" role="alert">
+                                {{ form.nombre_mascota.errors }}
+                            </div>
+                        {% endif %}
+
+                    </div>
+
+                </div>
+
+
+                <!-- DESCRIPCIÓN -->
+                <div class="form-row">
+
+                    <div class="field-icon" aria-hidden="true">
+                        <img
+                            src="{% static 'assets/iconos/huella-naranja.png' %}"
+                            alt=""
+                        >
+                    </div>
+
+                    <div class="field-content">
+
+                        <label for="{{ form.descripcion.id_for_label }}">
+                            Descripción <span>*</span>
+                        </label>
+
+                        {{ form.descripcion }}
+
+                        {% if form.descripcion.errors %}
+                            <div class="field-errors" role="alert">
+                                {{ form.descripcion.errors }}
+                            </div>
+                        {% endif %}
+
+                    </div>
+
+                </div>
+
+
+                <!-- CATEGORÍA -->
+                <div class="form-row">
+
+                    <div class="field-icon" aria-hidden="true">
+                        <img
+                            src="{% static 'assets/iconos/huella-amarilla.png' %}"
+                            alt=""
+                        >
+                    </div>
+
+                    <div class="field-content">
+
+                        <label for="{{ form.categoria.id_for_label }}">
+                            Tipo de concurso <span>*</span>
+                        </label>
+
+                        <div class="select-wrap">
+                            {{ form.categoria }}
+                        </div>
+
+                        {% if form.categoria.errors %}
+                            <div class="field-errors" role="alert">
+                                {{ form.categoria.errors }}
+                            </div>
+                        {% endif %}
+
+                    </div>
+
+                </div>
+
+
+                <!-- FOTOGRAFÍA -->
+                <div class="form-row form-row-file">
+
+                    <div class="field-icon" aria-hidden="true">
+                        <img
+                            src="{% static 'assets/iconos/huella-azul.png' %}"
+                            alt=""
+                        >
+                    </div>
+
+                    <div class="field-content">
+
+                        <label for="{{ form.foto.id_for_label }}">
+                            Fotografía <span>*</span>
+                        </label>
+
+                        <label
+                            for="{{ form.foto.id_for_label }}"
+                            class="file-dropzone"
+                        >
+                            <img
+                                src="{% static 'assets/iconos/Camara.png' %}"
+                                alt=""
+                                class="camera-icon"
+                            >
+
+                            <strong>
+                                Selecciona una foto
+                            </strong>
+
+                            <small>
+                                Haz clic aquí para elegir el archivo
+                            </small>
+                        </label>
+
+                        <div class="django-file-input">
+                            {{ form.foto }}
+                        </div>
+
+                        {% if form.foto.errors %}
+                            <div class="field-errors" role="alert">
+                                {{ form.foto.errors }}
+                            </div>
+                        {% endif %}
+
+                    </div>
+
+                </div>
+
+
+                <div class="submit-row">
+                    <button type="submit" class="submit-button">
+                        REGISTRAR MASCOTA
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+    </section>
+
+</main>
+
+
+<footer class="site-footer">
+
+    <img
+        src="{% static 'assets/fondos/Footer.png' %}"
+        alt="Mascota UNADista"
+        class="footer-image"
+    >
+
+    <div class="footer-social">
+
+        <a
+            href="https://www.facebook.com/UniversidadUNAD/"
+            aria-label="Facebook"
+        >
+            <img
+                src="{% static 'assets/iconos/Facebook.png' %}"
+                alt="Facebook"
+            >
+        </a>
+
+        <a
+            href="https://www.linkedin.com/school/universidadunad"
+            aria-label="LinkedIn"
+        >
+            <img
+                src="{% static 'assets/iconos/Linkedin.png' %}"
+                alt="LinkedIn"
+            >
+        </a>
+
+        <a
+            href="https://www.youtube.com/@universidadunadTvUnadVirtual"
+            aria-label="YouTube"
+        >
+            <img
+                src="{% static 'assets/iconos/Youtube.png' %}"
+                alt="YouTube"
+            >
+        </a>
+
+        <a
+            href="https://www.instagram.com/universidadunad"
+            aria-label="Instagram"
+        >
+            <img
+                src="{% static 'assets/iconos/Instagram.png' %}"
+                alt="Instagram"
+            >
+        </a>
+
+    </div>
+
+</footer>
+
+<section class="developers-bar" aria-label="Desarrolladores">
+    <p>
+        Desarrolladores Anderson Muñoz y Nikol Ramirez
+    </p>
+</section>
 
 </body>
 </html>

@@ -13,7 +13,10 @@
     <title>Mascota UNADista 2026 | Actividades</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+<link
+    href="https://fonts.googleapis.com/css2?family=Chewy&family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+>
     <link rel="stylesheet" href="{% static 'css/actividades.css' %}">
 </head>
 
@@ -369,7 +372,6 @@
     </main>
 
 
-    
    <!-- =====================================================
      FOOTER
 ====================================================== -->
@@ -378,7 +380,7 @@
 
     <!-- Imagen completa del footer -->
     <img
-        src="assets/fondos/Footer.png"
+        src="{% static 'assets/fondos/Footer.png' %}"
         alt="Mascota UNADista"
         class="footer-image"
     >
@@ -389,7 +391,7 @@
         <a href="https://www.facebook.com/UniversidadUNAD/"
            aria-label="Facebook">
             <img
-                src="assets/iconos/Facebook.png"
+                src="{% static 'assets/iconos/Facebook.png' %}"
                 alt="Facebook"
             >
         </a>
@@ -397,7 +399,7 @@
         <a href="https://www.linkedin.com/school/universidadunad"
            aria-label="LinkedIn">
             <img
-                src="assets/iconos/Linkedin.png"
+                src="{% static 'assets/iconos/Linkedin.png' %}"
                 alt="LinkedIn"
             >
         </a>
@@ -405,7 +407,7 @@
         <a href="https://www.youtube.com/@universidadunadTvUnadVirtual"
            aria-label="YouTube">
             <img
-                src="assets/iconos/Youtube.png"
+                src="{% static 'assets/iconos/Youtube.png' %}"
                 alt="YouTube"
             >
         </a>
@@ -413,7 +415,7 @@
         <a href="https://www.instagram.com/universidadunad"
            aria-label="Instagram">
             <img
-                src="assets/iconos/Instagram.png"
+                src="{% static 'assets/iconos/Instagram.png' %}"
                 alt="Instagram"
             >
         </a>
@@ -421,5 +423,10 @@
     </div>
 
 </footer>
+<section class="developers-bar" aria-label="Desarrolladores">
+    <p>
+        Desarrolladores Anderson Muñoz y Nikol Ramirez
+    </p>
+</section>
 </body>
 </html>

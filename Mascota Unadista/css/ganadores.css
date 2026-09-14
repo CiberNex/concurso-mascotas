@@ -992,3 +992,29 @@ position: absolute;
     }
 
 }
+/* ==========================================================
+   DESARROLLADORES
+========================================================== */
+
+.developers-bar {
+    width: 100%;
+    padding: 14px 20px;
+
+    background: #005883;
+
+    text-align: center;
+}
+
+.developers-bar p {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-family: "Chewy", system-ui, sans-serif;
+
+    font-size: clamp(18px, 2vw, 24px);
+
+    font-weight: 400;
+
+    line-height: 1.2;
+}

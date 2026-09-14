@@ -1,24 +1,145 @@
 <!DOCTYPE html>
 <html lang="es">
+
+{% load static %}
+
 <head>
     <meta charset="UTF-8">
-    <title>Registro exitoso</title>
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Registro exitoso de Mascota UNADista 2026."
+    >
+
+    <title>Mascota UNADista 2026 | Registro exitoso</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chewy&family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{% static 'css/registro_exitoso.css' %}"
+    >
 </head>
+
 <body>
 
-    <h1>¡Registro exitoso!</h1>
+    <main class="success-page">
 
-    <p>
-        La mascota ha sido registrada correctamente.
-    </p>
+        <section class="success-section">
 
-    <p>
-        Su participación quedará pendiente de aprobación.
-    </p>
+            <div class="success-decoration decoration-left">
+                <img
+                    src="{% static 'assets/iconos/huella-amarilla.png' %}"
+                    alt=""
+                >
+            </div>
 
-    <a href="{% url 'registrar_mascota' %}">
-        Registrar otra mascota
-    </a>
+            <div class="success-decoration decoration-right">
+                <img
+                    src="{% static 'assets/iconos/huella-naranja.png' %}"
+                    alt=""
+                >
+            </div>
+
+
+            <div class="success-card">
+
+                <div class="success-icon" aria-hidden="true">
+                    ✓
+                </div>
+
+                <h1>
+                    ¡Registro exitoso!
+                </h1>
+
+                <p class="success-main-text">
+                    La mascota ha sido registrada correctamente.
+                </p>
+
+                <div class="status-box">
+
+                    <div class="status-paw">
+                        <img
+                            src="{% static 'assets/iconos/huella-azul.png' %}"
+                            alt=""
+                        >
+                    </div>
+
+                    <div class="status-text">
+                        <strong>
+                            Participación recibida
+                        </strong>
+
+                        <p>
+                            Su participación quedará pendiente de aprobación.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="success-message">
+                    <p>
+                        Gracias por participar en
+                        <strong>Mascota UNADista 2026.</strong>
+                    </p>
+
+
+                </div>
+
+
+                <div class="success-actions">
+
+                    <a
+                        href="{% url 'registrar_mascota' %}"
+                        class="btn btn-primary"
+                    >
+                        REGISTRAR OTRA MASCOTA
+                    </a>
+
+                    <a
+                        href="{% url 'inicio' %}"
+                        class="btn btn-secondary"
+                    >
+                        VOLVER AL INICIO
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <section
+        class="developers-bar"
+        aria-label="Desarrolladores"
+    >
+        <p>
+            Desarrolladores Anderson Muñoz y Nikol Ramirez
+        </p>
+    </section>
 
 </body>
 </html>

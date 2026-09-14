@@ -720,3 +720,119 @@ label {
     }
 
 }
+/* ==========================================================
+   DESARROLLADORES
+========================================================== */
+
+.developers-bar {
+    width: 100%;
+    padding: 14px 20px;
+
+    background: #005883;
+
+    text-align: center;
+}
+
+.developers-bar p {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-family: "Chewy", system-ui, sans-serif;
+
+    font-size: clamp(18px, 2vw, 24px);
+
+    font-weight: 400;
+
+    line-height: 1.2;
+}
+
+/* ==========================================================
+   ADAPTACIÓN DJANGO — FORMULARIO REAL
+========================================================== */
+
+.field-content input:not([type="file"]):not([type="checkbox"]),
+.field-content textarea,
+.field-content select {
+    width: 100%;
+    padding: 0 21px;
+    border: 1px solid var(--input-border);
+    outline: none;
+    color: #333;
+    background: #fff;
+    font-family: "Inter", "Segoe UI", Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.03);
+    transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.field-content input:not([type="file"]):not([type="checkbox"]),
+.field-content select {
+    height: 47px;
+    border-radius: 999px;
+}
+
+.field-content textarea {
+    min-height: 130px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 20px;
+    resize: vertical;
+}
+
+.field-content input:focus,
+.field-content textarea:focus,
+.field-content select:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(9, 101, 141, 0.09);
+}
+
+.django-file-input input[type="file"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.field-errors,
+.form-errors {
+    margin-top: 7px;
+    color: #b42318;
+    font-size: 13px;
+    line-height: 1.35;
+}
+
+.field-errors ul,
+.form-errors ul {
+    margin: 0;
+    padding-left: 18px;
+}
+
+.form-errors-general {
+    width: calc(100% - 88px);
+    margin: 0 0 18px auto;
+    padding: 12px 16px;
+    border: 1px solid #f1b3ad;
+    border-radius: 12px;
+    background: #fff4f2;
+}
+
+@media (max-width: 760px) {
+    .field-content input:not([type="file"]):not([type="checkbox"]),
+    .field-content select {
+        height: 44px;
+        padding-left: 17px;
+    }
+
+    .field-content textarea {
+        min-height: 120px;
+        padding: 14px 17px;
+    }
+
+    .form-errors-general {
+        width: 100%;
+        margin-left: 0;
+    }
+}

@@ -19,7 +19,7 @@
 
 <header class="site-header">
     <div class="container nav-wrapper">
-        <a href="{% static 'index.html' %}" class="brand" aria-label="Ir al inicio">
+        <a href="{% url 'inicio' %}" class="brand" aria-label="Ir al inicio">
             <img src="{% static 'assets/logo/Logo UNAD.png' %}" alt="Universidad Nacional Abierta y a Distancia - UNAD" class="logo-unad">
         </a>
 
@@ -36,11 +36,11 @@
                     Evento
                 </a>
 
-                <a href="actividades.html">
+                <a href="{% url 'actividades' %}">
                     Actividades
                 </a>
 
-                <a href="ganadores.html">
+                <a href="{% url 'ganadores' %}">
                     Ganadores
                 </a>
 
@@ -49,7 +49,7 @@
                 </a>
 
 
-                <a href="vota-ahora.html" class="nav-cta">
+                <a href="{% url 'galeria' 1 %}" class="nav-cta">
                     ♥ VOTAR AHORA
                 </a>
 
@@ -82,7 +82,7 @@
 
             <div class="event-facts" aria-label="Información principal del evento">
                 <article class="fact-item">
-                    <span class="fact-icon fact-icon-blue" aria-hidden="true"><img src="assets/iconos/Calendario.png" alt="Icono Calendario" class="fact-icon-image"></span>
+                    <span class="fact-icon fact-icon-blue" aria-hidden="true"><img src="{% static 'assets/iconos/Calendario.png' %}" alt="Icono Calendario" class="fact-icon-image"></span>
                     <div>
                         <h3>FECHA</h3>
                         <p>20 de<br>Octubre de<br>2026</p>
@@ -91,7 +91,7 @@
                 </article>
 
                 <article class="fact-item">
-                    <span class="fact-icon fact-icon-yellow" aria-hidden="true"><img src="assets/iconos/Lugar.png" alt="Icono Lugar" class="fact-icon-image"></span>
+                    <span class="fact-icon fact-icon-yellow" aria-hidden="true"><img src="{% static 'assets/iconos/Lugar.png' %}" alt="Icono Lugar" class="fact-icon-image"></span>
                     <div>
                         <h3>LUGAR</h3>
                         <p>CIP Cali<br>Cl. 5B 5 36-110 San<br>Fernando</p>
@@ -100,7 +100,7 @@
                 </article>
 
                 <article class="fact-item">
-                    <span class="fact-icon fact-icon-orange" aria-hidden="true"><img src="assets/iconos/Hora.png" alt="Icono Hora" class="fact-icon-image"></span>
+                    <span class="fact-icon fact-icon-orange" aria-hidden="true"><img src="{% static 'assets/iconos/Hora.png' %}" alt="Icono Hora" class="fact-icon-image"></span>
                     <div>
                         <h3>HORA</h3>
                         <p>00:00 a.m -<br>00:00 a.m</p>
@@ -109,7 +109,7 @@
                 </article>
 
                 <article class="fact-item fact-item-wide">
-                    <span class="fact-icon fact-icon-navy" aria-hidden="true"><img src="assets/iconos/Comunidad.png" alt="Icono Comunidad" class="fact-icon-image"></span>
+                    <span class="fact-icon fact-icon-navy" aria-hidden="true"><img src="{% static 'assets/iconos/Comunidad.png' %}" alt="Icono Comunidad" class="fact-icon-image"></span>
                     <div>
                         <h3>¿QUIÉNES PUEDEN PARTICIPAR?</h3>
                         <p>Estudiantes, egresados, funcionarios y comunidad.</p>
@@ -328,7 +328,7 @@ Haz clic en el botón para completar la inscripción.
 
                         <a
                             class="panel-cta"
-                            href="inscripcion.html"
+                            href="{% url 'registrar_mascota' %}"
                             target="_blank"
                             rel="noopener noreferrer"
                         >

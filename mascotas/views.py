@@ -135,3 +135,13 @@ def evento(request):
         request,
         'mascotas/evento.html'
     )
+def actividades(request):
+    return render(
+        request,
+        'mascotas/actividades.html'
+    )
+def ganadores(request):
+    return render(
+        request,
+        'mascotas/ganadores.html'
+    )

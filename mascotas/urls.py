@@ -12,6 +12,16 @@ urlpatterns = [
         views.evento,
         name='evento'
     ),
+        path(
+        'actividades/',
+        views.actividades,
+        name='actividades'
+    ),
+    path(
+        'ganadores/',
+        views.ganadores,
+        name='ganadores'
+    ),
     path(
         'registrar/',
         views.registrar_mascota,

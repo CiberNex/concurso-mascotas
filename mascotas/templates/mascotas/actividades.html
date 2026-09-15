@@ -7,16 +7,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-          content="Actividades y webinars de Mascota UNADista 2026.">
+    <meta
+        name="description"
+        content="Actividades y tips de Mascota UNADista 2026."
+    >
 
-    <title>Mascota UNADista 2026 | Actividades</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-    href="https://fonts.googleapis.com/css2?family=Chewy&family=Inter:wght@400;500;600;700;800;900&display=swap"
-    rel="stylesheet"
->
+    <title>Mascota UNADista 2026 | Actividades y Tips</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chewy&family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
     <link rel="stylesheet" href="{% static 'css/actividades.css' %}">
 </head>
 
@@ -37,7 +42,6 @@
                 >
             </a>
 
-            <!-- Menú responsive sin JavaScript -->
             <input
                 type="checkbox"
                 id="nav-toggle"
@@ -54,7 +58,7 @@
 
             <nav class="main-nav" aria-label="Navegación principal">
 
-                <a href="{% url 'inicio' %}" class="active">
+                <a href="{% url 'inicio' %}">
                     Inicio
                 </a>
 
@@ -62,7 +66,7 @@
                     Evento
                 </a>
 
-                <a href="{% url 'actividades' %}">
+                <a href="{% url 'actividades' %}" class="active">
                     Actividades
                 </a>
 
@@ -88,24 +92,24 @@
     <main>
 
         <!-- =====================================================
-             HERO / TÍTULO
+             HERO
         ====================================================== -->
         <section class="activities-hero">
 
-            <span class="paw-shape paw-left paw-left-1" aria-hidden="true"></span>
-            <span class="paw-shape paw-left paw-left-2" aria-hidden="true"></span>
-            <span class="paw-shape paw-right paw-right-1" aria-hidden="true"></span>
-            <span class="paw-shape paw-right paw-right-2" aria-hidden="true"></span>
+            <span class="paw-shape paw-left-1" aria-hidden="true"></span>
+            <span class="paw-shape paw-left-2" aria-hidden="true"></span>
+            <span class="paw-shape paw-right-1" aria-hidden="true"></span>
+            <span class="paw-shape paw-right-2" aria-hidden="true"></span>
 
             <div class="container hero-content">
 
                 <h1>
-                    Actividades y<br>
-                    webinars
+                    Actividades y Tips
                 </h1>
 
                 <p>
-                    ¡Participa de las diferentes actividades y webinars planeados!
+                    Conoce las actividades más destacadas de la jornada
+                    y encuentra recomendaciones para cuidar mejor a tu mascota.
                 </p>
 
             </div>
@@ -114,256 +118,363 @@
 
 
         <!-- =====================================================
-             LISTADO DE ACTIVIDADES
+             ACTIVIDADES
+             Conserva la estructura visual original:
+             casilla de información + bloque visual alternado.
         ====================================================== -->
         <section class="activities-section">
 
-            <div class="container activities-list">
+            <div class="container">
 
-                <!-- =================================================
-                     ACTIVIDAD 1
-                     Tarjeta izquierda + imagen derecha
-                ================================================== -->
-                <article class="activity-row activity-row-1">
+                <div class="section-heading">
+                    <span>3 de octubre de 2026 · CIP Cali</span>
 
-                    <div class="activity-card">
+                    <h2>
+                        Actividades destacadas
+                    </h2>
 
-                        <h2>Nombre</h2>
+                    <p>
+                        Horario general: 8:00 a. m. a 12:00 p. m.
+                    </p>
+                </div>
 
-                        <div class="activity-detail">
 
-                            <div class="activity-icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" role="img">
-                                    <rect x="3" y="5" width="18" height="16" rx="2"></rect>
-                                    <line x1="7" y1="3" x2="7" y2="7"></line>
-                                    <line x1="17" y1="3" x2="17" y2="7"></line>
-                                    <line x1="3" y1="9" x2="21" y2="9"></line>
-                                </svg>
+                <div class="activities-list">
+
+                    <!-- =================================================
+                         BLOQUE 1
+                    ================================================== -->
+                    <article class="activity-row activity-row-1">
+
+                        <div class="activity-card">
+
+                            <h2>
+                                Apertura y emprendimiento
+                            </h2>
+
+                            <div class="activity-entry">
+
+                                <div class="activity-entry-top">
+                                    <span class="activity-time">
+                                        8:00 a. m. – 12:00 p. m.
+                                    </span>
+
+                                    <span class="activity-date">
+                                        3 OCT
+                                    </span>
+                                </div>
+
+                                <h3>
+                                    Feria de Emprendimientos del CIP Cali
+                                </h3>
+
+                                <p>
+                                    Exhibición permanente de productos, servicios
+                                    e iniciativas desarrolladas por los
+                                    emprendimientos del CIP Cali.
+                                </p>
+
                             </div>
 
-                            <div class="activity-text">
-                                <h3>Fecha</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur</p>
-                            </div>
 
-                        </div>
+                            <div class="activity-entry">
 
-                        <div class="activity-detail">
+                                <div class="activity-entry-top">
+                                    <span class="activity-time">
+                                        9:00 a. m. – 9:10 a. m.
+                                    </span>
 
-                            <div class="activity-icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" role="img">
-                                    <circle cx="12" cy="12" r="9"></circle>
-                                    <line x1="12" y1="7" x2="12" y2="12"></line>
-                                    <line x1="12" y1="12" x2="16" y2="14"></line>
-                                </svg>
-                            </div>
+                                    <span class="activity-date">
+                                        3 OCT
+                                    </span>
+                                </div>
 
-                            <div class="activity-text">
-                                <h3>Hora</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur</p>
-                            </div>
+                                <h3>
+                                    Bienvenida e instalación del evento
+                                </h3>
 
-                        </div>
+                                <p>
+                                    Apertura oficial y presentación de los
+                                    objetivos de la jornada Mascota UNADista 2026.
+                                </p>
 
-                        <div class="activity-detail">
-
-                            <div class="activity-icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" role="img">
-                                    <path d="M10 13a5 5 0 0 0 7.07 0l2.12-2.12a5 5 0 0 0-7.07-7.07L10.9 5.03"></path>
-                                    <path d="M14 11a5 5 0 0 0-7.07 0L4.8 13.12a5 5 0 0 0 7.07 7.07l1.22-1.22"></path>
-                                </svg>
-                            </div>
-
-                            <div class="activity-text">
-                                <h3>Enlace</h3>
-
-                                <a
-                                    href="#"
-                                    class="activity-link"
-                                >
-                                    Lorem ipsum dolor sit amet, consectetur
-                                </a>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- IMAGEN 1 DEL ESQUEMA -->
-                    <div class="activity-image-wrap">
-                        <img
-                            src="{% static 'assets/actividades/actividad-01.png' %}"
-                            alt="Imagen de la primera actividad"
-                            class="activity-image"
-                        >
-                    </div>
-
-                </article>
-
-
-                <!-- =================================================
-                     ACTIVIDAD 2
-                     Imagen izquierda + tarjeta derecha
-                ================================================== -->
-                <article class="activity-row activity-row-2">
-
-                    <!-- IMAGEN 2 DEL ESQUEMA -->
-                    <div class="activity-image-wrap">
-                        <img
-                            src="{% static 'assets/actividades/actividad-02.png' %}"
-                            alt="Imagen de la segunda actividad"
-                            class="activity-image"
-                        >
-                    </div>
-
-
-                    <div class="activity-card">
-
-                        <h2>Nombre</h2>
-
-                        <div class="activity-detail">
-
-                            <div class="activity-icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" role="img">
-                                    <rect x="3" y="5" width="18" height="16" rx="2"></rect>
-                                    <line x1="7" y1="3" x2="7" y2="7"></line>
-                                    <line x1="17" y1="3" x2="17" y2="7"></line>
-                                    <line x1="3" y1="9" x2="21" y2="9"></line>
-                                </svg>
-                            </div>
-
-                            <div class="activity-text">
-                                <h3>Fecha</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur</p>
                             </div>
 
                         </div>
 
-                        <div class="activity-detail">
 
-                            <div class="activity-icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" role="img">
-                                    <circle cx="12" cy="12" r="9"></circle>
-                                    <line x1="12" y1="7" x2="12" y2="12"></line>
-                                    <line x1="12" y1="12" x2="16" y2="14"></line>
-                                </svg>
+                        <div class="activity-image-wrap activity-placeholder">
+                            <span>
+                                IMAGEN DE LA ACTIVIDAD
+                            </span>
+                        </div>
+
+                    </article>
+
+
+                    <!-- =================================================
+                         BLOQUE 2
+                    ================================================== -->
+                    <article class="activity-row activity-row-2">
+
+                        <div class="activity-image-wrap activity-placeholder">
+                            <span>
+                                IMAGEN DE LA ACTIVIDAD
+                            </span>
+                        </div>
+
+
+                        <div class="activity-card">
+
+                            <h2>
+                                Bienestar y adopción
+                            </h2>
+
+                            <div class="activity-entry">
+
+                                <div class="activity-entry-top">
+                                    <span class="activity-time">
+                                        9:10 a. m. – 9:50 a. m.
+                                    </span>
+
+                                    <span class="activity-date">
+                                        3 OCT
+                                    </span>
+                                </div>
+
+                                <h3>
+                                    Rescate, rehabilitación y adopción responsable
+                                </h3>
+
+                                <p>
+                                    Charla sobre rescate, socialización,
+                                    preparación para la adopción y bienestar animal.
+                                </p>
+
                             </div>
 
-                            <div class="activity-text">
-                                <h3>Hora</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur</p>
+
+                            <div class="activity-entry">
+
+                                <div class="activity-entry-top">
+                                    <span class="activity-time">
+                                        9:50 a. m. – 10:10 a. m.
+                                    </span>
+
+                                    <span class="activity-date">
+                                        3 OCT
+                                    </span>
+                                </div>
+
+                                <h3>
+                                    Encuentro con animales rescatados
+                                </h3>
+
+                                <p>
+                                    Historias de recuperación y orientación
+                                    para quienes desean brindar un hogar responsable.
+                                </p>
+
                             </div>
 
                         </div>
 
-                        <div class="activity-detail">
+                    </article>
 
-                            <div class="activity-icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" role="img">
-                                    <path d="M10 13a5 5 0 0 0 7.07 0l2.12-2.12a5 5 0 0 0-7.07-7.07L10.9 5.03"></path>
-                                    <path d="M14 11a5 5 0 0 0-7.07 0L4.8 13.12a5 5 0 0 0 7.07 7.07l1.22-1.22"></path>
-                                </svg>
+
+                    <!-- =================================================
+                         BLOQUE 3
+                    ================================================== -->
+                    <article class="activity-row activity-row-3">
+
+                        <div class="activity-card">
+
+                            <h2>
+                                Demostración y cierre
+                            </h2>
+
+                            <div class="activity-entry">
+
+                                <div class="activity-entry-top">
+                                    <span class="activity-time">
+                                        10:30 a. m. – 11:15 a. m.
+                                    </span>
+
+                                    <span class="activity-date">
+                                        3 OCT
+                                    </span>
+                                </div>
+
+                                <h3>
+                                    Rescate y socorrismo con caninos
+                                </h3>
+
+                                <p>
+                                    Demostración de búsqueda, localización,
+                                    primeros auxilios y respuesta ante emergencias.
+                                </p>
+
                             </div>
 
-                            <div class="activity-text">
-                                <h3>Enlace</h3>
 
-                                <a
-                                    href="#"
-                                    class="activity-link"
-                                >
-                                    Lorem ipsum dolor sit amet, consectetur
-                                </a>
+                            <div class="activity-entry compact-entry">
+
+                                <div>
+                                    <span class="activity-time">
+                                        11:15 a. m. – 11:30 a. m.
+                                    </span>
+
+                                    <h3>
+                                        Conversatorio con equipos caninos
+                                    </h3>
+                                </div>
+
                             </div>
 
-                        </div>
 
-                    </div>
+                            <div class="activity-entry compact-entry">
 
-                </article>
+                                <div>
+                                    <span class="activity-time">
+                                        11:30 a. m. – 12:00 p. m.
+                                    </span>
 
+                                    <h3>
+                                        Concurso virtual, premiación y cierre
+                                    </h3>
+                                </div>
 
-                <!-- =================================================
-                     ACTIVIDAD 3
-                     Tarjeta izquierda + imagen derecha
-                ================================================== -->
-                <article class="activity-row activity-row-3">
-
-                    <div class="activity-card">
-
-                        <h2>Nombre</h2>
-
-                        <div class="activity-detail">
-
-                            <div class="activity-icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" role="img">
-                                    <rect x="3" y="5" width="18" height="16" rx="2"></rect>
-                                    <line x1="7" y1="3" x2="7" y2="7"></line>
-                                    <line x1="17" y1="3" x2="17" y2="7"></line>
-                                    <line x1="3" y1="9" x2="21" y2="9"></line>
-                                </svg>
-                            </div>
-
-                            <div class="activity-text">
-                                <h3>Fecha</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur</p>
-                            </div>
-
-                        </div>
-
-                        <div class="activity-detail">
-
-                            <div class="activity-icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" role="img">
-                                    <circle cx="12" cy="12" r="9"></circle>
-                                    <line x1="12" y1="7" x2="12" y2="12"></line>
-                                    <line x1="12" y1="12" x2="16" y2="14"></line>
-                                </svg>
-                            </div>
-
-                            <div class="activity-text">
-                                <h3>Hora</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur</p>
                             </div>
 
                         </div>
 
-                        <div class="activity-detail">
 
-                            <div class="activity-icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" role="img">
-                                    <path d="M10 13a5 5 0 0 0 7.07 0l2.12-2.12a5 5 0 0 0-7.07-7.07L10.9 5.03"></path>
-                                    <path d="M14 11a5 5 0 0 0-7.07 0L4.8 13.12a5 5 0 0 0 7.07 7.07l1.22-1.22"></path>
-                                </svg>
-                            </div>
-
-                            <div class="activity-text">
-                                <h3>Enlace</h3>
-
-                                <a
-                                    href="#"
-                                    class="activity-link"
-                                >
-                                    Lorem ipsum dolor sit amet, consectetur
-                                </a>
-                            </div>
-
+                        <div class="activity-image-wrap activity-placeholder">
+                            <span>
+                                IMAGEN DE LA ACTIVIDAD
+                            </span>
                         </div>
 
-                    </div>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
 
 
-                    <!-- IMAGEN 3 DEL ESQUEMA -->
-                    <div class="activity-image-wrap">
-                        <img
-                            src="assets/actividades/actividad-03.png"
-                            alt="Imagen de la tercera actividad"
-                            class="activity-image"
-                        >
-                    </div>
+        <!-- =====================================================
+             TIPS
+        ====================================================== -->
+        <section class="tips-section">
 
-                </article>
+            <div class="container">
+
+                <div class="section-heading tips-heading">
+
+                    <span>
+                        Recomendaciones
+                    </span>
+
+                    <h2>
+                        Tips para tu mascota
+                    </h2>
+
+                    <p>
+                        Información práctica para cuidar, proteger
+                        y convivir responsablemente con nuestros animales.
+                    </p>
+
+                </div>
+
+
+                <div class="tips-grid">
+
+                    <article class="tip-card">
+
+                        <div class="tip-image-wrap">
+                            <img
+                                src="{% static 'assets/actividades/tip-evento.png' %}"
+                                alt="Día de la Mascota UNADista CIP Cali"
+                                class="tip-image tip-image-poster"
+                            >
+                        </div>
+
+                        <div class="tip-content">
+                            <span class="tip-label">
+                                Evento
+                            </span>
+
+                            <h3>
+                                Día de la Mascota UNADista
+                            </h3>
+
+                            <p>
+                                Guarda la información principal de la jornada
+                                presencial del 3 de octubre.
+                            </p>
+                        </div>
+
+                    </article>
+
+
+                    <article class="tip-card">
+
+                        <div class="tip-image-wrap">
+                            <img
+                                src="{% static 'assets/actividades/tip-cuidado-basico.png' %}"
+                                alt="Tips importantes para el cuidado básico de mascotas"
+                                class="tip-image"
+                            >
+                        </div>
+
+                        <div class="tip-content">
+                            <span class="tip-label">
+                                Cuidado básico
+                            </span>
+
+                            <h3>
+                                Cinco cuidados esenciales
+                            </h3>
+
+                            <p>
+                                Alimentación, veterinario, ejercicio,
+                                higiene y atención responsable.
+                            </p>
+                        </div>
+
+                    </article>
+
+
+                    <article class="tip-card">
+
+                        <div class="tip-image-wrap">
+                            <img
+                                src="{% static 'assets/actividades/tip-tenencia-responsable.png' %}"
+                                alt="Tenencia responsable de mascotas"
+                                class="tip-image"
+                            >
+                        </div>
+
+                        <div class="tip-content">
+                            <span class="tip-label">
+                                Tenencia responsable
+                            </span>
+
+                            <h3>
+                                Una convivencia responsable
+                            </h3>
+
+                            <p>
+                                Identificación, bienestar, socialización,
+                                respeto y participación comunitaria.
+                            </p>
+                        </div>
+
+                    </article>
+
+                </div>
 
             </div>
 
@@ -372,61 +483,68 @@
     </main>
 
 
-   <!-- =====================================================
-     FOOTER
-====================================================== -->
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+    <footer class="site-footer">
 
-<footer class="site-footer">
+        <img
+            src="{% static 'assets/fondos/Footer.png' %}"
+            alt="Mascota UNADista"
+            class="footer-image"
+        >
 
-    <!-- Imagen completa del footer -->
-    <img
-        src="{% static 'assets/fondos/Footer.png' %}"
-        alt="Mascota UNADista"
-        class="footer-image"
-    >
+        <div class="footer-social">
 
-    <!-- Redes sociales -->
-    <div class="footer-social">
-
-        <a href="https://www.facebook.com/UniversidadUNAD/"
-           aria-label="Facebook">
-            <img
-                src="{% static 'assets/iconos/Facebook.png' %}"
-                alt="Facebook"
+            <a
+                href="https://www.facebook.com/UniversidadUNAD/"
+                aria-label="Facebook"
             >
-        </a>
+                <img
+                    src="{% static 'assets/iconos/Facebook.png' %}"
+                    alt="Facebook"
+                >
+            </a>
 
-        <a href="https://www.linkedin.com/school/universidadunad"
-           aria-label="LinkedIn">
-            <img
-                src="{% static 'assets/iconos/Linkedin.png' %}"
-                alt="LinkedIn"
+            <a
+                href="https://www.linkedin.com/school/universidadunad"
+                aria-label="LinkedIn"
             >
-        </a>
+                <img
+                    src="{% static 'assets/iconos/Linkedin.png' %}"
+                    alt="LinkedIn"
+                >
+            </a>
 
-        <a href="https://www.youtube.com/@universidadunadTvUnadVirtual"
-           aria-label="YouTube">
-            <img
-                src="{% static 'assets/iconos/Youtube.png' %}"
-                alt="YouTube"
+            <a
+                href="https://www.youtube.com/@universidadunadTvUnadVirtual"
+                aria-label="YouTube"
             >
-        </a>
+                <img
+                    src="{% static 'assets/iconos/Youtube.png' %}"
+                    alt="YouTube"
+                >
+            </a>
 
-        <a href="https://www.instagram.com/universidadunad"
-           aria-label="Instagram">
-            <img
-                src="{% static 'assets/iconos/Instagram.png' %}"
-                alt="Instagram"
+            <a
+                href="https://www.instagram.com/universidadunad"
+                aria-label="Instagram"
             >
-        </a>
+                <img
+                    src="{% static 'assets/iconos/Instagram.png' %}"
+                    alt="Instagram"
+                >
+            </a>
 
-    </div>
+        </div>
 
-</footer>
-<section class="developers-bar" aria-label="Desarrolladores">
-    <p>
-        Desarrolladores Anderson Muñoz y Nikol Ramirez
-    </p>
-</section>
+    </footer>
+
+    <section class="developers-bar" aria-label="Desarrolladores">
+        <p>
+            Desarrolladores Anderson Muñoz y Nikol Ramirez
+        </p>
+    </section>
+
 </body>
 </html>

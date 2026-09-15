@@ -130,44 +130,34 @@
 
             <div class="container vote-tools-row">
 
-                <div class="category-filters" aria-label="Categorías de mascotas">
+                <div class="category-filters" aria-label="Categorías del concurso">
 
-                    <a href="#" class="filter-pill active">
-                        Todas
+                    <a
+                        href="{% url 'galeria' 1 %}"
+                        class="filter-pill{% if categoria.id == 1 %} active{% endif %}"
+                    >
+                        <span aria-hidden="true">
+                            <img
+                                src="{% static 'assets/iconos/Paw Categoria.png' %}"
+                                class="paw-categoria"
+                                alt=""
+                            >
+                        </span>
+                        Foto Familiar
                     </a>
 
-                    <a href="#" class="filter-pill">
-    <span aria-hidden="true">
-        <img
-            src="{% static 'assets/iconos/Paw Categoria.png' %}"
-            class="paw-categoria"
-            alt=""
-        >
-    </span>
-    Perros
-</a>
-
-                    <a href="#" class="filter-pill">
-                        <span aria-hidden="true"><img
-                            src="{% static 'assets/iconos/Paw Categoria.png' %}"
-                            class="paw-categoria"
-                        ></span>
-                        Gatos
-                    </a>
-
-<a href="#" class="filter-pill">
-    <span aria-hidden="true">
-        <img
-            src="{% static 'assets/iconos/Paw Categoria.png' %}"
-            class="paw-categoria"
-            alt=""
-        >
-    </span>
-    Aves
-</a>
-
-                    <a href="#" class="filter-pill">
-                        Otros
+                    <a
+                        href="{% url 'galeria' 2 %}"
+                        class="filter-pill{% if categoria.id == 2 %} active{% endif %}"
+                    >
+                        <span aria-hidden="true">
+                            <img
+                                src="{% static 'assets/iconos/Paw Categoria.png' %}"
+                                class="paw-categoria"
+                                alt=""
+                            >
+                        </span>
+                        Foto con disfraz
                     </a>
 
                 </div>
@@ -247,23 +237,30 @@
 
 
             <!-- =================================================
-                 PAGINACIÓN VISUAL
+                 PAGINACIÓN FUNCIONAL — 6 MASCOTAS POR PÁGINA
             ================================================== -->
             <nav class="pagination" aria-label="Paginación de mascotas">
 
-                <a href="#" class="pagination-arrow" aria-label="Página anterior">
+                <button
+                    type="button"
+                    class="pagination-arrow pagination-prev"
+                    aria-label="Página anterior"
+                >
                     ‹
-                </a>
+                </button>
 
-                <a href="#" class="pagination-dot active" aria-label="Página 1"></a>
-                <a href="#" class="pagination-dot" aria-label="Página 2"></a>
-                <a href="#" class="pagination-dot" aria-label="Página 3"></a>
-                <a href="#" class="pagination-dot" aria-label="Página 4"></a>
-                <a href="#" class="pagination-dot" aria-label="Página 5"></a>
+                <div
+                    class="pagination-dots"
+                    aria-label="Páginas de la galería"
+                ></div>
 
-                <a href="#" class="pagination-arrow" aria-label="Página siguiente">
+                <button
+                    type="button"
+                    class="pagination-arrow pagination-next"
+                    aria-label="Página siguiente"
+                >
                     ›
-                </a>
+                </button>
 
             </nav>
 
@@ -324,6 +321,286 @@
     </div>
 
 </footer>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const gallery = document.querySelector(".pet-grid");
+    const pagination = document.querySelector(".pagination");
+    const prevButton = document.querySelector(".pagination-prev");
+    const nextButton = document.querySelector(".pagination-next");
+    const dotsContainer = document.querySelector(".pagination-dots");
+
+    /* Se conservan el ID y la clase existentes del buscador. */
+    const searchInput = document.querySelector("#pet-search-input");
+    const searchForm = document.querySelector(".pet-search");
+
+    if (!gallery || !pagination || !prevButton || !nextButton || !dotsContainer) {
+        return;
+    }
+
+    const cards = Array.from(
+        gallery.querySelectorAll(".pet-card:not(.pet-card-placeholder)")
+    );
+
+    const itemsPerPage = 6;
+
+    let filteredCards = [...cards];
+    let totalPages = Math.ceil(filteredCards.length / itemsPerPage);
+    let currentPage = 0;
+
+    /*
+       Mensaje creado únicamente desde JavaScript.
+       No modifica IDs, clases ni atributos de integración existentes.
+    */
+    const emptyMessage = document.createElement("p");
+
+    emptyMessage.textContent =
+        "No se encontraron mascotas con ese nombre.";
+
+    emptyMessage.hidden = true;
+    emptyMessage.setAttribute("role", "status");
+    emptyMessage.setAttribute("aria-live", "polite");
+
+    emptyMessage.style.margin = "28px auto 8px";
+    emptyMessage.style.padding = "18px 22px";
+    emptyMessage.style.maxWidth = "620px";
+    emptyMessage.style.textAlign = "center";
+    emptyMessage.style.color = "#08658d";
+    emptyMessage.style.fontWeight = "700";
+    emptyMessage.style.border = "1px solid #d1d1d1";
+    emptyMessage.style.borderRadius = "16px";
+    emptyMessage.style.background = "#f8fbfc";
+
+    gallery.insertAdjacentElement("afterend", emptyMessage);
+
+
+    /* =====================================================
+       NORMALIZACIÓN DE TEXTO
+       - ignora mayúsculas/minúsculas
+       - ignora tildes y otros signos diacríticos
+    ====================================================== */
+
+    function normalizeText(text) {
+        return String(text || "")
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .toLocaleLowerCase("es")
+            .trim();
+    }
+
+
+    /* =====================================================
+       PLACEHOLDERS DE LA ÚLTIMA PÁGINA
+    ====================================================== */
+
+    function removePlaceholders() {
+        gallery
+            .querySelectorAll(".pet-card-placeholder")
+            .forEach(function (placeholder) {
+                placeholder.remove();
+            });
+    }
+
+
+    function addPlaceholders(visibleCount) {
+        const missingCards = itemsPerPage - visibleCount;
+
+        for (let index = 0; index < missingCards; index += 1) {
+            const placeholder = document.createElement("article");
+
+            placeholder.className = "pet-card pet-card-placeholder";
+            placeholder.setAttribute("aria-hidden", "true");
+
+            gallery.appendChild(placeholder);
+        }
+    }
+
+
+    /* =====================================================
+       PUNTOS DE PAGINACIÓN
+    ====================================================== */
+
+    function createDots() {
+        dotsContainer.innerHTML = "";
+
+        for (let index = 0; index < totalPages; index += 1) {
+            const dot = document.createElement("button");
+
+            dot.type = "button";
+            dot.className = "pagination-dot";
+            dot.setAttribute(
+                "aria-label",
+                `Ir a la página ${index + 1}`
+            );
+
+            dot.addEventListener("click", function () {
+                currentPage = index;
+                renderPage();
+            });
+
+            dotsContainer.appendChild(dot);
+        }
+    }
+
+
+    /* =====================================================
+       RENDER DE LA PÁGINA ACTUAL
+    ====================================================== */
+
+    function renderPage() {
+        removePlaceholders();
+
+        /*
+           Primero se ocultan todas las tarjetas originales.
+           Después se muestran exclusivamente las que pertenecen
+           a la página actual de los resultados filtrados.
+        */
+        cards.forEach(function (card) {
+            card.hidden = true;
+        });
+
+        if (filteredCards.length === 0) {
+            pagination.hidden = true;
+            emptyMessage.hidden = false;
+            return;
+        }
+
+        pagination.hidden = false;
+        emptyMessage.hidden = true;
+
+        /*
+           Seguridad adicional por si una búsqueda reduce el número
+           total de páginas mientras el usuario estaba en una página
+           posterior.
+        */
+        if (currentPage >= totalPages) {
+            currentPage = Math.max(totalPages - 1, 0);
+        }
+
+        const start = currentPage * itemsPerPage;
+        const end = start + itemsPerPage;
+
+        const visibleCards = filteredCards.slice(start, end);
+
+        visibleCards.forEach(function (card) {
+            card.hidden = false;
+        });
+
+        /*
+           Mantiene la forma de la grilla cuando la última página
+           tiene menos de seis resultados.
+        */
+        addPlaceholders(visibleCards.length);
+
+        const dots = dotsContainer.querySelectorAll(".pagination-dot");
+
+        dots.forEach(function (dot, index) {
+            const isActive = index === currentPage;
+
+            dot.classList.toggle("active", isActive);
+
+            if (isActive) {
+                dot.setAttribute("aria-current", "page");
+            } else {
+                dot.removeAttribute("aria-current");
+            }
+        });
+
+        prevButton.disabled = currentPage === 0;
+        nextButton.disabled = currentPage === totalPages - 1;
+    }
+
+
+    /* =====================================================
+       FILTRADO DINÁMICO POR NOMBRE
+    ====================================================== */
+
+    function filterPets() {
+        const query = normalizeText(
+            searchInput ? searchInput.value : ""
+        );
+
+        filteredCards = cards.filter(function (card) {
+            const nameElement = card.querySelector(".pet-info h2");
+
+            if (!nameElement) {
+                return false;
+            }
+
+            const petName = normalizeText(nameElement.textContent);
+
+            return petName.includes(query);
+        });
+
+        /*
+           Cada nueva búsqueda regresa a la primera página y
+           recalcula completamente la cantidad de páginas/dots.
+        */
+        currentPage = 0;
+        totalPages = Math.ceil(
+            filteredCards.length / itemsPerPage
+        );
+
+        createDots();
+        renderPage();
+    }
+
+
+    /* =====================================================
+       FLECHAS
+    ====================================================== */
+
+    prevButton.addEventListener("click", function () {
+        if (currentPage > 0) {
+            currentPage -= 1;
+            renderPage();
+        }
+    });
+
+
+    nextButton.addEventListener("click", function () {
+        if (currentPage < totalPages - 1) {
+            currentPage += 1;
+            renderPage();
+        }
+    });
+
+
+    /* =====================================================
+       BUSCADOR
+    ====================================================== */
+
+    if (searchInput) {
+        searchInput.addEventListener("input", filterPets);
+    }
+
+    /*
+       El formulario ya existente no recarga la página al pulsar
+       Enter o el botón de búsqueda; el filtrado sigue siendo local.
+    */
+    if (searchForm) {
+        searchForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+            filterPets();
+        });
+    }
+
+
+    /* =====================================================
+       ESTADO INICIAL
+    ====================================================== */
+
+    if (cards.length === 0) {
+        pagination.hidden = true;
+        return;
+    }
+
+    createDots();
+    renderPage();
+});
+</script>
+
 
 </body>
 </html>

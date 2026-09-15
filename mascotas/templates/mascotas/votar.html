@@ -1,44 +1,381 @@
 <!DOCTYPE html>
 <html lang="es">
+
+{% load static %}
+
 <head>
     <meta charset="UTF-8">
-    <title>Votar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Confirma tu voto en Mascota UNADista 2026."
+    >
+
+    <title>Mascota UNADista 2026 | Votar</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chewy&family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="{% static 'css/votar.css' %}">
 </head>
+
 <body>
 
-    <h1>Votar por {{ participacion.mascota.nombre }}</h1>
+    <!-- =====================================================
+         HEADER / NAVEGACIÓN
+    ====================================================== -->
+    <header class="site-header">
 
-    <p>
-        Categoría: {{ participacion.categoria.nombre }}
-    </p>
+        <div class="container nav-wrapper">
 
-    <p>
-        Votos actuales: {{ participacion.votos.count }}
-    </p>
+            <a
+                href="{% url 'inicio' %}"
+                class="brand"
+                aria-label="Ir al inicio"
+            >
+                <img
+                    src="{% static 'assets/logo/Logo UNAD.png' %}"
+                    alt="Universidad Nacional Abierta y a Distancia - UNAD"
+                    class="logo-unad"
+                >
+            </a>
 
-    {% if error %}
-        <p>{{ error }}</p>
-    {% endif %}
+            <input
+                type="checkbox"
+                id="nav-toggle"
+                class="nav-toggle-input"
+            >
 
-    {% if mensaje %}
-        <p>{{ mensaje }}</p>
-    {% endif %}
+            <label
+                for="nav-toggle"
+                class="menu-toggle"
+                aria-label="Abrir o cerrar menú"
+            >
+                ☰
+            </label>
 
-    <form method="POST">
-        {% csrf_token %}
+            <nav class="main-nav" aria-label="Navegación principal">
 
-        <label for="cedula">Cédula:</label>
-        <input
-            type="text"
-            name="cedula"
-            id="cedula"
-            required
+                <a href="{% url 'inicio' %}">
+                    Inicio
+                </a>
+
+                <a href="{% url 'evento' %}">
+                    Evento
+                </a>
+
+                <a href="{% url 'actividades' %}">
+                    Actividades
+                </a>
+
+                <a href="{% url 'ganadores' %}">
+                    Ganadores
+                </a>
+
+                <a href="{% url 'registrar_mascota' %}">
+                    Inscripción
+                </a>
+
+                <a
+                    href="{% url 'galeria' participacion.categoria.id %}"
+                    class="nav-cta"
+                >
+                    ♥ VOTAR AHORA
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
+        <section class="vote-confirm-hero">
+
+            <div class="container vote-confirm-heading">
+
+                <div class="vote-title-row">
+
+                    <img
+                        src="{% static 'assets/iconos/Paw Print Left Vota.png' %}"
+                        alt=""
+                        class="vote-title-icon vote-title-icon-left"
+                    >
+
+                    <h1>
+                        Confirma tu voto
+                    </h1>
+
+                    <img
+                        src="{% static 'assets/iconos/Paw Print Right Vota.png' %}"
+                        alt=""
+                        class="vote-title-icon vote-title-icon-right"
+                    >
+
+                </div>
+
+                <p>
+                    Estás a un paso de apoyar a tu mascota favorita.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CANDIDATO + FORMULARIO
+        ====================================================== -->
+        <section class="vote-confirm-section">
+
+            <div class="container vote-confirm-layout">
+
+                <!-- TARJETA DE LA MASCOTA -->
+                <article class="candidate-card">
+
+                    <div class="candidate-image-wrap">
+
+                        <img
+                            src="{{ participacion.foto.url }}"
+                            alt="{{ participacion.mascota.nombre }}"
+                            class="candidate-image"
+                        >
+
+                        <span class="category-badge">
+                            {{ participacion.categoria.nombre }}
+                        </span>
+
+                    </div>
+
+                    <div class="candidate-info">
+
+                        <p class="candidate-label">
+                            Tu candidata/o seleccionada/o
+                        </p>
+
+                        <h2>
+                            {{ participacion.mascota.nombre }}
+                        </h2>
+
+                        <div class="candidate-stats">
+
+                            <span class="vote-count">
+                                ♥ {{ participacion.votos.count }} votos
+                            </span>
+
+                            <span class="category-name">
+                                {{ participacion.categoria.nombre }}
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PANEL DE VOTACIÓN -->
+                <section class="vote-panel" aria-labelledby="vote-panel-title">
+
+                    <span class="panel-kicker">
+                        Mascota UNADista 2026
+                    </span>
+
+                    <h2 id="vote-panel-title">
+                        Vota por {{ participacion.mascota.nombre }}
+                    </h2>
+
+                    <p class="panel-intro">
+                        Ingresa tu cédula para validar tu participación
+                        y registrar el voto.
+                    </p>
+
+
+                    <!-- REGLA DE VOTACIÓN -->
+                    <div class="vote-rule">
+
+                        <div class="vote-rule-icon" aria-hidden="true">
+                            1
+                        </div>
+
+                        <div>
+                            <strong>
+                                Un voto por categoría
+                            </strong>
+
+                            <p>
+                                Cada cédula puede votar una sola vez en
+                                <strong>{{ participacion.categoria.nombre }}</strong>.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <!-- MENSAJES DEL SERVIDOR -->
+                    {% if error %}
+                        <div
+                            class="server-message server-message-error"
+                            role="alert"
+                        >
+                            <span class="server-message-icon" aria-hidden="true">
+                                !
+                            </span>
+
+                            <div>
+                                <strong>No fue posible registrar el voto</strong>
+                                <p>{{ error }}</p>
+                            </div>
+                        </div>
+                    {% endif %}
+
+
+                    {% if mensaje %}
+                        <div
+                            class="server-message server-message-success"
+                            role="status"
+                        >
+                            <span class="server-message-icon" aria-hidden="true">
+                                ✓
+                            </span>
+
+                            <div>
+                                <strong>¡Voto registrado!</strong>
+                                <p>{{ mensaje }}</p>
+                            </div>
+                        </div>
+                    {% endif %}
+
+
+                    {% if not mensaje %}
+
+                        <form method="POST" class="vote-form">
+
+                            {% csrf_token %}
+
+                            <div class="form-group">
+
+                                <label for="cedula">
+                                    Cédula <span>*</span>
+                                </label>
+
+                                <input
+                                    type="text"
+                                    name="cedula"
+                                    id="cedula"
+                                    inputmode="numeric"
+                                    autocomplete="off"
+                                    placeholder="Ingresa tu número de cédula"
+                                    required
+                                >
+
+                            
+
+                            </div>
+
+                            <button
+                                type="submit"
+                                class="confirm-vote-button"
+                            >
+                                <span aria-hidden="true">♥</span>
+                                CONFIRMAR VOTO
+                            </button>
+
+                        </form>
+
+                    {% endif %}
+
+
+                    <a
+                        href="{% url 'galeria' participacion.categoria.id %}"
+                        class="back-gallery-link"
+                    >
+                        ← Volver a la galería
+                    </a>
+
+                </section>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+    <footer class="site-footer">
+
+        <img
+            src="{% static 'assets/fondos/Footer.png' %}"
+            alt="Mascota UNADista"
+            class="footer-image"
         >
 
-        <button type="submit">
-            Votar
-        </button>
-    </form>
+        <div class="footer-social">
+
+            <a
+                href="https://www.facebook.com/UniversidadUNAD/"
+                aria-label="Facebook"
+            >
+                <img
+                    src="{% static 'assets/iconos/Facebook.png' %}"
+                    alt="Facebook"
+                >
+            </a>
+
+            <a
+                href="https://www.linkedin.com/school/universidadunad"
+                aria-label="LinkedIn"
+            >
+                <img
+                    src="{% static 'assets/iconos/Linkedin.png' %}"
+                    alt="LinkedIn"
+                >
+            </a>
+
+            <a
+                href="https://www.youtube.com/@universidadunadTvUnadVirtual"
+                aria-label="YouTube"
+            >
+                <img
+                    src="{% static 'assets/iconos/Youtube.png' %}"
+                    alt="YouTube"
+                >
+            </a>
+
+            <a
+                href="https://www.instagram.com/universidadunad"
+                aria-label="Instagram"
+            >
+                <img
+                    src="{% static 'assets/iconos/Instagram.png' %}"
+                    alt="Instagram"
+                >
+            </a>
+
+        </div>
+
+    </footer>
+
+
+    <section class="developers-bar" aria-label="Desarrolladores">
+        <p>
+            Desarrolladores Anderson Muñoz y Nikol Ramirez
+        </p>
+    </section>
 
 </body>
 </html>

@@ -72,7 +72,7 @@
                 </a>
 
 
-                <a href="vota-ahora.html" class="nav-cta">
+                <a href="{% url 'galeria' 1 %}" class="nav-cta">
                     ♥ VOTAR AHORA
                 </a>
 
@@ -110,12 +110,12 @@
 
                     <div class="hero-actions">
 
-                        <a href="evento.html"
+                        <a href="{% url 'evento' %}"
                            class="btn btn-blue">
                             CONOCE EL CONCURSO
                         </a>
 
-                        <a href="vota-ahora.html"
+                        <a href="{% url 'galeria' 1 %}"
                            class="btn btn-orange">
                             VOTA POR TU FAVORITA
                         </a>
@@ -412,6 +412,86 @@
 
 
         <!-- =====================================================
+             CUENTA REGRESIVA DEL EVENTO
+        ====================================================== -->
+
+        <section class="event-countdown-section" aria-labelledby="countdown-title">
+
+            <div class="container">
+
+                <div class="event-countdown-card">
+
+                    <div class="countdown-copy">
+
+                        <h2 id="countdown-title">
+                            ¡Ya casi comienza el evento!
+                        </h2>
+
+                        <p>
+                            Nos encontramos el
+                            <strong>3 de octubre de 2026 a las 9:00 a. m.</strong>
+                        </p>
+
+                    </div>
+
+                    <div
+                        class="countdown-timer"
+                        id="event-countdown"
+                        role="timer"
+                        aria-live="polite"
+                        aria-label="Tiempo restante para el evento"
+                    >
+
+                        <div class="countdown-unit">
+                            <strong id="countdown-days">00</strong>
+                            <span>Días</span>
+                        </div>
+
+                        <div class="countdown-separator" aria-hidden="true">
+                            :
+                        </div>
+
+                        <div class="countdown-unit">
+                            <strong id="countdown-hours">00</strong>
+                            <span>Horas</span>
+                        </div>
+
+                        <div class="countdown-separator" aria-hidden="true">
+                            :
+                        </div>
+
+                        <div class="countdown-unit">
+                            <strong id="countdown-minutes">00</strong>
+                            <span>Minutos</span>
+                        </div>
+
+                        <div class="countdown-separator" aria-hidden="true">
+                            :
+                        </div>
+
+                        <div class="countdown-unit">
+                            <strong id="countdown-seconds">00</strong>
+                            <span>Segundos</span>
+                        </div>
+
+                    </div>
+
+                    <p
+                        class="countdown-finished"
+                        id="countdown-finished"
+                        hidden
+                    >
+                        ¡El evento ha comenzado!
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
              CALENDARIO + EVENTO PRESENCIAL
         ====================================================== -->
 
@@ -471,7 +551,9 @@
 
                             <span>1</span>
                             <span>2</span>
-                            <span>3</span>
+                            <span class="marked">
+                                3
+                            </span>
 
                             <span>4</span>
                             <span>5</span>
@@ -492,9 +574,7 @@
                             <span>18</span>
                             <span>19</span>
 
-                            <span class="marked">
-                                20
-                            </span>
+                            <span>20</span>
 
                             <span>21</span>
                             <span>22</span>
@@ -698,6 +778,132 @@
 
         });
 
+    </script>
+
+
+    <!-- =====================================================
+         CUENTA REGRESIVA
+         Fecha objetivo: 3 de octubre de 2026, 9:00 a. m.
+         Se interpreta en la hora local del navegador.
+    ====================================================== -->
+
+    <script>
+        (() => {
+
+            const countdown = document.getElementById("event-countdown");
+
+            if (!countdown) {
+                return;
+            }
+
+            const daysElement =
+                document.getElementById("countdown-days");
+
+            const hoursElement =
+                document.getElementById("countdown-hours");
+
+            const minutesElement =
+                document.getElementById("countdown-minutes");
+
+            const secondsElement =
+                document.getElementById("countdown-seconds");
+
+            const finishedMessage =
+                document.getElementById("countdown-finished");
+
+            /*
+               JavaScript usa meses desde 0:
+               9 = octubre.
+               Al no indicar zona horaria, se usa la hora local
+               configurada en el dispositivo del visitante.
+            */
+            const eventDate =
+                new Date(2026, 9, 3, 9, 0, 0);
+
+            const pad = (value) =>
+                String(value).padStart(2, "0");
+
+            const setValues = (
+                days,
+                hours,
+                minutes,
+                seconds
+            ) => {
+                daysElement.textContent = pad(days);
+                hoursElement.textContent = pad(hours);
+                minutesElement.textContent = pad(minutes);
+                secondsElement.textContent = pad(seconds);
+            };
+
+            const updateCountdown = () => {
+
+                const now = new Date();
+                const distance =
+                    eventDate.getTime() - now.getTime();
+
+                if (distance <= 0) {
+
+                    setValues(0, 0, 0, 0);
+
+                    countdown.classList.add(
+                        "countdown-complete"
+                    );
+
+                    finishedMessage.hidden = false;
+
+                    return false;
+                }
+
+                const totalSeconds =
+                    Math.floor(distance / 1000);
+
+                const days =
+                    Math.floor(
+                        totalSeconds / 86400
+                    );
+
+                const hours =
+                    Math.floor(
+                        (totalSeconds % 86400) / 3600
+                    );
+
+                const minutes =
+                    Math.floor(
+                        (totalSeconds % 3600) / 60
+                    );
+
+                const seconds =
+                    totalSeconds % 60;
+
+                setValues(
+                    days,
+                    hours,
+                    minutes,
+                    seconds
+                );
+
+                return true;
+            };
+
+            if (updateCountdown()) {
+
+                const countdownInterval =
+                    setInterval(() => {
+
+                        const shouldContinue =
+                            updateCountdown();
+
+                        if (!shouldContinue) {
+                            clearInterval(
+                                countdownInterval
+                            );
+                        }
+
+                    }, 1000);
+
+            }
+
+        })();
     </script>
 
 </body>

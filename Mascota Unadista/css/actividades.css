@@ -1,10 +1,11 @@
 /* ==========================================================
    MASCOTA UNADISTA 2026
-   ACTIVIDADES Y WEBINARS
-   ========================================================== */
+   ACTIVIDADES Y TIPS
+   Mantiene el patrón original:
+   tarjeta informativa + bloque visual alternado.
+========================================================== */
 
 :root {
-
     --blue: #09658c;
     --blue-dark: #005883;
 
@@ -12,15 +13,17 @@
     --yellow: #f5ad16;
 
     --light-blue: #e7f0f4;
+    --soft-blue: #f5fafc;
 
     --text: #111111;
+    --muted: #606060;
     --white: #ffffff;
     --border: #cfcfcf;
 
     --container: 1180px;
 
     --shadow:
-        0 6px 16px rgba(0, 0, 0, 0.05);
+        0 7px 18px rgba(0, 0, 0, 0.07);
 }
 
 
@@ -30,29 +33,23 @@
 
 * {
     box-sizing: border-box;
-
     margin: 0;
     padding: 0;
 }
-
 
 html {
     scroll-behavior: smooth;
 }
 
-
 body {
-
     min-width: 320px;
-
     overflow-x: hidden;
 
     color: var(--text);
-
     background: var(--white);
 
     font-family:
-        Inter,
+        "Inter",
         "Segoe UI",
         Arial,
         Helvetica,
@@ -61,20 +58,15 @@ body {
     line-height: 1.35;
 }
 
-
 img {
     display: block;
-
     max-width: 100%;
 }
 
-
 a {
     color: inherit;
-
     text-decoration: none;
 }
-
 
 button,
 label,
@@ -82,15 +74,8 @@ a {
     -webkit-tap-highlight-color: transparent;
 }
 
-
 .container {
-
-    width:
-        min(
-            92%,
-            var(--container)
-        );
-
+    width: min(92%, var(--container));
     margin-inline: auto;
 }
 
@@ -100,56 +85,41 @@ a {
 ========================================================== */
 
 .site-header {
-
     position: relative;
-
     z-index: 50;
-
     background: var(--white);
 }
 
-
 .nav-wrapper {
-
     min-height: 106px;
 
     display: flex;
-
     align-items: center;
     justify-content: space-between;
 
     gap: 32px;
 }
 
-
 .brand {
-
     width: 170px;
     height: 92px;
 
     display: flex;
-
     align-items: center;
 
     flex: 0 0 auto;
 }
 
-
 .logo-unad {
-
     width: 150px;
     height: 92px;
 
     object-fit: contain;
-
     object-position: left center;
 }
 
-
 .main-nav {
-
     display: flex;
-
     align-items: center;
 
     gap: 42px;
@@ -158,46 +128,33 @@ a {
     font-weight: 600;
 }
 
-
 .main-nav a {
-
     transition:
         color .2s ease,
         transform .2s ease;
 }
 
-
 .main-nav a:hover,
 .main-nav a.active {
-
     color: var(--orange);
 }
 
-
 .nav-cta {
-
-    padding:
-        14px
-        24px;
+    padding: 14px 24px;
 
     border-radius: 6px;
 
     color: var(--white) !important;
-
     background: var(--orange);
 
     box-shadow: var(--shadow);
 }
 
-
 .nav-cta:hover {
-
     transform: translateY(-2px);
 }
 
-
 .nav-toggle-input {
-
     position: absolute;
 
     width: 1px;
@@ -208,9 +165,7 @@ a {
     pointer-events: none;
 }
 
-
 .menu-toggle {
-
     display: none;
 
     color: var(--blue);
@@ -222,61 +177,67 @@ a {
 
 
 /* ==========================================================
-   HERO ACTIVIDADES
+   HERO
 ========================================================== */
 
 .activities-hero {
-
     position: relative;
 
-    min-height: 260px;
+    min-height: 265px;
 
     overflow: hidden;
 }
 
-
 .hero-content {
-
     position: relative;
-
     z-index: 2;
 
     padding:
-        22px
+        24px
         0
-        45px;
+        48px;
 
     text-align: center;
 }
 
-
 .hero-content h1 {
+    color: var(--blue);
 
-    font-family: "Chewy", system-ui !important;
-    color: #09658c;
-    font-size: clamp(62px, 7vw, 94px);
+    font-family:
+        "Chewy",
+        system-ui,
+        sans-serif;
+
+    font-size:
+        clamp(
+            62px,
+            7vw,
+            94px
+        );
+
     line-height: .96;
     font-weight: 400;
-    letter-spacing: 0;
-
 }
 
-
 .hero-content p {
+    max-width: 760px;
 
-    margin-top: 23px;
+    margin:
+        22px
+        auto
+        0;
 
     font-size: 15px;
     font-weight: 500;
+    line-height: 1.55;
 }
 
 
 /* ==========================================================
-   DECORACIONES TIPO HUELLAS / MANCHAS
+   DECORACIONES
 ========================================================== */
 
 .paw-shape {
-
     position: absolute;
 
     z-index: 1;
@@ -292,9 +253,7 @@ a {
     transform: rotate(-18deg);
 }
 
-
 .paw-left-1 {
-
     width: 74px;
     height: 62px;
 
@@ -302,9 +261,7 @@ a {
     top: 77px;
 }
 
-
 .paw-left-2 {
-
     width: 31px;
     height: 31px;
 
@@ -316,9 +273,7 @@ a {
         91px -36px 0 -7px var(--light-blue);
 }
 
-
 .paw-right-1 {
-
     width: 76px;
     height: 65px;
 
@@ -326,9 +281,7 @@ a {
     top: 115px;
 }
 
-
 .paw-right-2 {
-
     width: 30px;
     height: 30px;
 
@@ -342,41 +295,91 @@ a {
 
 
 /* ==========================================================
-   LISTADO DE ACTIVIDADES
+   ENCABEZADOS DE SECCIÓN
+========================================================== */
+
+.section-heading {
+    max-width: 760px;
+
+    margin:
+        0
+        auto
+        46px;
+
+    text-align: center;
+}
+
+.section-heading > span {
+    display: inline-block;
+
+    margin-bottom: 8px;
+
+    color: var(--orange);
+
+    font-size: 12px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+    letter-spacing: .65px;
+}
+
+.section-heading h2 {
+    color: var(--blue);
+
+    font-family:
+        "Chewy",
+        system-ui,
+        sans-serif;
+
+    font-size:
+        clamp(
+            42px,
+            5vw,
+            58px
+        );
+
+    line-height: 1;
+    font-weight: 400;
+}
+
+.section-heading p {
+    margin-top: 10px;
+
+    color: var(--muted);
+
+    font-size: 15px;
+}
+
+
+/* ==========================================================
+   ACTIVIDADES
 ========================================================== */
 
 .activities-section {
-
     position: relative;
 
     padding:
-        6px
+        12px
         0
-        115px;
+        105px;
 
     overflow: hidden;
 }
 
-
 .activities-list {
-
     position: relative;
 
     display: flex;
-
     flex-direction: column;
 
-    gap: 68px;
+    gap: 72px;
 }
-
 
 .activities-list::before,
 .activities-list::after {
-
     content: "";
 
     position: absolute;
-
     z-index: -1;
 
     border-radius:
@@ -388,84 +391,69 @@ a {
     background: var(--light-blue);
 }
 
-
 .activities-list::before {
-
-    width: 74px;
-    height: 68px;
-
-    left: 44%;
-    top: 290px;
-
-    box-shadow:
-        -52px -56px 0 -18px var(--light-blue),
-        30px -52px 0 -19px var(--light-blue),
-        97px -18px 0 -18px var(--light-blue);
-}
-
-
-.activities-list::after {
-
-    width: 76px;
+    width: 78px;
     height: 70px;
 
-    right: -13px;
-    top: 665px;
+    left: 45%;
+    top: 310px;
 
     box-shadow:
-        -38px -64px 0 -19px var(--light-blue),
-        -83px -41px 0 -20px var(--light-blue);
+        -50px -54px 0 -18px var(--light-blue),
+        34px -48px 0 -19px var(--light-blue),
+        98px -12px 0 -18px var(--light-blue);
+}
+
+.activities-list::after {
+    width: 78px;
+    height: 72px;
+
+    right: -14px;
+    bottom: 210px;
+
+    box-shadow:
+        -42px -62px 0 -20px var(--light-blue),
+        -88px -37px 0 -20px var(--light-blue);
 }
 
 
 /* ==========================================================
-   FILA DE ACTIVIDAD
+   FILAS ALTERNADAS
 ========================================================== */
 
 .activity-row {
-
     display: grid;
 
     grid-template-columns:
         1fr
         1fr;
 
-    align-items: center;
+    align-items: stretch;
 
-    gap: 41px;
+    gap: 42px;
 }
 
-
-.activity-row-1 {
-
+.activity-row-1,
+.activity-row-3 {
     padding-right: 24px;
 }
 
-
 .activity-row-2 {
-
     padding-left: 24px;
 }
 
 
-.activity-row-3 {
-
-    padding-right: 24px;
-}
-
-
 /* ==========================================================
-   TARJETA DE INFORMACIÓN
+   TARJETA PRINCIPAL
 ========================================================== */
 
 .activity-card {
-
-    min-height: 268px;
+    min-height: 338px;
 
     padding:
-        28px
-        32px
-        27px;
+        29px
+        31px
+        28px;
 
     border:
         1px
@@ -479,180 +467,461 @@ a {
     box-shadow: var(--shadow);
 }
 
-
-.activity-card h2 {
-
-    margin-bottom: 17px;
-
-    padding-left: 54px;
+.activity-card > h2 {
+    margin-bottom: 20px;
 
     color: var(--yellow);
 
-    font-size: 31px;
-    line-height: 1;
-
+    font-size: 29px;
+    line-height: 1.05;
     font-weight: 800;
 }
 
 
-.activity-detail {
+/* ==========================================================
+   ACTIVIDADES DENTRO DE CADA CASILLA
+========================================================== */
 
-    display: grid;
+.activity-entry {
+    padding:
+        15px
+        0;
 
-    grid-template-columns:
-        47px
-        minmax(0, 1fr);
+    border-top:
+        1px
+        solid
+        #e5e5e5;
+}
+
+.activity-entry:first-of-type {
+    padding-top: 0;
+
+    border-top: 0;
+}
+
+.activity-entry-top {
+    display: flex;
 
     align-items: center;
+    justify-content: space-between;
 
-    gap: 10px;
+    gap: 14px;
 
-    margin-bottom: 12px;
+    margin-bottom: 7px;
+}
+
+.activity-time {
+    color: var(--blue);
+
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.activity-date {
+    flex: 0 0 auto;
+
+    padding:
+        5px
+        8px;
+
+    border-radius: 999px;
+
+    color: var(--white);
+    background: var(--orange);
+
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: .4px;
+}
+
+.activity-entry h3 {
+    margin-bottom: 5px;
+
+    color: var(--blue-dark);
+
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+.activity-entry p {
+    color: #575757;
+
+    font-size: 12px;
+    line-height: 1.48;
+}
+
+.compact-entry {
+    padding:
+        11px
+        0;
+}
+
+.compact-entry h3 {
+    margin:
+        4px
+        0
+        0;
 }
 
 
-.activity-detail:last-child {
+/* ==========================================================
+   BLOQUE VISUAL DE CADA GRUPO
+   Sustituye el placeholder gris original, pero mantiene
+   exactamente la "casilla de imagen".
+========================================================== */
 
-    margin-bottom: 0;
+.activity-image-wrap {
+    width: 100%;
+    min-height: 338px;
+
+    overflow: hidden;
+
+    border-radius: 8px;
 }
 
+.activity-visual {
+    display: flex;
 
-.activity-icon {
+    flex-direction: column;
 
-    width: 42px;
-    height: 42px;
+    align-items: center;
+    justify-content: center;
 
-    display: grid;
+    gap: 18px;
 
-    place-items: center;
+    padding:
+        30px;
 
-    color: var(--orange);
+    color: var(--white);
+
+    text-align: center;
+
+    box-shadow: var(--shadow);
 }
 
+.activity-visual-yellow {
+    background:
+        linear-gradient(
+            145deg,
+            #f4b824,
+            #ee9d12
+        );
+}
 
-.activity-icon svg {
+.activity-visual-blue {
+    background:
+        linear-gradient(
+            145deg,
+            #0c719b,
+            #005883
+        );
+}
 
-    width: 33px;
-    height: 33px;
+.activity-visual-orange {
+    background:
+        linear-gradient(
+            145deg,
+            #f88925,
+            #ef6506
+        );
+}
 
-    overflow: visible;
+.activity-visual-svg {
+    width: 170px;
+    height: 155px;
 
     fill: none;
 
     stroke: currentColor;
-
-    stroke-width: 2.4;
+    stroke-width: 7;
 
     stroke-linecap: round;
     stroke-linejoin: round;
+
+    opacity: .96;
 }
 
+.activity-visual strong {
+    font-family:
+        "Chewy",
+        system-ui,
+        sans-serif;
 
-.activity-text h3 {
-
-    margin-bottom: 2px;
-
-    color: var(--blue);
-
-    font-size: 16px;
-    line-height: 1.1;
-
-    font-weight: 800;
-}
-
-
-.activity-text p,
-.activity-link {
-
-    font-size: 12px;
-    line-height: 1.2;
-}
-
-
-.activity-link {
-
-    display: inline-block;
-}
-
-
-.activity-link:hover {
-
-    text-decoration: underline;
+    font-size: 32px;
+    line-height: 1.03;
+    font-weight: 400;
 }
 
 
 /* ==========================================================
-   IMÁGENES
+   TIPS
 ========================================================== */
 
-.activity-image-wrap {
+.tips-section {
+    position: relative;
 
-    width: 100%;
-    height: 325px;
+    padding:
+        82px
+        0
+        100px;
 
     overflow: hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f7fbfd 0%,
+            #ffffff 100%
+        );
+}
+
+.tips-section::before,
+.tips-section::after {
+    content: "";
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    background: var(--light-blue);
+
+    pointer-events: none;
+}
+
+.tips-section::before {
+    width: 86px;
+    height: 86px;
+
+    left: 4%;
+    top: 20%;
+}
+
+.tips-section::after {
+    width: 112px;
+    height: 112px;
+
+    right: 3%;
+    bottom: 9%;
+}
+
+.tips-heading {
+    position: relative;
+    z-index: 2;
+}
+
+.tips-grid {
+    position: relative;
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0, 1fr)
+        );
+
+    gap: 25px;
+}
+
+.tip-card {
+    overflow: hidden;
+
+    border:
+        1px
+        solid
+        var(--border);
+
+    border-radius: 25px;
+
+    background: var(--white);
+
+    box-shadow: var(--shadow);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.tip-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 13px 28px
+        rgba(0, 0, 0, 0.10);
+}
+
+.tip-image-wrap {
+    width: 100%;
+    height: 300px;
+
+    display: grid;
+    place-items: center;
+
+    padding: 13px;
+
+    overflow: hidden;
+
+    background: #edf3f6;
+}
+
+.tip-image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center;
+
+    border-radius: 7px;
+}
+
+.tip-image-poster {
+    width: auto;
+}
+
+.tip-content {
+    padding:
+        21px
+        22px
+        24px;
+}
+
+.tip-label {
+    display: inline-flex;
+
+    margin-bottom: 9px;
+    padding:
+        6px
+        10px;
+
+    border-radius: 999px;
+
+    color: var(--white);
+    background: var(--orange);
+
+    font-size: 10px;
+    font-weight: 850;
+
+    text-transform: uppercase;
+    letter-spacing: .45px;
+}
+
+.tip-content h3 {
+    color: var(--blue);
+
+    font-size: 20px;
+    line-height: 1.18;
+    font-weight: 800;
+}
+
+.tip-content p {
+    margin-top: 9px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+    line-height: 1.5;
 }
 
 
-.activity-image {
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+.site-footer {
+    position: relative;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    line-height: 0;
+}
+
+.footer-image {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    max-width: none;
+}
+
+.footer-social {
+    position: absolute;
+
+    z-index: 10;
+
+    right: 6%;
+    top: 70%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 18px;
+}
+
+.footer-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 48px;
+    height: 48px;
+
+    transition: transform .2s ease;
+}
+
+.footer-social img {
+    display: block;
 
     width: 100%;
     height: 100%;
 
-    object-fit: cover;
+    object-fit: contain;
+}
 
-    object-position: center;
-
-    background: #c9c9c9;
+.footer-social a:hover {
+    transform: translateY(-4px);
 }
 
 
 /* ==========================================================
-   AJUSTES DE PROPORCIÓN SEGÚN EL PDF
+   DESARROLLADORES
 ========================================================== */
 
-.activity-row-1
-.activity-card {
-
+.developers-bar {
     width: 100%;
+
+    padding: 14px 20px;
+
+    background: #005883;
+
+    text-align: center;
 }
 
+.developers-bar p {
+    margin: 0;
 
-.activity-row-1
-.activity-image-wrap {
+    color: var(--white);
 
-    width: 100%;
+    font-family:
+        "Chewy",
+        system-ui,
+        sans-serif;
+
+    font-size:
+        clamp(
+            18px,
+            2vw,
+            24px
+        );
+
+    font-weight: 400;
+    line-height: 1.2;
 }
-
-
-.activity-row-2
-.activity-image-wrap {
-
-    width: 100%;
-}
-
-
-.activity-row-2
-.activity-card {
-
-    width: 100%;
-}
-
-
-.activity-row-3
-.activity-card {
-
-    width: 100%;
-}
-
-
-.activity-row-3
-.activity-image-wrap {
-
-    width: 100%;
-}
-
-
 
 
 /* ==========================================================
@@ -662,30 +931,37 @@ a {
 @media (max-width: 980px) {
 
     .main-nav {
-
         gap: 22px;
 
         font-size: 14px;
     }
 
-
     .activity-row {
-
         gap: 26px;
     }
 
+    .activity-row-1,
+    .activity-row-2,
+    .activity-row-3 {
+        padding-inline: 0;
+    }
 
     .activity-card {
-
         padding:
             26px
             24px;
     }
 
+    .tips-grid {
+        grid-template-columns: 1fr;
 
-    .activity-card h2 {
+        max-width: 650px;
 
-        padding-left: 48px;
+        margin-inline: auto;
+    }
+
+    .tip-image-wrap {
+        height: 390px;
     }
 
 }
@@ -698,33 +974,24 @@ a {
 @media (max-width: 760px) {
 
     .nav-wrapper {
-
         min-height: 78px;
     }
 
-
     .brand {
-
         width: 135px;
         height: 72px;
     }
 
-
     .logo-unad {
-
         width: 120px;
         height: 72px;
     }
 
-
     .menu-toggle {
-
         display: block;
     }
 
-
     .main-nav {
-
         position: absolute;
 
         top: 78px;
@@ -735,7 +1002,6 @@ a {
         display: none;
 
         flex-direction: column;
-
         align-items: stretch;
 
         gap: 5px;
@@ -747,273 +1013,106 @@ a {
         box-shadow: var(--shadow);
     }
 
-
-    #nav-toggle:checked
-    ~ .main-nav {
-
+    #nav-toggle:checked ~ .main-nav {
         display: flex;
     }
 
-
     .main-nav a {
-
         padding: 11px;
 
         text-align: center;
     }
 
-
     .activities-hero {
-
         min-height: 230px;
     }
 
-
     .hero-content {
-
         padding-top: 35px;
     }
 
-
     .hero-content h1 {
-
         font-size:
             clamp(
-                44px,
+                46px,
                 13vw,
-                64px
+                66px
             );
     }
 
-
     .activity-row {
-
         grid-template-columns: 1fr;
 
         gap: 22px;
-
-        padding-inline: 0;
     }
 
-
-    .activity-row-2
-    .activity-image-wrap {
-
+    .activity-row-2 .activity-image-wrap {
         order: 2;
     }
 
-
-    .activity-row-2
-    .activity-card {
-
+    .activity-row-2 .activity-card {
         order: 1;
     }
 
-
     .activities-list {
-
         gap: 48px;
     }
 
-
     .activity-card {
-
         min-height: 0;
     }
 
-
     .activity-image-wrap {
+        min-height: 270px;
+    }
 
+    .activity-entry-top {
+        align-items: flex-start;
+    }
+
+    .tips-section {
+        padding:
+            64px
+            0
+            78px;
+    }
+
+    .tip-image-wrap {
         height: auto;
+        min-height: 285px;
 
         aspect-ratio:
-            1.18 / 1;
+            1.45 / 1;
     }
-
-    .social {
-
-        text-align: center;
-    }
-
-
-    .social-links {
-
-        justify-content: center;
-    }
-
-}
-/* ==========================================================
-   FOOTER
-   La imagen Footer.png contiene todo el diseño visual.
-========================================================== */
-
-.site-footer {
-
-    position: relative;
-
-    width: 100%;
-
-    overflow: hidden;
-
-    line-height: 0;
-
-}
-
-
-/* ----------------------------------------------------------
-   IMAGEN DEL FOOTER
----------------------------------------------------------- */
-
-.footer-image {
-
-    display: block;
-
-    width: 100%;
-
-    height: auto;
-
-    max-width: none;
-
-}
-
-
-/* ----------------------------------------------------------
-   REDES SOCIALES
----------------------------------------------------------- */
-
-.footer-social {
-
-    position: absolute;
-
-    z-index: 10;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 18px;
-
-}
-
-
-/* Cada botón de red */
-
-.footer-social a {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    width: 48px;
-
-    height: 48px;
-
-    transition: transform .2s ease;
-
-}
-
-
-/* Iconos */
-
-.footer-social img {
-
-    display: block;
-
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: contain;
-
-}
-
-
-/* Efecto al pasar el mouse */
-
-.footer-social a:hover {
-
-    transform: translateY(-4px);
-
-}
-.footer-social {
-
-    right: 6%;
-
-    top: 70%;
-
-}
-
-/* ==========================================================
-   RESPONSIVE — CELULAR PEQUEÑO
-========================================================== */
-
-@media (max-width: 480px) {
-
-    .hero-content p {
-
-        font-size: 13px;
-    }
-
-
-    .activity-card {
-
-        padding:
-            24px
-            20px;
-    }
-
-
-    .activity-card h2 {
-
-        padding-left: 0;
-
-        text-align: center;
-    }
-
-
-    .activity-detail {
-
-        grid-template-columns:
-            42px
-            minmax(0, 1fr);
-    }
-
-
-    .activity-text h3 {
-
-        font-size: 15px;
-    }
-
-
-    .activity-text p,
-    .activity-link {
-
-        font-size: 11.5px;
-    }
-
-}
-
-/* ==========================================================
-   FOOTER - AJUSTE RESPONSIVE UNIFICADO
-   Evita que los iconos sociales se corten en tablet y móvil.
-========================================================== */
-
-@media (max-width: 760px) {
 
     .footer-social {
         top: auto;
+
         right: 5.5%;
         bottom: 8%;
-        gap: clamp(6px, 1.7vw, 10px);
+
+        gap:
+            clamp(
+                6px,
+                1.7vw,
+                10px
+            );
     }
 
     .footer-social a {
-        width: clamp(20px, 5.5vw, 28px);
-        height: clamp(20px, 5.5vw, 28px);
+        width:
+            clamp(
+                20px,
+                5.5vw,
+                28px
+            );
+
+        height:
+            clamp(
+                20px,
+                5.5vw,
+                28px
+            );
     }
 
     .footer-social a:hover {
@@ -1022,44 +1121,73 @@ a {
 
 }
 
+
+/* ==========================================================
+   RESPONSIVE — CELULAR PEQUEÑO
+========================================================== */
+
 @media (max-width: 480px) {
 
+    .hero-content p {
+        font-size: 13px;
+    }
+
+    .activity-card {
+        padding:
+            24px
+            20px;
+    }
+
+    .activity-card > h2 {
+        text-align: center;
+
+        font-size: 25px;
+    }
+
+    .activity-entry-top {
+        flex-direction: column;
+
+        gap: 6px;
+    }
+
+    .activity-visual {
+        min-height: 240px;
+    }
+
+    .activity-visual-svg {
+        width: 135px;
+        height: 125px;
+    }
+
+    .activity-visual strong {
+        font-size: 27px;
+    }
+
+    .tip-image-wrap {
+        min-height: 225px;
+    }
+
     .footer-social {
-        top: auto;
         right: 4.5%;
         bottom: 7%;
+
         gap: 6px;
     }
 
     .footer-social a {
-        width: clamp(18px, 5.2vw, 23px);
-        height: clamp(18px, 5.2vw, 23px);
+        width:
+            clamp(
+                18px,
+                5.2vw,
+                23px
+            );
+
+        height:
+            clamp(
+                18px,
+                5.2vw,
+                23px
+            );
     }
 
-}
-/* ==========================================================
-   DESARROLLADORES
-========================================================== */
-
-.developers-bar {
-    width: 100%;
-    padding: 14px 20px;
-
-    background: #005883;
-
-    text-align: center;
-}
-
-.developers-bar p {
-    margin: 0;
-
-    color: #ffffff;
-
-    font-family: "Chewy", system-ui, sans-serif;
-
-    font-size: clamp(18px, 2vw, 24px);
-
-    font-weight: 400;
-
-    line-height: 1.2;
 }

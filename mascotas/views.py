@@ -49,18 +49,14 @@ def votar(request, participacion_id):
 
     if request.method == 'POST':
         cedula = request.POST.get('cedula')
+        nombre = request.POST.get('nombre')
 
-        try:
-            persona = Persona.objects.get(cedula=cedula)
-        except Persona.DoesNotExist:
-            return render(
-                request,
-                'mascotas/votar.html',
-                {
-                    'participacion': participacion,
-                    'error': 'La cédula no está registrada.'
-                }
-            )
+        persona, creada = Persona.objects.get_or_create(
+            cedula=cedula,
+            defaults={
+                'nombre': nombre
+            }
+        )
 
         ya_voto = Voto.objects.filter(
             persona=persona,

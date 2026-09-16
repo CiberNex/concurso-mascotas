@@ -56,7 +56,7 @@
                 ☰
             </label>
 
-            <nav class="main-nav" aria-label="Navegación principal">
+                        <nav class="main-nav" aria-label="Navegación principal">
 
                 <a href="{% url 'inicio' %}">
                     Inicio
@@ -66,7 +66,7 @@
                     Evento
                 </a>
 
-                <a href="{% url 'actividades' %}" class="active">
+                <a href="{% url 'actividades' %}" class="active" aria-current="page">
                     Actividades
                 </a>
 
@@ -89,398 +89,380 @@
     </header>
 
 
-    <main>
+    
+<main>
 
-        <!-- =====================================================
-             HERO
-        ====================================================== -->
-        <section class="activities-hero">
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+    <section class="activities-hero">
+        <div class="container hero-content">
 
-            <span class="paw-shape paw-left-1" aria-hidden="true"></span>
-            <span class="paw-shape paw-left-2" aria-hidden="true"></span>
-            <span class="paw-shape paw-right-1" aria-hidden="true"></span>
-            <span class="paw-shape paw-right-2" aria-hidden="true"></span>
+            <h1>
+                Actividades y Tips
+            </h1>
 
-            <div class="container hero-content">
+            <p>
+                Conoce las actividades más destacadas de la jornada
+                y encuentra recomendaciones para cuidar mejor a tu mascota.
+            </p>
 
-                <h1>
-                    Actividades y Tips
-                </h1>
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ACTIVIDADES DESTACADAS
+    ====================================================== -->
+    <section class="activities-section">
+
+        <div class="container">
+
+            <div class="section-heading activities-heading">
+
+                <h2>
+                    Actividades destacadas
+                </h2>
 
                 <p>
-                    Conoce las actividades más destacadas de la jornada
-                    y encuentra recomendaciones para cuidar mejor a tu mascota.
+                    Horario general: 8:00 a. m. a 12:00 p. m.
                 </p>
 
             </div>
 
-        </section>
 
+            <div class="activities-layout">
 
-        <!-- =====================================================
-             ACTIVIDADES
-             Conserva la estructura visual original:
-             casilla de información + bloque visual alternado.
-        ====================================================== -->
-        <section class="activities-section">
+                <!-- =================================================
+                     APERTURA Y EMPRENDIMIENTO
+                ================================================== -->
+                <article class="activity-row activity-row-1">
 
-            <div class="container">
+                    <div class="activity-card activity-card-bordered">
 
-                <div class="section-heading">
-                    <span>3 de octubre de 2026 · CIP Cali</span>
+                        <h2>
+                            Apertura y emprendimiento
+                        </h2>
 
-                    <h2>
-                        Actividades destacadas
-                    </h2>
+                        <div class="activity-entry">
 
-                    <p>
-                        Horario general: 8:00 a. m. a 12:00 p. m.
-                    </p>
-                </div>
-
-
-                <div class="activities-list">
-
-                    <!-- =================================================
-                         BLOQUE 1
-                    ================================================== -->
-                    <article class="activity-row activity-row-1">
-
-                        <div class="activity-card">
-
-                            <h2>
-                                Apertura y emprendimiento
-                            </h2>
-
-                            <div class="activity-entry">
-
-                                <div class="activity-entry-top">
-                                    <span class="activity-time">
-                                        8:00 a. m. – 12:00 p. m.
-                                    </span>
-
-                                    <span class="activity-date">
-                                        3 OCT
-                                    </span>
-                                </div>
-
-                                <h3>
-                                    Feria de Emprendimientos del CIP Cali
-                                </h3>
-
-                                <p>
-                                    Exhibición permanente de productos, servicios
-                                    e iniciativas desarrolladas por los
-                                    emprendimientos del CIP Cali.
-                                </p>
-
-                            </div>
-
-
-                            <div class="activity-entry">
-
-                                <div class="activity-entry-top">
-                                    <span class="activity-time">
-                                        9:00 a. m. – 9:10 a. m.
-                                    </span>
-
-                                    <span class="activity-date">
-                                        3 OCT
-                                    </span>
-                                </div>
-
-                                <h3>
-                                    Bienvenida e instalación del evento
-                                </h3>
-
-                                <p>
-                                    Apertura oficial y presentación de los
-                                    objetivos de la jornada Mascota UNADista 2026.
-                                </p>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="activity-image-wrap activity-placeholder">
-                            <span>
-                                IMAGEN DE LA ACTIVIDAD
+                            <span class="activity-time">
+                                8:00 a. m. – 12:00 p. m.
                             </span>
+
+                            <h3>
+                                Feria de Emprendimientos del CIP Cali
+                            </h3>
+
+                            <p>
+                                Exhibición permanente de productos, servicios
+                                e iniciativas desarrolladas por los
+                                emprendimientos del CIP Cali.
+                            </p>
+
                         </div>
 
-                    </article>
 
+                        <div class="activity-entry">
 
-                    <!-- =================================================
-                         BLOQUE 2
-                    ================================================== -->
-                    <article class="activity-row activity-row-2">
-
-                        <div class="activity-image-wrap activity-placeholder">
-                            <span>
-                                IMAGEN DE LA ACTIVIDAD
+                            <span class="activity-time">
+                                9:00 a. m. – 9:10 a. m.
                             </span>
-                        </div>
 
+                            <h3>
+                                Bienvenida e instalación del evento
+                            </h3>
 
-                        <div class="activity-card">
-
-                            <h2>
-                                Bienestar y adopción
-                            </h2>
-
-                            <div class="activity-entry">
-
-                                <div class="activity-entry-top">
-                                    <span class="activity-time">
-                                        9:10 a. m. – 9:50 a. m.
-                                    </span>
-
-                                    <span class="activity-date">
-                                        3 OCT
-                                    </span>
-                                </div>
-
-                                <h3>
-                                    Rescate, rehabilitación y adopción responsable
-                                </h3>
-
-                                <p>
-                                    Charla sobre rescate, socialización,
-                                    preparación para la adopción y bienestar animal.
-                                </p>
-
-                            </div>
-
-
-                            <div class="activity-entry">
-
-                                <div class="activity-entry-top">
-                                    <span class="activity-time">
-                                        9:50 a. m. – 10:10 a. m.
-                                    </span>
-
-                                    <span class="activity-date">
-                                        3 OCT
-                                    </span>
-                                </div>
-
-                                <h3>
-                                    Encuentro con animales rescatados
-                                </h3>
-
-                                <p>
-                                    Historias de recuperación y orientación
-                                    para quienes desean brindar un hogar responsable.
-                                </p>
-
-                            </div>
+                            <p>
+                                Apertura oficial y presentación de los objetivos
+                                de la jornada Mascota UNADista 2026.
+                            </p>
 
                         </div>
 
-                    </article>
+                    </div>
+
+<div
+    class="activity-image-wrap"
+    aria-label="Imagen de apertura y emprendimiento"
+>
+    <img
+        src="{% static 'assets/logo/Agenda1.jpg' %}"
+        alt="Agenda de apertura y emprendimiento"
+        class="activity-image"
+    >
+</div>
+                </article>
 
 
-                    <!-- =================================================
-                         BLOQUE 3
-                    ================================================== -->
-                    <article class="activity-row activity-row-3">
-
-                        <div class="activity-card">
-
-                            <h2>
-                                Demostración y cierre
-                            </h2>
-
-                            <div class="activity-entry">
-
-                                <div class="activity-entry-top">
-                                    <span class="activity-time">
-                                        10:30 a. m. – 11:15 a. m.
-                                    </span>
-
-                                    <span class="activity-date">
-                                        3 OCT
-                                    </span>
-                                </div>
-
-                                <h3>
-                                    Rescate y socorrismo con caninos
-                                </h3>
-
-                                <p>
-                                    Demostración de búsqueda, localización,
-                                    primeros auxilios y respuesta ante emergencias.
-                                </p>
-
-                            </div>
+                <!-- =================================================
+                     BIENESTAR Y ADOPCIÓN
+                ================================================== -->
+                <article class="activity-row activity-row-2">
+                    <div
+    class="activity-image-wrap"
+    aria-label="Imagen de bienestar y adopción"
+>
+    <img
+        src="{% static 'assets/logo/Agenda2.jpg' %}"
+        alt="Agenda de bienestar y adopción"
+        class="activity-image"
+    >
+</div>
 
 
-                            <div class="activity-entry compact-entry">
+                    <div class="activity-card activity-card-plain">
 
-                                <div>
-                                    <span class="activity-time">
-                                        11:15 a. m. – 11:30 a. m.
-                                    </span>
+                        <h2>
+                            Bienestar y adopción
+                        </h2>
 
-                                    <h3>
-                                        Conversatorio con equipos caninos
-                                    </h3>
-                                </div>
+                        <div class="activity-entry">
 
-                            </div>
-
-
-                            <div class="activity-entry compact-entry">
-
-                                <div>
-                                    <span class="activity-time">
-                                        11:30 a. m. – 12:00 p. m.
-                                    </span>
-
-                                    <h3>
-                                        Concurso virtual, premiación y cierre
-                                    </h3>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="activity-image-wrap activity-placeholder">
-                            <span>
-                                IMAGEN DE LA ACTIVIDAD
+                            <span class="activity-time">
+                                9:10 a. m. – 9:50 a. m.
                             </span>
+
+                            <p>
+                                Charla sobre rescate, socialización,
+                                preparación para la adopción y bienestar animal.
+                            </p>
+
                         </div>
 
-                    </article>
 
-                </div>
+                        <div class="activity-entry">
+
+                            <span class="activity-time">
+                                9:50 a. m. – 10:10 a. m.
+                            </span>
+
+                            <p>
+                                Historias de recuperación y orientación para
+                                quienes desean brindar un hogar responsable.
+                            </p>
+
+                        </div>
+
+
+                        <div class="activity-entry">
+
+                            <span class="activity-time">
+                                9:00 a. m. – 12:00 p. m.
+                            </span>
+
+                            <p>
+                                Un rincón interactivo con un photocall donde los
+                                asistentes sellan la huella de su mascota con
+                                pintura lavable en un mural colectivo y se toman
+                                una foto instantánea para un álbum físico de la sede.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =================================================
+                     DEMOSTRACIÓN Y CIERRE
+                ================================================== -->
+                <article class="activity-row activity-row-3">
+
+                    <div class="activity-card activity-card-bordered">
+
+                        <h2>
+                            Demostración y cierre
+                        </h2>
+
+                        <div class="activity-entry">
+
+                            <span class="activity-time">
+                                10:30 a. m. – 11:15 a. m.
+                            </span>
+
+                            <h3>
+                                Rescate y socorrismo con caninos
+                            </h3>
+
+                            <p>
+                                Demostración de búsqueda, localización,
+                                primeros auxilios y respuesta ante emergencias.
+                            </p>
+
+                        </div>
+
+
+                        <div class="activity-entry">
+
+                            <span class="activity-time">
+                                11:15 a. m. – 11:30 a. m.
+                            </span>
+
+                            <h3>
+                                Conversatorio con equipos caninos
+                            </h3>
+
+                            <p>
+                                Sobre la labor de los equipos caninos en
+                                situaciones de emergencia y atención a desastres.
+                            </p>
+
+                        </div>
+
+
+                        <div class="activity-entry">
+
+                            <span class="activity-time">
+                                11:30 a. m. – 12:00 p. m.
+                            </span>
+
+                            <h3>
+                                Concurso virtual, premiación y cierre
+                            </h3>
+
+                            <p>
+                                Presentación de las mascotas finalistas,
+                                sus fotografías y más destacadas.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+<div
+    class="activity-image-wrap"
+    aria-label="Imagen de demostración y cierre"
+>
+    <img
+        src="{% static 'assets/logo/Agenda3.jpg' %}"
+        alt="Agenda de demostración y cierre"
+        class="activity-image"
+    >
+</div>
+
+                </article>
 
             </div>
 
-        </section>
+        </div>
+
+    </section>
 
 
-        <!-- =====================================================
-             TIPS
-        ====================================================== -->
-        <section class="tips-section">
+    <!-- =====================================================
+         TIPS
+    ====================================================== -->
+    <section class="tips-section">
 
-            <div class="container">
+        <div class="container">
 
-                <div class="section-heading tips-heading">
+            <div class="section-heading tips-heading">
 
-                    <span>
-                        Recomendaciones
-                    </span>
+                <h2>
+                    Tips para tu mascota
+                </h2>
 
-                    <h2>
-                        Tips para tu mascota
-                    </h2>
+                <p>
+                    Información práctica para cuidar, proteger y convivir
+                    responsablemente con nuestros animales.
+                </p>
 
-                    <p>
-                        Información práctica para cuidar, proteger
-                        y convivir responsablemente con nuestros animales.
-                    </p>
-
-                </div>
+            </div>
 
 
-                <div class="tips-grid">
+            <div class="tips-stack">
 
-                    <article class="tip-card">
+                <!-- TIP PRINCIPAL -->
+                <article class="tip-card tip-card-featured">
 
-                        <div class="tip-image-wrap">
-                            <img
-                                src="{% static 'assets/actividades/tip-evento.png' %}"
+                    <div class="tip-image-wrap tip-image-wrap-featured">
+                        <img
+                                src="{% static 'assets/mascotas/tip-evento.png' %}"
                                 alt="Día de la Mascota UNADista CIP Cali"
                                 class="tip-image tip-image-poster"
                             >
-                        </div>
+                    </div>
 
-                        <div class="tip-content">
-                            <span class="tip-label">
-                                Evento
-                            </span>
+                    <div class="tip-content">
 
-                            <h3>
-                                Día de la Mascota UNADista
-                            </h3>
+                        <h3>
+                            Día de la Mascota UNAdista
+                        </h3>
 
-                            <p>
-                                Guarda la información principal de la jornada
-                                presencial del 3 de octubre.
-                            </p>
-                        </div>
+                        <p>
+                            Guarda la información principal de la jornada
+                            presencial del 3 de octubre.
+                        </p>
 
-                    </article>
+                    </div>
+
+                </article>
 
 
-                    <article class="tip-card">
+                <!-- TIP CUIDADO BÁSICO -->
+                <article class="tip-card tip-card-wide">
 
-                        <div class="tip-image-wrap">
-                            <img
-                                src="{% static 'assets/actividades/tip-cuidado-basico.png' %}"
+                    <div class="tip-image-wrap tip-image-wrap-wide">
+                        <img
+                                src="{% static 'assets/mascotas/tip-cuidado-basico.png' %}"
                                 alt="Tips importantes para el cuidado básico de mascotas"
                                 class="tip-image"
                             >
-                        </div>
+                    </div>
 
-                        <div class="tip-content">
-                            <span class="tip-label">
-                                Cuidado básico
-                            </span>
+                    <div class="tip-content">
 
-                            <h3>
-                                Cinco cuidados esenciales
-                            </h3>
+                        <h3>
+                            Cinco cuidados esenciales
+                        </h3>
 
-                            <p>
-                                Alimentación, veterinario, ejercicio,
-                                higiene y atención responsable.
-                            </p>
-                        </div>
+                        <p>
+                            Alimentación, veterinario, ejercicio,
+                            higiene y atención responsable.
+                        </p>
 
-                    </article>
+                    </div>
+
+                </article>
 
 
-                    <article class="tip-card">
+                <!-- TIP TENENCIA RESPONSABLE -->
+                <article class="tip-card tip-card-wide">
 
-                        <div class="tip-image-wrap">
-                            <img
-                                src="{% static 'assets/actividades/tip-tenencia-responsable.png' %}"
+                    <div class="tip-image-wrap tip-image-wrap-wide">
+                        <img
+                                src="{% static 'assets/mascotas/tip-tenencia-responsable.png' %}"
                                 alt="Tenencia responsable de mascotas"
                                 class="tip-image"
                             >
-                        </div>
+                    </div>
 
-                        <div class="tip-content">
-                            <span class="tip-label">
-                                Tenencia responsable
-                            </span>
+                    <div class="tip-content">
 
-                            <h3>
-                                Una convivencia responsable
-                            </h3>
+                        <h3>
+                            Una convivencia responsable
+                        </h3>
 
-                            <p>
-                                Identificación, bienestar, socialización,
-                                respeto y participación comunitaria.
-                            </p>
-                        </div>
+                        <p>
+                            Identificación, bienestar, socialización,
+                            respeto y participación comunitaria.
+                        </p>
 
-                    </article>
+                    </div>
 
-                </div>
+                </article>
 
             </div>
 
-        </section>
+        </div>
 
-    </main>
+    </section>
+
+</main>
+
 
 
     <!-- =====================================================

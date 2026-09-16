@@ -43,23 +43,33 @@
             ☰
         </label>
 
-        <nav class="main-nav" aria-label="Navegación principal">
-            <a href="{% url 'inicio' %}">Inicio</a>
-            <a href="{% url 'evento' %}">Evento</a>
-            <a href="{% url 'actividades' %}">Actividades</a>
-            <a href="{% url 'ganadores' %}">Ganadores</a>
+                    <nav class="main-nav" aria-label="Navegación principal">
 
-            <a
-                href="{% url 'registrar_mascota' %}"
-                class="active"
-                aria-current="page"
-            >
-                Inscripción
-            </a>
+                <a href="{% url 'inicio' %}">
+                    Inicio
+                </a>
 
-            <!-- La galería actual exige categoria_id; se conectará en la fase de votación. -->
-            <a href="#" class="nav-cta">♥ VOTAR AHORA</a>
-        </nav>
+                <a href="{% url 'evento' %}">
+                    Evento
+                </a>
+
+                <a href="{% url 'actividades' %}">
+                    Actividades
+                </a>
+
+                <a href="{% url 'ganadores' %}">
+                    Ganadores
+                </a>
+
+                <a href="{% url 'registrar_mascota' %}" class="active" aria-current="page">
+                    Inscripción
+                </a>
+
+                <a href="{% url 'galeria' 1 %}" class="nav-cta">
+                    ♥ VOTAR AHORA
+                </a>
+
+            </nav>
 
     </div>
 </header>

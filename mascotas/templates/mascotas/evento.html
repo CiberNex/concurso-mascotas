@@ -29,13 +29,13 @@
         <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
         <label for="nav-toggle" class="menu-toggle" aria-label="Abrir o cerrar menú">☰</label>
 
-        <nav class="main-nav" aria-label="Navegación principal">
+                    <nav class="main-nav" aria-label="Navegación principal">
 
-                <a href="{% url 'inicio' %}" class="active">
+                <a href="{% url 'inicio' %}">
                     Inicio
                 </a>
 
-                <a href="{% url 'evento' %}">
+                <a href="{% url 'evento' %}" class="active" aria-current="page">
                     Evento
                 </a>
 
@@ -50,7 +50,6 @@
                 <a href="{% url 'registrar_mascota' %}">
                     Inscripción
                 </a>
-
 
                 <a href="{% url 'galeria' 1 %}" class="nav-cta">
                     ♥ VOTAR AHORA
@@ -122,6 +121,59 @@
             </div>
         </div>
     </section>
+
+    <!-- =====================================================
+         CTA INSCRIPCIÓN EVENTO PRESENCIAL
+    ====================================================== -->
+
+    <section
+        class="event-registration-cta"
+        aria-labelledby="event-registration-cta-title"
+    >
+        <div class="container">
+
+            <div class="event-registration-cta-card">
+<div class="event-registration-cta-copy">
+<h2 id="event-registration-cta-title">
+                        ¿Quieres acompañarnos presencialmente?
+                    </h2>
+
+                    <p>
+                        Este formulario corresponde exclusivamente a la
+                        inscripción para participar de manera presencial en
+                        Mascota UNADista 2026, en la sede CIP Cali.
+                    </p>
+
+                </div>
+
+                <div class="event-registration-cta-action">
+
+                    <a
+                        href="https://docs.google.com/forms/d/e/1FAIpQLSesdv12z82hOQ8huNorIYahVyiYHKRT2THT0DawHe58scwhXw/viewform"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="event-registration-cta-button"
+                    >
+                        <span>
+                            INSCRIBIRSE AL EVENTO
+                        </span>
+
+                        <span
+                            class="event-registration-cta-heart"
+                            aria-hidden="true"
+                        >
+                            ♥
+                        </span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
 
     <section class="event-info section-decor" aria-labelledby="event-info-title">
         <div class="container">

@@ -15,7 +15,7 @@
     <!-- Fuente Chewy -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Chewy&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="{% static 'css/votacion.css' %}">
 </head>
@@ -51,9 +51,9 @@
                 ☰
             </label>
 
-                        <nav class="main-nav" aria-label="Navegación principal">
+                                    <nav class="main-nav" aria-label="Navegación principal">
 
-                <a href="{% url 'inicio' %}" class="active">
+                <a href="{% url 'inicio' %}">
                     Inicio
                 </a>
 
@@ -73,9 +73,8 @@
                     Inscripción
                 </a>
 
-
-                 <a href="{% url 'galeria' 1 %}" class="nav-cta">
-                 ♥ VOTAR AHORA
+                <a href="{% url 'galeria' 1 %}" class="nav-cta" aria-current="page">
+                    ♥ VOTAR AHORA
                 </a>
 
             </nav>

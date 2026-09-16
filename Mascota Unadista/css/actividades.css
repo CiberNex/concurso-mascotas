@@ -1,8 +1,7 @@
 /* ==========================================================
    MASCOTA UNADISTA 2026
    ACTIVIDADES Y TIPS
-   Mantiene el patrón original:
-   tarjeta informativa + bloque visual alternado.
+   Maquetación basada en la referencia PDF.
 ========================================================== */
 
 :root {
@@ -13,17 +12,17 @@
     --yellow: #f5ad16;
 
     --light-blue: #e7f0f4;
-    --soft-blue: #f5fafc;
 
     --text: #111111;
-    --muted: #606060;
+    --muted: #666666;
     --white: #ffffff;
-    --border: #cfcfcf;
+    --border: #cecece;
+    --placeholder: #c8c8c8;
 
     --container: 1180px;
 
     --shadow:
-        0 7px 18px rgba(0, 0, 0, 0.07);
+        0 7px 16px rgba(0, 0, 0, 0.055);
 }
 
 
@@ -81,12 +80,14 @@ a {
 
 
 /* ==========================================================
-   HEADER
+   HEADER / NAVBAR
+   Conserva la escala y disposición global del proyecto.
 ========================================================== */
 
 .site-header {
     position: relative;
     z-index: 50;
+
     background: var(--white);
 }
 
@@ -183,7 +184,7 @@ a {
 .activities-hero {
     position: relative;
 
-    min-height: 265px;
+    min-height: 250px;
 
     overflow: hidden;
 }
@@ -193,9 +194,9 @@ a {
     z-index: 2;
 
     padding:
-        24px
+        25px
         0
-        48px;
+        42px;
 
     text-align: center;
 }
@@ -210,12 +211,12 @@ a {
 
     font-size:
         clamp(
-            62px,
-            7vw,
+            64px,
+            7.2vw,
             94px
         );
 
-    line-height: .96;
+    line-height: .95;
     font-weight: 400;
 }
 
@@ -223,18 +224,18 @@ a {
     max-width: 760px;
 
     margin:
-        22px
+        20px
         auto
         0;
 
     font-size: 15px;
     font-weight: 500;
-    line-height: 1.55;
+    line-height: 1.45;
 }
 
 
 /* ==========================================================
-   DECORACIONES
+   MANCHAS DECORATIVAS
 ========================================================== */
 
 .paw-shape {
@@ -295,79 +296,67 @@ a {
 
 
 /* ==========================================================
-   ENCABEZADOS DE SECCIÓN
+   TÍTULOS DE SECCIÓN
 ========================================================== */
 
 .section-heading {
-    max-width: 760px;
-
-    margin:
-        0
-        auto
-        46px;
+    margin-inline: auto;
 
     text-align: center;
 }
 
-.section-heading > span {
-    display: inline-block;
-
-    margin-bottom: 8px;
-
-    color: var(--orange);
-
-    font-size: 12px;
-    font-weight: 800;
-
-    text-transform: uppercase;
-    letter-spacing: .65px;
-}
-
 .section-heading h2 {
-    color: var(--blue);
-
     font-family:
         "Chewy",
         system-ui,
         sans-serif;
 
-    font-size:
-        clamp(
-            42px,
-            5vw,
-            58px
-        );
-
-    line-height: 1;
     font-weight: 400;
+    line-height: .98;
 }
 
 .section-heading p {
-    margin-top: 10px;
+    color: #333333;
 
-    color: var(--muted);
-
-    font-size: 15px;
+    font-size: 14px;
+    line-height: 1.4;
 }
 
 
 /* ==========================================================
-   ACTIVIDADES
+   ACTIVIDADES DESTACADAS
 ========================================================== */
 
 .activities-section {
-    position: relative;
-
     padding:
-        12px
         0
-        105px;
-
-    overflow: hidden;
+        0
+        96px;
 }
 
-.activities-list {
-    position: relative;
+.activities-heading {
+    margin-bottom: 48px;
+}
+
+.activities-heading h2 {
+    color: var(--orange);
+
+    font-size:
+        clamp(
+            44px,
+            5vw,
+            58px
+        );
+}
+
+.activities-heading p {
+    margin-top: 10px;
+}
+
+.activities-layout {
+    width: min(100%, 1040px);
+
+    margin-inline: auto;
 
     display: flex;
     flex-direction: column;
@@ -375,85 +364,51 @@ a {
     gap: 72px;
 }
 
-.activities-list::before,
-.activities-list::after {
-    content: "";
-
-    position: absolute;
-    z-index: -1;
-
-    border-radius:
-        48%
-        52%
-        57%
-        43%;
-
-    background: var(--light-blue);
-}
-
-.activities-list::before {
-    width: 78px;
-    height: 70px;
-
-    left: 45%;
-    top: 310px;
-
-    box-shadow:
-        -50px -54px 0 -18px var(--light-blue),
-        34px -48px 0 -19px var(--light-blue),
-        98px -12px 0 -18px var(--light-blue);
-}
-
-.activities-list::after {
-    width: 78px;
-    height: 72px;
-
-    right: -14px;
-    bottom: 210px;
-
-    box-shadow:
-        -42px -62px 0 -20px var(--light-blue),
-        -88px -37px 0 -20px var(--light-blue);
-}
-
 
 /* ==========================================================
-   FILAS ALTERNADAS
+   FILAS PRINCIPALES DEL PDF
 ========================================================== */
 
 .activity-row {
     display: grid;
 
-    grid-template-columns:
-        1fr
-        1fr;
-
-    align-items: stretch;
+    align-items: center;
 
     gap: 42px;
 }
 
-.activity-row-1,
-.activity-row-3 {
-    padding-right: 24px;
+.activity-row-1 {
+    grid-template-columns:
+        minmax(0, 1.08fr)
+        minmax(0, .82fr);
 }
 
 .activity-row-2 {
-    padding-left: 24px;
+    grid-template-columns:
+        minmax(0, .78fr)
+        minmax(0, 1.22fr);
+}
+
+.activity-row-3 {
+    grid-template-columns:
+        minmax(0, 1.08fr)
+        minmax(0, .82fr);
 }
 
 
 /* ==========================================================
-   TARJETA PRINCIPAL
+   TARJETAS DE ACTIVIDADES
 ========================================================== */
 
 .activity-card {
-    min-height: 338px;
+    min-width: 0;
+}
 
+.activity-card-bordered {
     padding:
+        25px
         29px
-        31px
-        28px;
+        24px;
 
     border:
         1px
@@ -464,33 +419,48 @@ a {
 
     background: var(--white);
 
-    box-shadow: var(--shadow);
+    box-shadow:
+        0 5px 13px rgba(0, 0, 0, 0.035);
+}
+
+.activity-card-plain {
+    padding:
+        5px
+        9px
+        5px
+        2px;
 }
 
 .activity-card > h2 {
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 
-    color: var(--yellow);
+    color: #f5a30d;
 
-    font-size: 29px;
+    font-size:
+        clamp(
+            25px,
+            2.7vw,
+            31px
+        );
+
     line-height: 1.05;
     font-weight: 800;
 }
 
 
 /* ==========================================================
-   ACTIVIDADES DENTRO DE CADA CASILLA
+   CONTENIDO DE CADA ACTIVIDAD
 ========================================================== */
 
 .activity-entry {
     padding:
-        15px
+        13px
         0;
 
     border-top:
         1px
         solid
-        #e5e5e5;
+        #e2e2e2;
 }
 
 .activity-entry:first-of-type {
@@ -499,39 +469,16 @@ a {
     border-top: 0;
 }
 
-.activity-entry-top {
-    display: flex;
-
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 14px;
+.activity-time {
+    display: block;
 
     margin-bottom: 7px;
-}
 
-.activity-time {
     color: var(--blue);
 
-    font-size: 13px;
+    font-size: 12px;
+    line-height: 1.2;
     font-weight: 800;
-}
-
-.activity-date {
-    flex: 0 0 auto;
-
-    padding:
-        5px
-        8px;
-
-    border-radius: 999px;
-
-    color: var(--white);
-    background: var(--orange);
-
-    font-size: 9px;
-    font-weight: 900;
-    letter-spacing: .4px;
 }
 
 .activity-entry h3 {
@@ -539,118 +486,42 @@ a {
 
     color: var(--blue-dark);
 
-    font-size: 16px;
-    line-height: 1.2;
+    font-size: 14px;
+    line-height: 1.25;
     font-weight: 800;
 }
 
 .activity-entry p {
-    color: #575757;
+    color: #2e2e2e;
 
-    font-size: 12px;
-    line-height: 1.48;
-}
-
-.compact-entry {
-    padding:
-        11px
-        0;
-}
-
-.compact-entry h3 {
-    margin:
-        4px
-        0
-        0;
+    font-size: 11.5px;
+    line-height: 1.45;
 }
 
 
 /* ==========================================================
-   BLOQUE VISUAL DE CADA GRUPO
-   Sustituye el placeholder gris original, pero mantiene
-   exactamente la "casilla de imagen".
+   PLACEHOLDERS GRISES PARA LAS IMÁGENES DE ACTIVIDAD
 ========================================================== */
 
 .activity-image-wrap {
     width: 100%;
-    min-height: 338px;
 
     overflow: hidden;
-
-    border-radius: 8px;
 }
 
-.activity-visual {
-    display: flex;
+.activity-placeholder {
+    min-height: 315px;
 
-    flex-direction: column;
+    border-radius: 3px;
 
-    align-items: center;
-    justify-content: center;
-
-    gap: 18px;
-
-    padding:
-        30px;
-
-    color: var(--white);
-
-    text-align: center;
-
-    box-shadow: var(--shadow);
+    background: var(--placeholder);
 }
 
-.activity-visual-yellow {
-    background:
-        linear-gradient(
-            145deg,
-            #f4b824,
-            #ee9d12
-        );
-}
+.activity-placeholder > span {
+    display: block;
 
-.activity-visual-blue {
-    background:
-        linear-gradient(
-            145deg,
-            #0c719b,
-            #005883
-        );
-}
-
-.activity-visual-orange {
-    background:
-        linear-gradient(
-            145deg,
-            #f88925,
-            #ef6506
-        );
-}
-
-.activity-visual-svg {
-    width: 170px;
-    height: 155px;
-
-    fill: none;
-
-    stroke: currentColor;
-    stroke-width: 7;
-
-    stroke-linecap: round;
-    stroke-linejoin: round;
-
-    opacity: .96;
-}
-
-.activity-visual strong {
-    font-family:
-        "Chewy",
-        system-ui,
-        sans-serif;
-
-    font-size: 32px;
-    line-height: 1.03;
-    font-weight: 400;
+    width: 100%;
+    height: 100%;
 }
 
 
@@ -659,71 +530,47 @@ a {
 ========================================================== */
 
 .tips-section {
-    position: relative;
-
     padding:
-        82px
+        6px
         0
-        100px;
-
-    overflow: hidden;
-
-    background:
-        linear-gradient(
-            180deg,
-            #f7fbfd 0%,
-            #ffffff 100%
-        );
-}
-
-.tips-section::before,
-.tips-section::after {
-    content: "";
-
-    position: absolute;
-
-    border-radius: 50%;
-
-    background: var(--light-blue);
-
-    pointer-events: none;
-}
-
-.tips-section::before {
-    width: 86px;
-    height: 86px;
-
-    left: 4%;
-    top: 20%;
-}
-
-.tips-section::after {
-    width: 112px;
-    height: 112px;
-
-    right: 3%;
-    bottom: 9%;
+        105px;
 }
 
 .tips-heading {
-    position: relative;
-    z-index: 2;
+    max-width: 850px;
+
+    margin-bottom: 42px;
 }
 
-.tips-grid {
-    position: relative;
-    z-index: 2;
+.tips-heading h2 {
+    color: var(--blue);
 
-    display: grid;
-
-    grid-template-columns:
-        repeat(
-            3,
-            minmax(0, 1fr)
+    font-size:
+        clamp(
+            46px,
+            5.4vw,
+            64px
         );
-
-    gap: 25px;
 }
+
+.tips-heading p {
+    margin-top: 11px;
+}
+
+.tips-stack {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 42px;
+}
+
+
+/* ==========================================================
+   TARJETAS DE TIPS
+========================================================== */
 
 .tip-card {
     overflow: hidden;
@@ -731,102 +578,140 @@ a {
     border:
         1px
         solid
-        var(--border);
+        #d1d1d1;
 
-    border-radius: 25px;
+    border-radius: 28px;
 
     background: var(--white);
 
-    box-shadow: var(--shadow);
-
-    transition:
-        transform .2s ease,
-        box-shadow .2s ease;
-}
-
-.tip-card:hover {
-    transform: translateY(-4px);
-
     box-shadow:
-        0 13px 28px
-        rgba(0, 0, 0, 0.10);
+        0 8px 15px rgba(0, 0, 0, 0.09);
 }
 
-.tip-image-wrap {
+
+/* ----------------------------------------------------------
+   TIP 1 — IMAGEN VERTICAL
+---------------------------------------------------------- */
+
+.tip-card-featured {
+    width:
+        min(
+            100%,
+            520px
+        );
+}
+
+.tip-image-wrap-featured {
     width: 100%;
-    height: 300px;
 
-    display: grid;
-    place-items: center;
+    min-height: 320px;
 
-    padding: 13px;
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding:
+        18px
+        18px
+        0;
 
     overflow: hidden;
 
-    background: #edf3f6;
+    background: var(--white);
 }
 
-.tip-image {
-    width: 100%;
-    height: 100%;
+.tip-image-wrap-featured .tip-image,
+.tip-image-wrap-featured .tip-image-poster {
+    display: block;
+
+    width: auto;
+    max-width: 100%;
+
+    height: auto;
+    max-height: 420px;
 
     object-fit: contain;
     object-position: center;
-
-    border-radius: 7px;
 }
 
-.tip-image-poster {
-    width: auto;
+
+/* ----------------------------------------------------------
+   TIPS 2 Y 3 — IMÁGENES HORIZONTALES
+---------------------------------------------------------- */
+
+.tip-card-wide {
+    width:
+        min(
+            100%,
+            1060px
+        );
 }
+
+.tip-image-wrap-wide {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding:
+        18px
+        18px
+        0;
+
+    overflow: hidden;
+
+    background: var(--white);
+}
+
+.tip-image-wrap-wide .tip-image {
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+
+    height: auto;
+
+    object-fit: contain;
+    object-position: center;
+}
+
+
+/* ----------------------------------------------------------
+   TEXTO DE LAS TARJETAS
+---------------------------------------------------------- */
 
 .tip-content {
     padding:
-        21px
-        22px
-        24px;
-}
-
-.tip-label {
-    display: inline-flex;
-
-    margin-bottom: 9px;
-    padding:
-        6px
-        10px;
-
-    border-radius: 999px;
-
-    color: var(--white);
-    background: var(--orange);
-
-    font-size: 10px;
-    font-weight: 850;
-
-    text-transform: uppercase;
-    letter-spacing: .45px;
+        18px
+        28px
+        22px;
 }
 
 .tip-content h3 {
     color: var(--blue);
 
     font-size: 20px;
-    line-height: 1.18;
+    line-height: 1.15;
+
     font-weight: 800;
 }
 
 .tip-content p {
-    margin-top: 9px;
+    margin-top: 8px;
 
-    color: var(--muted);
+    color: #747474;
 
-    font-size: 13px;
-    line-height: 1.5;
+    font-size: 12px;
+    line-height: 1.4;
 }
 
 
 /* ==========================================================
    FOOTER
+   Conserva exactamente la composición global existente.
 ========================================================== */
 
 .site-footer {
@@ -905,7 +790,7 @@ a {
 .developers-bar p {
     margin: 0;
 
-    color: var(--white);
+    color: #ffffff;
 
     font-family:
         "Chewy",
@@ -936,32 +821,33 @@ a {
         font-size: 14px;
     }
 
+    .activities-layout {
+        gap: 54px;
+    }
+
     .activity-row {
-        gap: 26px;
+        gap: 28px;
     }
 
     .activity-row-1,
-    .activity-row-2,
     .activity-row-3 {
-        padding-inline: 0;
+        grid-template-columns:
+            minmax(0, 1.05fr)
+            minmax(0, .95fr);
     }
 
-    .activity-card {
-        padding:
-            26px
-            24px;
+    .activity-row-2 {
+        grid-template-columns:
+            minmax(0, .9fr)
+            minmax(0, 1.1fr);
     }
 
-    .tips-grid {
-        grid-template-columns: 1fr;
-
-        max-width: 650px;
-
-        margin-inline: auto;
+    .activity-placeholder {
+        min-height: 290px;
     }
 
-    .tip-image-wrap {
-        height: 390px;
+    .tip-card-wide {
+        width: min(100%, 900px);
     }
 
 }
@@ -1023,67 +909,127 @@ a {
         text-align: center;
     }
 
+
     .activities-hero {
-        min-height: 230px;
+        min-height: 220px;
     }
 
     .hero-content {
-        padding-top: 35px;
+        padding:
+            34px
+            0
+            38px;
     }
 
     .hero-content h1 {
         font-size:
             clamp(
-                46px,
+                48px,
                 13vw,
-                66px
+                68px
             );
     }
 
-    .activity-row {
-        grid-template-columns: 1fr;
+    .hero-content p {
+        max-width: 520px;
 
-        gap: 22px;
+        font-size: 13.5px;
     }
 
-    .activity-row-2 .activity-image-wrap {
-        order: 2;
+
+    .activities-section {
+        padding-bottom: 76px;
+    }
+
+    .activities-heading {
+        margin-bottom: 34px;
+    }
+
+    .activities-layout {
+        gap: 48px;
+    }
+
+    .activity-row,
+    .activity-row-1,
+    .activity-row-2,
+    .activity-row-3 {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
     }
 
     .activity-row-2 .activity-card {
         order: 1;
     }
 
-    .activities-list {
-        gap: 48px;
+    .activity-row-2 .activity-image-wrap {
+        order: 2;
     }
 
-    .activity-card {
-        min-height: 0;
+    .activity-card-bordered,
+    .activity-card-plain {
+        padding:
+            24px
+            22px;
     }
 
-    .activity-image-wrap {
-        min-height: 270px;
+    .activity-card-plain {
+        border:
+            1px
+            solid
+            var(--border);
+
+        border-radius: 26px;
+
+        background: var(--white);
+
+        box-shadow:
+            0 5px 13px rgba(0, 0, 0, 0.035);
     }
 
-    .activity-entry-top {
-        align-items: flex-start;
+    .activity-placeholder {
+        min-height: 260px;
     }
+
 
     .tips-section {
+        padding-bottom: 78px;
+    }
+
+    .tips-heading {
+        margin-bottom: 34px;
+    }
+
+    .tips-stack {
+        gap: 30px;
+    }
+
+    .tip-card-featured,
+    .tip-card-wide {
+        width: 100%;
+    }
+
+    .tip-image-wrap-featured {
+        min-height: 260px;
+
         padding:
-            64px
-            0
-            78px;
+            16px
+            16px
+            0;
     }
 
-    .tip-image-wrap {
-        height: auto;
-        min-height: 285px;
-
-        aspect-ratio:
-            1.45 / 1;
+    .tip-image-wrap-featured .tip-image,
+    .tip-image-wrap-featured .tip-image-poster {
+        max-height: 300px;
     }
+
+    .tip-image-wrap-wide {
+        padding:
+            14px
+            14px
+            0;
+    }
+
 
     .footer-social {
         top: auto;
@@ -1128,43 +1074,83 @@ a {
 
 @media (max-width: 480px) {
 
-    .hero-content p {
-        font-size: 13px;
+    .activities-hero {
+        min-height: 205px;
     }
 
-    .activity-card {
+    .hero-content h1 {
+        font-size:
+            clamp(
+                43px,
+                13.5vw,
+                58px
+            );
+    }
+
+    .paw-left-1,
+    .paw-left-2,
+    .paw-right-1,
+    .paw-right-2 {
+        opacity: .6;
+    }
+
+    .section-heading h2 {
+        font-size: 40px;
+    }
+
+    .activity-card-bordered,
+    .activity-card-plain {
         padding:
-            24px
-            20px;
+            22px
+            18px;
     }
 
     .activity-card > h2 {
-        text-align: center;
-
-        font-size: 25px;
+        font-size: 24px;
     }
 
-    .activity-entry-top {
-        flex-direction: column;
-
-        gap: 6px;
+    .activity-entry h3 {
+        font-size: 13.5px;
     }
 
-    .activity-visual {
-        min-height: 240px;
+    .activity-entry p {
+        font-size: 11.5px;
     }
 
-    .activity-visual-svg {
-        width: 135px;
-        height: 125px;
+    .activity-placeholder {
+        min-height: 220px;
     }
 
-    .activity-visual strong {
-        font-size: 27px;
+    .tip-image-wrap-featured {
+        min-height: 220px;
+
+        padding:
+            14px
+            14px
+            0;
     }
 
-    .tip-image-wrap {
-        min-height: 225px;
+    .tip-image-wrap-featured .tip-image,
+    .tip-image-wrap-featured .tip-image-poster {
+        max-height: 240px;
+    }
+
+    .tip-image-wrap-wide {
+        padding:
+            12px
+            12px
+            0;
+    }
+
+    .tip-content {
+        padding:
+            16px
+            20px
+            20px;
+    }
+
+    .tip-content h3 {
+        font-size: 18px;
     }
 
     .footer-social {
@@ -1191,3 +1177,242 @@ a {
     }
 
 }
+
+/* ==========================================================
+   NAVBAR UNIFICADO — AJUSTE FINAL
+   Mismas dimensiones, tipografía y estado activo en todo el sitio.
+========================================================== */
+
+.site-header {
+    position: relative;
+    z-index: 50;
+    background: #ffffff;
+}
+
+.site-header .container {
+    width: min(92%, 1180px);
+    margin-inline: auto;
+}
+
+.nav-wrapper {
+    min-height: 105px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 34px;
+}
+
+.brand {
+    width: 170px;
+    height: 92px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    flex: 0 0 auto;
+}
+
+.logo-unad {
+    width: 150px;
+    height: 92px;
+
+    display: block;
+
+    margin: 0;
+    padding: 0;
+
+    object-fit: contain;
+    object-position: left center;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+
+    gap: 42px;
+
+    font-family:
+        "Inter",
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 15px;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+.main-nav a {
+    text-decoration: none;
+
+    transition:
+        color .2s ease,
+        transform .2s ease;
+}
+
+.main-nav a:not(.nav-cta) {
+    padding: 0;
+}
+
+.main-nav a:hover:not(.nav-cta),
+.main-nav a.active:not(.nav-cta) {
+    color: #f47616 !important;
+}
+
+.main-nav a[aria-current="page"]:not(.nav-cta) {
+    color: #f47616 !important;
+}
+
+.nav-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 46px;
+
+    padding: 14px 24px;
+
+    border-radius: 6px;
+
+    color: #ffffff !important;
+    background: #f47616;
+
+    font-size: 15px;
+    line-height: 1.2;
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    box-shadow:
+        0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+.nav-cta:hover {
+    color: #ffffff !important;
+
+    transform: translateY(-2px);
+}
+
+.nav-toggle-input {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+.menu-toggle {
+    display: none;
+
+    border: 0;
+
+    background: transparent;
+    color: #08658d;
+
+    font-size: 29px;
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+
+/* ==========================================================
+   NAVBAR UNIFICADO — TABLET
+========================================================== */
+
+@media (max-width: 980px) {
+
+    .main-nav {
+        gap: 22px;
+
+        font-size: 14px;
+    }
+
+    .nav-cta {
+        font-size: 14px;
+    }
+
+}
+
+
+/* ==========================================================
+   NAVBAR UNIFICADO — MÓVIL
+   Compatible tanto con checkbox como con el menú JS del inicio.
+========================================================== */
+
+@media (max-width: 760px) {
+
+    .nav-wrapper {
+        min-height: 78px;
+
+        gap: 20px;
+    }
+
+    .brand {
+        width: 135px;
+        height: 72px;
+    }
+
+    .logo-unad {
+        width: 120px;
+        height: 72px;
+
+        margin: 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .main-nav {
+        position: absolute;
+
+        top: 78px;
+        left: 0;
+
+        width: 100%;
+
+        display: none;
+
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 5px;
+
+        padding: 18px;
+
+        background: #ffffff;
+
+        box-shadow:
+            0 8px 22px rgba(0, 0, 0, 0.10);
+    }
+
+    #nav-toggle:checked ~ .main-nav,
+    .main-nav.open {
+        display: flex;
+    }
+
+    .main-nav a:not(.nav-cta),
+    .main-nav .nav-cta {
+        width: 100%;
+
+        padding: 11px;
+
+        text-align: center;
+    }
+
+    .nav-cta {
+        min-height: 44px;
+
+        margin-top: 2px;
+    }
+
+}
+

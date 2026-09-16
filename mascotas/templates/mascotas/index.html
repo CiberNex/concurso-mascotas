@@ -49,9 +49,9 @@
                 ☰
             </button>
 
-            <nav class="main-nav" aria-label="Navegación principal">
+                        <nav class="main-nav" aria-label="Navegación principal">
 
-                <a href="{% url 'inicio' %}" class="active">
+                <a href="{% url 'inicio' %}" class="active" aria-current="page">
                     Inicio
                 </a>
 
@@ -70,7 +70,6 @@
                 <a href="{% url 'registrar_mascota' %}">
                     Inscripción
                 </a>
-
 
                 <a href="{% url 'galeria' 1 %}" class="nav-cta">
                     ♥ VOTAR AHORA
@@ -95,7 +94,7 @@
 
                 <div class="hero-copy">
 
-                    <a href="index.html" class="title-main">
+                    <a href="{% url 'inicio' %}" class="title-main">
                         <img
                             src="{% static 'assets/logo/Mascota Unadista.png' %}"
                             alt="Mascota UNADista 2026"
@@ -112,7 +111,7 @@
 
                         <a href="{% url 'evento' %}"
                            class="btn btn-blue">
-                            CONOCE EL CONCURSO
+                            EVENTO PRESENCIAL
                         </a>
 
                         <a href="{% url 'galeria' 1 %}"
@@ -208,7 +207,7 @@
                             que es.
                         </p>
 
-                        <a href="inscripcion.html"
+                        <a href="{% url 'registrar_mascota' %}"
                            class="small-btn-inscribir">
                             INSCRIBIR MI MASCOTAㅤ<img src="{% static 'assets/iconos/paw-print.png' %}" alt="Icono Pata">
                         </a>
@@ -236,7 +235,7 @@
                             llegar a la cima con tus votos.
                         </p>
 
-                        <a href="vota-ahora.html"
+                        <a href="{% url 'galeria' 1 %}"
                            class="small-btn-concurso">
                             VER CONCURSOㅤ<img src="{% static 'assets/iconos/heart.png' %}" alt="Icono Corazon">
                         </a>
@@ -264,7 +263,7 @@
                             nosotros a las mascotas más queridas.
                         </p>
 
-                        <a href="ganadores.html"
+                        <a href="{% url 'ganadores' %}"
                            class="small-btn-ganadores">
                             VER GANADORESㅤ<img
     src="{% static 'assets/iconos/paw-print relleno.png' %}"
@@ -282,7 +281,7 @@
 
 
         <!-- =====================================================
-             EVENTOS Y WEBINARS
+             EMPRENDIMIENTOS
         ====================================================== -->
 
         <section class="events section">
@@ -292,22 +291,27 @@
                 <div class="section-heading">
 
                     <h2>
-                        Próximos Eventos y Webinars
+                        Emprendimientos
                     </h2>
+
+                    <p>
+                        Conoce algunos de los emprendimientos que harán parte
+                        de la jornada Mascota UNADista 2026.
+                    </p>
 
                 </div>
 
 
                 <div class="events-list">
 
-                    <!-- EVENTO 1 -->
+                    <!-- EMPRENDIMIENTO 1 -->
 
                     <article class="event-card">
 
                         <div class="event-image placeholder">
 
                             <span>
-                                IMAGEN DEL EVENTO
+                                IMAGEN DEL EMPRENDIMIENTO
                             </span>
 
                         </div>
@@ -315,34 +319,28 @@
                         <div class="event-content">
 
                             <h3>
-                                EVENTO
+                                NOMBRE DEL EMPRENDIMIENTO
                             </h3>
 
                             <p>
-                                Lorem ipsum dolor sit amet,
-                                consectetur adipiscing elit.
-                                Pellentesque euismod erat vitae
-                                ullamcorper consectetur. Fusce vel.
+                                Breve descripción del emprendimiento,
+                                sus productos, servicios o propuesta
+                                que presentará durante la jornada.
                             </p>
-
-                            <a href="actividades.html"
-                               class="event-btn yellow">
-                                CONOCE MÁS ›
-                            </a>
 
                         </div>
 
                     </article>
 
 
-                    <!-- EVENTO 2 -->
+                    <!-- EMPRENDIMIENTO 2 -->
 
                     <article class="event-card reverse">
 
                         <div class="event-image placeholder">
 
                             <span>
-                                IMAGEN DEL EVENTO
+                                IMAGEN DEL EMPRENDIMIENTO
                             </span>
 
                         </div>
@@ -350,34 +348,28 @@
                         <div class="event-content">
 
                             <h3>
-                                EVENTO
+                                NOMBRE DEL EMPRENDIMIENTO
                             </h3>
 
                             <p>
-                                Lorem ipsum dolor sit amet,
-                                consectetur adipiscing elit.
-                                Pellentesque euismod erat vitae
-                                ullamcorper consectetur. Fusce vel.
+                                Breve descripción del emprendimiento,
+                                sus productos, servicios o propuesta
+                                que presentará durante la jornada.
                             </p>
-
-                            <a href="actividades.html"
-                               class="event-btn orange">
-                                CONOCE MÁS ›
-                            </a>
 
                         </div>
 
                     </article>
 
 
-                    <!-- EVENTO 3 -->
+                    <!-- EMPRENDIMIENTO 3 -->
 
                     <article class="event-card">
 
                         <div class="event-image placeholder">
 
                             <span>
-                                IMAGEN DEL EVENTO
+                                IMAGEN DEL EMPRENDIMIENTO
                             </span>
 
                         </div>
@@ -385,20 +377,14 @@
                         <div class="event-content">
 
                             <h3>
-                                EVENTO
+                                NOMBRE DEL EMPRENDIMIENTO
                             </h3>
 
                             <p>
-                                Lorem ipsum dolor sit amet,
-                                consectetur adipiscing elit.
-                                Pellentesque euismod erat vitae
-                                ullamcorper consectetur. Fusce vel.
+                                Breve descripción del emprendimiento,
+                                sus productos, servicios o propuesta
+                                que presentará durante la jornada.
                             </p>
-
-                            <a href="actividades.html"
-                               class="event-btn blue">
-                                CONOCE MÁS ›
-                            </a>
 
                         </div>
 
@@ -619,7 +605,7 @@
                         en esta celebración!
                     </p>
 
-                    <a href="evento.html"
+                    <a href="https://docs.google.com/forms/u/3/d/e/1FAIpQLSesdv12z82hOQ8huNorIYahVyiYHKRT2THT0DawHe58scwhXw/viewform"
                        class="presence-btn">
 
                         <span>
@@ -686,6 +672,38 @@
                         <img
                             src="{% static 'assets/logo/patrocinador-03.png' %}"
                             alt="Patrocinador 3"
+                            class="sponsor-logo"
+                        >
+                    </article>
+
+                    <article class="sponsor-card">
+                        <img
+                            src="{% static 'assets/logo/patrocinador-04.png' %}"
+                            alt="Escuela de Ciencias Agrícolas, Pecuarias y del Medio Ambiente - ECAPMA"
+                            class="sponsor-logo"
+                        >
+                    </article>
+
+                    <article class="sponsor-card">
+                        <img
+                            src="{% static 'assets/logo/patrocinador-05.png' %}"
+                            alt="Incubadora de Innovación UNAD"
+                            class="sponsor-logo"
+                        >
+                    </article>
+
+                    <article class="sponsor-card">
+                        <img
+                            src="{% static 'assets/logo/patrocinador-06.png' %}"
+                            alt="Vicerrectoría de Innovación y Emprendimiento - VIEM"
+                            class="sponsor-logo"
+                        >
+                    </article>
+
+                    <article class="sponsor-card">
+                        <img
+                            src="{% static 'assets/logo/patrocinador-07.jpg' %}"
+                            alt="Sistema de Bienestar Integral UNADista"
                             class="sponsor-logo"
                         >
                     </article>

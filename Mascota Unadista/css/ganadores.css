@@ -1257,3 +1257,39 @@ position: absolute;
 
 }
 
+/* ==========================================================
+   GANADORES — PLACEHOLDER DE FOTOGRAFÍA
+========================================================== */
+
+.winner-photo-placeholder {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 8px;
+
+    background: #c9c9c9;
+    color: #777777;
+
+    font-family:
+        "Inter",
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    text-align: center;
+}
+
+.first-place-card .winner-photo-placeholder {
+    border-radius:
+        20px
+        20px
+        0
+        0;
+}
+

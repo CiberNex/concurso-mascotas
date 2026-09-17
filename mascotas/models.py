@@ -39,7 +39,7 @@ class Participacion(models.Model):
         related_name='participaciones'
     )
     foto = models.ImageField(upload_to='participaciones/')
-    estado = models.CharField(max_length=20, default='pendiente')
+    estado = models.CharField(max_length=20, default='aprobada')
     fecha_registro = models.DateTimeField(auto_now_add=True)
 
     class Meta:

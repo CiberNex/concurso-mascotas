@@ -1374,3 +1374,21 @@ label {
     }
 }
 
+/* ==========================================================
+   ACLARACIÓN — DOBLE INSCRIPCIÓN
+========================================================== */
+
+.virtual-notice-required {
+    margin-top: 8px !important;
+    padding: 9px 12px;
+    border-radius: 10px;
+    color: #5b4300 !important;
+    background: rgba(245, 187, 35, 0.16);
+    font-weight: 600;
+}
+
+.virtual-notice-required strong {
+    color: var(--orange) !important;
+    font-weight: 850;
+}
+
